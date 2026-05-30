@@ -176,9 +176,9 @@
     .tl-future::before {
       content: '';
       position: absolute;
-      top: -.35rem;
+      top: -2.2rem;
       left: 32px;
-      height: 4.5rem;
+      height: calc(2.2rem + 22px);
       border-left: 3px dashed rgba(15,118,110,.55);
     }
 
