@@ -32,6 +32,7 @@
         <li><a href="index.html" class="nav-link">Home</a></li>
         <li><a href="portfolio.html" class="nav-link active">Portfolio</a></li>
         <li><a href="personal.html" class="nav-link">Personal</a></li>
+        <li><a href="resume.html" class="nav-link nav-link-resume">Résumé</a></li>
       </ul>
     </div>
   </nav>
@@ -42,6 +43,12 @@
       <div class="page-banner-icon">💼</div>
       <h1>Portfolio</h1>
       <p>Real projects, real outcomes. Each initiative below represents a challenge solved, a system built, or a capability delivered.</p>
+    </div>
+    <!-- Wave divider -->
+    <div class="page-wave" aria-hidden="true">
+      <svg viewBox="0 0 1440 48" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+        <path d="M0,24 C360,48 1080,0 1440,24 L1440,48 L0,48 Z" fill="#EEF2FF"/>
+      </svg>
     </div>
   </header>
 
@@ -371,7 +378,7 @@
         <h2>Interested in Working Together?</h2>
         <p>I'm always open to conversations about learning strategy, knowledge systems, or content design.</p>
         <div class="hero-actions">
-          <a href="index.html" class="btn btn-primary">Back to Home</a>
+          <a href="resume.html" class="btn btn-primary">View Résumé</a>
           <a href="personal.html" class="btn btn-outline">About Me</a>
         </div>
       </div>
@@ -388,6 +395,7 @@
       <nav class="footer-links">
         <a href="index.html" class="footer-link">Home</a>
         <a href="portfolio.html" class="footer-link">Portfolio</a>
+        <a href="resume.html" class="footer-link">Résumé</a>
         <a href="personal.html" class="footer-link">Personal</a>
       </nav>
       <p class="footer-copy">&copy; <span class="year"></span> Jesse Becker. All rights reserved.</p>
@@ -397,7 +405,6 @@
   <script>
     document.querySelectorAll('.year').forEach(el => el.textContent = new Date().getFullYear());
 
-    // Nav toggle
     const toggle = document.querySelector('.nav-toggle');
     const links  = document.querySelector('.nav-links');
     toggle.addEventListener('click', () => {
