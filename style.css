@@ -293,7 +293,22 @@ p { color: var(--text-secondary); line-height: 1.7; }
 
 .page-banner-inner { position: relative; max-width: 720px; margin: 0 auto; }
 
-.page-banner-icon { font-size: 2.5rem; margin-bottom: 1rem; line-height: 1; }
+.page-banner-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+  padding: .4rem .8rem;
+  border: 1px solid rgba(255,255,255,.22);
+  border-radius: var(--r-full);
+  background: rgba(255,255,255,.09);
+  color: rgba(255,255,255,.84);
+  font-size: .72rem;
+  font-weight: 700;
+  letter-spacing: .12em;
+  line-height: 1;
+  text-transform: uppercase;
+}
 
 .page-banner h1 {
   font-size: clamp(1.75rem, 4vw, 2.75rem);
@@ -679,7 +694,9 @@ p { color: var(--text-secondary); line-height: 1.7; }
   font-size: .68rem;
   font-weight: 700;
   letter-spacing: .04em;
+  line-height: 1.2;
   text-transform: uppercase;
+  white-space: nowrap;
 }
 
 .badge-blue   { background: rgba(59,130,246,.14); color: var(--blue-dark); }
@@ -742,7 +759,7 @@ p { color: var(--text-secondary); line-height: 1.7; }
 
 .project-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-hover); }
 
-.project-card-top { display: flex; align-items: flex-start; justify-content: space-between; gap: .75rem; }
+.project-card-top { display: flex; flex-wrap: wrap; align-items: flex-start; gap: .5rem; }
 
 .project-title { font-size: 1.05rem; font-weight: 700; letter-spacing: -.01em; }
 
