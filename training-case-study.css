@@ -70,7 +70,7 @@
       position: absolute;
       left: 32px;          /* centers on the 68px node column */
       top:  52px;
-      bottom: 52px;
+      bottom: 0;
       width: 3px;
       border-radius: 99px;
       background: linear-gradient(
@@ -176,9 +176,9 @@
     .tl-future::before {
       content: '';
       position: absolute;
-      top: -2rem;
+      top: -.35rem;
       left: 32px;
-      height: 2.2rem;
+      height: 4.5rem;
       border-left: 3px dashed rgba(15,118,110,.55);
     }
 

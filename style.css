@@ -518,14 +518,25 @@ p { color: var(--text-secondary); line-height: 1.7; }
 }
 
 .hero-actions-primary {
-  margin-bottom: 1.75rem;
+  margin-bottom: 2.75rem;
 }
 
 .hero-actions-primary .btn {
   min-width: 155px;
   justify-content: center;
-  border-radius: .8rem;
+  border-radius: .5rem;
   box-shadow: 0 8px 22px rgba(15,23,42,.22);
+}
+
+.hero-actions-primary .btn-outline {
+  background: rgba(15,23,42,.28);
+  border-color: rgba(255,255,255,.68);
+  box-shadow: 0 8px 22px rgba(15,23,42,.2);
+}
+
+.hero-actions-primary .btn-outline:hover {
+  background: rgba(15,23,42,.42);
+  border-color: rgba(255,255,255,.9);
 }
 
 .hero-actions-primary .btn span {
@@ -536,15 +547,6 @@ p { color: var(--text-secondary); line-height: 1.7; }
 
 .hero-actions-primary .btn:hover span {
   transform: translateX(3px);
-}
-
-.hero-focus-label {
-  margin-bottom: .65rem;
-  color: rgba(255,255,255,.58);
-  font-size: .66rem;
-  font-weight: 700;
-  letter-spacing: .15em;
-  text-transform: uppercase;
 }
 
 .pill-row { display: flex; flex-wrap: wrap; gap: .5rem; justify-content: center; }
