@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio — Jesse Becker</title>
+  <meta name="description" content="Professional portfolio of Jesse Becker — Knowledge Management, Learning & Development, Learning Technologies, and AI Initiatives.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="bg-orbs" aria-hidden="true">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+  </div>
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <span class="nav-logo-mark">JB</span>
+        <span class="nav-logo-name">Jesse Becker</span>
+      </a>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="portfolio.html" class="nav-link active">Portfolio</a></li>
+        <li><a href="personal.html" class="nav-link">Personal</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Page Banner -->
+  <header class="page-banner">
+    <div class="page-banner-inner">
+      <div class="page-banner-icon">💼</div>
+      <h1>Portfolio</h1>
+      <p>Real projects, real outcomes. Each initiative below represents a challenge solved, a system built, or a capability delivered.</p>
+    </div>
+  </header>
+
+  <main>
+    <section class="section">
+      <div class="container">
+
+        <!-- Filter Tabs -->
+        <div class="filter-row" role="tablist">
+          <button class="filter-tab active" data-filter="all">All Projects</button>
+          <button class="filter-tab" data-filter="km">Knowledge Management</button>
+          <button class="filter-tab" data-filter="ld">Learning &amp; Development</button>
+          <button class="filter-tab" data-filter="lt">Learning Technologies</button>
+          <button class="filter-tab" data-filter="pi">Process Improvement</button>
+          <button class="filter-tab" data-filter="ai">AI Initiatives</button>
+        </div>
+
+        <!-- Project Grid -->
+        <div class="project-grid" id="project-grid">
+
+          <!-- KM 1 -->
+          <article class="project-card" data-category="km">
+            <div class="card-accent accent-violet"></div>
+            <div class="project-card-top">
+              <span class="badge badge-violet">Knowledge Management</span>
+            </div>
+            <h3 class="project-title">Knowledge Base Modernization Initiative</h3>
+            <p class="project-summary">
+              Led a comprehensive overhaul of fragmented internal documentation scattered across
+              legacy wikis, shared drives, and email threads — consolidating everything into a
+              centralized, searchable, and maintainable knowledge system.
+            </p>
+            <div class="tags">
+              <span class="tag tag-violet">SharePoint</span>
+              <span class="tag">Information Architecture</span>
+              <span class="tag">Content Strategy</span>
+              <span class="tag">Taxonomy Design</span>
+            </div>
+            <div class="project-meta">
+              <div>
+                <div class="meta-label">Challenge</div>
+                <div class="meta-value">Content scattered across 6+ platforms with no ownership or governance model</div>
+              </div>
+              <div>
+                <div class="meta-label">Outcome</div>
+                <div class="meta-value">Significant reduction in support tickets; improved employee self-service rates</div>
+              </div>
+            </div>
+          </article>
+
+          <!-- KM 2 -->
+          <article class="project-card" data-category="km">
+            <div class="card-accent accent-violet"></div>
+            <div class="project-card-top">
+              <span class="badge badge-violet">Knowledge Management</span>
+            </div>
+            <h3 class="project-title">Knowledge Governance &amp; Maintenance Program</h3>
+            <p class="project-summary">
+              Designed a sustainable content governance framework that established ownership roles,
+              review cycles, and quality standards across a large internal knowledge ecosystem.
+            </p>
+            <div class="tags">
+              <span class="tag tag-violet">Content Governance</span>
+              <span class="tag">Confluence</span>
+              <span class="tag">Style Guides</span>
+              <span class="tag">Change Management</span>
+            </div>
+            <div class="project-meta">
+              <div>
+                <div class="meta-label">Challenge</div>
+                <div class="meta-value">No clear accountability for content accuracy; high volume of outdated articles</div>
+              </div>
+              <div>
+                <div class="meta-label">Outcome</div>
+                <div class="meta-value">Established ongoing review cadence with measurably higher content freshness scores</div>
+              </div>
+            </div>
+          </article>
+
+          <!-- L&D 1 -->
+          <article class="project-card" data-category="ld">
+            <div class="card-accent accent-blue"></div>
+            <div class="project-card-top">
+              <span class="badge badge-blue">Learning &amp; Development</span>
+            </div>
+            <h3 class="project-title">Global Trainer Certification Program</h3>
+            <p class="project-summary">
+              Designed a comprehensive train-the-trainer curriculum to standardize onboarding
+              quality across international training teams, ensuring consistent learner outcomes
+              regardless of delivery location.
+            </p>
+            <div class="tags">
+              <span class="tag tag-blue">Instructional Design</span>
+              <span class="tag">Articulate Storyline</span>
+              <span class="tag">Train-the-Trainer</span>
+              <span class="tag">LMS</span>
+            </div>
+            <div class="project-meta">
+              <div>
+                <div class="meta-label">Challenge</div>
+                <div class="meta-value">Inconsistent trainer quality across global locations led to variable learner outcomes</div>
+              </div>
+              <div>
+                <div class="meta-label">Outcome</div>
+                <div class="meta-value">Deployed across multiple countries; delivery consistency scores improved measurably</div>
+              </div>
+            </div>
+          </article>
+
+          <!-- L&D 2 -->
+          <article class="project-card" data-category="ld">
+            <div class="card-accent accent-blue"></div>
+            <div class="project-card-top">
+              <span class="badge badge-blue">Learning &amp; Development</span>
+            </div>
+            <h3 class="project-title">Enterprise Compliance Training Rollout</h3>
+            <p class="project-summary">
+              Developed and deployed a blended compliance curriculum for a large employee
+              population, combining interactive eLearning modules with live facilitated sessions
+              and targeted post-training reinforcement.
+            </p>
+            <div class="tags">
+              <span class="tag tag-blue">eLearning</span>
+              <span class="tag">SCORM</span>
+              <span class="tag">Workday Learning</span>
+              <span class="tag">Blended Learning</span>
+            </div>
+            <div class="project-meta">
+              <div>
+                <div class="meta-label">Challenge</div>
+                <div class="meta-value">Regulatory compliance required across a diverse workforce with varied schedules and roles</div>
+              </div>
+              <div>
+                <div class="meta-label">Outcome</div>
+                <div class="meta-value">95%+ completion rate; validated knowledge gains via pre/post assessments</div>
+              </div>
+            </div>
+          </article>
+
+          <!-- L&D 3 -->
+          <article class="project-card" data-category="ld">
+            <div class="card-accent accent-blue"></div>
+            <div class="project-card-top">
+              <span class="badge badge-blue">Learning &amp; Development</span>
+            </div>
+            <h3 class="project-title">New Hire Onboarding Redesign</h3>
+            <p class="project-summary">
+              Redesigned a legacy onboarding program from a passive orientation experience into
+              an engaging, structured 30-60-90 day learning journey with clear milestones and
+              manager checkpoints.
+            </p>
+            <div class="tags">
+              <span class="tag tag-blue">Onboarding Design</span>
+              <span class="tag">Learning Journey</span>
+              <span class="tag">Performance Support</span>
+              <span class="tag">Manager Enablement</span>
+            </div>
+            <div class="project-meta">
+              <div>
+                <div class="meta-label">Challenge</div>
+                <div class="meta-value">High early attrition correlated with poor onboarding clarity and ramp-up support</div>
+              </div>
+              <div>
+                <div class="meta-label">Outcome</div>
+                <div class="meta-value">Improved 90-day retention and reduced time-to-productivity for new hires</div>
+              </div>
+            </div>
+          </article>
+
+          <!-- LT 1 -->
+          <article class="project-card" data-category="lt">
+            <div class="card-accent accent-teal"></div>
+            <div class="project-card-top">
+              <span class="badge badge-teal">Learning Technologies</span>
+            </div>
+            <h3 class="project-title">LMS Platform Migration &amp; Implementation</h3>
+            <p class="project-summary">
+              Led end-to-end evaluation, vendor selection, and implementation of a new Learning
+              Management System to replace a legacy platform with poor adoption rates and
+              limited reporting capabilities.
+            </p>
+            <div class="tags">
+              <span class="tag tag-teal">Workday Learning</span>
+              <span class="tag">SCORM</span>
+              <span class="tag">xAPI</span>
+              <span class="tag">Change Management</span>
+            </div>
+            <div class="project-meta">
+              <div>
+                <div class="meta-label">Challenge</div>
+                <div class="meta-value">Legacy LMS caused low adoption, poor UX, and opaque reporting for L&D leaders</div>
+              </div>
+              <div>
+                <div class="meta-label">Outcome</div>
+                <div class="meta-value">Successful content migration; increased platform adoption and reporting depth</div>
+              </div>
+            </div>
+          </article>
+
+          <!-- LT 2 -->
+          <article class="project-card" data-category="lt">
+            <div class="card-accent accent-teal"></div>
+            <div class="project-card-top">
+              <span class="badge badge-teal">Learning Technologies</span>
+            </div>
+            <h3 class="project-title">Interactive eLearning Course Suite</h3>
+            <p class="project-summary">
+              Designed and developed a library of interactive eLearning courses on complex
+              operational topics, featuring branching scenarios, embedded knowledge checks,
+              and performance-based assessments.
+            </p>
+            <div class="tags">
+              <span class="tag tag-teal">Articulate Storyline</span>
+              <span class="tag">Adobe Captivate</span>
+              <span class="tag">Camtasia</span>
+              <span class="tag">Branching Scenarios</span>
+            </div>
+            <div class="project-meta">
+              <div>
+                <div class="meta-label">Challenge</div>
+                <div class="meta-value">Need for consistent, scalable training without instructor dependency</div>
+              </div>
+              <div>
+                <div class="meta-label">Outcome</div>
+                <div class="meta-value">Reduced instructor-led training hours by 35%; consistent delivery at scale</div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Process Improvement -->
+          <article class="project-card" data-category="pi">
+            <div class="card-accent accent-cyan"></div>
+            <div class="project-card-top">
+              <span class="badge badge-cyan">Process Improvement</span>
+            </div>
+            <h3 class="project-title">Training Operations Workflow Redesign</h3>
+            <p class="project-summary">
+              Mapped and redesigned the end-to-end training scheduling, coordination, and
+              reporting workflow — replacing highly manual processes with automated solutions
+              and standardized data collection.
+            </p>
+            <div class="tags">
+              <span class="tag tag-cyan">Power Automate</span>
+              <span class="tag">SharePoint</span>
+              <span class="tag">Microsoft Forms</span>
+              <span class="tag">Process Mapping</span>
+            </div>
+            <div class="project-meta">
+              <div>
+                <div class="meta-label">Challenge</div>
+                <div class="meta-value">Manual coordination consumed significant admin time and introduced data quality issues</div>
+              </div>
+              <div>
+                <div class="meta-label">Outcome</div>
+                <div class="meta-value">Automated key workflows; freed team capacity and improved data reliability</div>
+              </div>
+            </div>
+          </article>
+
+          <!-- AI 1 -->
+          <article class="project-card" data-category="ai">
+            <div class="card-accent accent-orange"></div>
+            <div class="project-card-top">
+              <span class="badge badge-orange">AI Initiative</span>
+            </div>
+            <h3 class="project-title">AI-Powered Knowledge Assistant Pilot</h3>
+            <p class="project-summary">
+              Designed and launched an AI-assisted knowledge retrieval tool to help operations
+              staff surface accurate, contextual answers during live customer interactions —
+              reducing handle time and improving confidence.
+            </p>
+            <div class="tags">
+              <span class="tag tag-orange">AI Integration</span>
+              <span class="tag">Prompt Engineering</span>
+              <span class="tag">SharePoint</span>
+              <span class="tag">API Configuration</span>
+            </div>
+            <div class="project-meta">
+              <div>
+                <div class="meta-label">Challenge</div>
+                <div class="meta-value">High handle time caused by difficulty locating accurate information during calls</div>
+              </div>
+              <div>
+                <div class="meta-label">Outcome</div>
+                <div class="meta-value">Pilot showed meaningful time-to-answer reduction; expanded to additional teams</div>
+              </div>
+            </div>
+          </article>
+
+          <!-- AI 2 -->
+          <article class="project-card" data-category="ai">
+            <div class="card-accent accent-orange"></div>
+            <div class="project-card-top">
+              <span class="badge badge-orange">AI Initiative</span>
+            </div>
+            <h3 class="project-title">AI-Enhanced Content Development Workflow</h3>
+            <p class="project-summary">
+              Developed an AI-assisted content creation framework for the L&amp;D team —
+              including curated prompt libraries, quality review protocols, and integration
+              with existing authoring and publishing tools.
+            </p>
+            <div class="tags">
+              <span class="tag tag-orange">Prompt Engineering</span>
+              <span class="tag">AI Writing Tools</span>
+              <span class="tag">Content Templates</span>
+              <span class="tag">Articulate</span>
+            </div>
+            <div class="project-meta">
+              <div>
+                <div class="meta-label">Challenge</div>
+                <div class="meta-value">Content development timelines were a bottleneck limiting team responsiveness</div>
+              </div>
+              <div>
+                <div class="meta-label">Outcome</div>
+                <div class="meta-value">Reduced average content development time; freed capacity for higher-value work</div>
+              </div>
+            </div>
+          </article>
+
+        </div><!-- /project-grid -->
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+      <div class="cta-inner">
+        <h2>Interested in Working Together?</h2>
+        <p>I'm always open to conversations about learning strategy, knowledge systems, or content design.</p>
+        <div class="hero-actions">
+          <a href="index.html" class="btn btn-primary">Back to Home</a>
+          <a href="personal.html" class="btn btn-outline">About Me</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-logo-mark">JB</div>
+      <p class="footer-name">Jesse Becker</p>
+      <p class="footer-tag">Learning &amp; Development · Knowledge Management · Training</p>
+      <nav class="footer-links">
+        <a href="index.html" class="footer-link">Home</a>
+        <a href="portfolio.html" class="footer-link">Portfolio</a>
+        <a href="personal.html" class="footer-link">Personal</a>
+      </nav>
+      <p class="footer-copy">&copy; <span class="year"></span> Jesse Becker. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.querySelectorAll('.year').forEach(el => el.textContent = new Date().getFullYear());
+
+    // Nav toggle
+    const toggle = document.querySelector('.nav-toggle');
+    const links  = document.querySelector('.nav-links');
+    toggle.addEventListener('click', () => {
+      const open = links.classList.toggle('open');
+      toggle.classList.toggle('open', open);
+      toggle.setAttribute('aria-expanded', open);
+    });
+
+    // Portfolio filter tabs
+    const tabs  = document.querySelectorAll('.filter-tab');
+    const cards = document.querySelectorAll('.project-card');
+
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        tabs.forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+        const filter = tab.dataset.filter;
+        cards.forEach(card => {
+          const show = filter === 'all' || card.dataset.category === filter;
+          card.style.display = show ? '' : 'none';
+        });
+      });
+    });
+  </script>
+
+</body>
+</html>

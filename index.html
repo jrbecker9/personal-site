@@ -3,10 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jesse Becker</title>
+  <title>Jesse Becker — Learning & Development</title>
+  <meta name="description" content="Jesse Becker — Learning & Development Trainer specializing in Knowledge Management, Training Programs, and Learning Technology.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -17,61 +18,304 @@
     <div class="orb orb-3"></div>
   </div>
 
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <span class="nav-logo-mark">JB</span>
+        <span class="nav-logo-name">Jesse Becker</span>
+      </a>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="index.html" class="nav-link active">Home</a></li>
+        <li><a href="portfolio.html" class="nav-link">Portfolio</a></li>
+        <li><a href="personal.html" class="nav-link">Personal</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero -->
   <header class="hero">
     <div class="hero-inner">
-      <div class="avatar" aria-hidden="true">JB</div>
+      <div class="hero-avatar" aria-hidden="true">JB</div>
       <h1>Jesse Becker</h1>
-      <p class="tagline">Learning &amp; Development Trainer</p>
+      <p class="hero-title">Learning &amp; Development Trainer</p>
+      <p class="hero-tagline">
+        I help organizations build the learning systems, knowledge infrastructure,
+        and training programs that enable their people to do their best work.
+      </p>
+      <div class="hero-actions">
+        <a href="portfolio.html" class="btn btn-primary">View My Portfolio</a>
+        <a href="#about" class="btn btn-outline">Learn More</a>
+      </div>
       <div class="pill-row">
         <span class="pill">Knowledge Management</span>
-        <span class="pill">Training</span>
-        <span class="pill">Sci-Fi Writing</span>
+        <span class="pill">Training Design</span>
+        <span class="pill">Learning Technology</span>
+        <span class="pill">AI Integration</span>
       </div>
     </div>
   </header>
 
-  <main class="container">
-    <section class="card-grid">
+  <!-- Stats Bar -->
+  <div class="stats-bar">
+    <div class="stats-grid">
+      <div class="stat-item">
+        <div class="stat-value">10+</div>
+        <div class="stat-label">Years Experience</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-value">50+</div>
+        <div class="stat-label">Programs Delivered</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-value">Global</div>
+        <div class="stat-label">Program Reach</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-value">AI</div>
+        <div class="stat-label">Enhanced Workflows</div>
+      </div>
+    </div>
+  </div>
 
-      <article class="card">
-        <div class="card-accent accent-blue"></div>
-        <div class="card-icon">📚</div>
-        <h2>Training &amp; Development</h2>
-        <p>
-          Designing and delivering learning experiences that stick —
-          from onboarding programs to technical skill-building workshops.
-        </p>
-      </article>
+  <main>
 
-      <article class="card">
-        <div class="card-accent accent-violet"></div>
-        <div class="card-icon">🗂️</div>
-        <h2>Knowledge Management</h2>
-        <p>
-          Building systems that capture, organize, and surface the right
-          information at the right moment for teams and organizations.
-        </p>
-      </article>
-
-      <article class="card">
-        <div class="card-accent accent-cyan"></div>
-        <div class="card-icon">🚀</div>
-        <h2>Sci-Fi Writing</h2>
-        <p>
-          Exploring futures, ideas, and the human condition through
-          speculative fiction — one story at a time.
-        </p>
-      </article>
-
+    <!-- About / Summary -->
+    <section class="section" id="about">
+      <div class="container">
+        <div class="summary-grid">
+          <div class="summary-text">
+            <p class="section-label">About</p>
+            <h2>Bridging Learning, Knowledge, and Technology</h2>
+            <p>
+              With a background spanning instructional design, knowledge management,
+              and learning technology, I specialize in creating systems that help
+              people learn effectively and find information when they need it most.
+            </p>
+            <p>
+              Whether designing a curriculum from scratch, modernizing a fractured
+              knowledge base, or integrating AI tools into learning workflows — my
+              focus is always on practical outcomes and measurable impact.
+            </p>
+            <a href="portfolio.html" class="btn btn-blue">See My Work</a>
+          </div>
+          <div class="summary-visual">
+            <div class="summary-mini">
+              <div class="summary-mini-icon">🎓</div>
+              <div class="summary-mini-label">Instructional Design</div>
+            </div>
+            <div class="summary-mini">
+              <div class="summary-mini-icon">🗂️</div>
+              <div class="summary-mini-label">Knowledge Management</div>
+            </div>
+            <div class="summary-mini">
+              <div class="summary-mini-icon">💻</div>
+              <div class="summary-mini-label">Learning Technology</div>
+            </div>
+            <div class="summary-mini">
+              <div class="summary-mini-icon">🤖</div>
+              <div class="summary-mini-label">AI Integration</div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
+
+    <!-- Skills -->
+    <section class="section section-alt" id="skills">
+      <div class="container">
+        <div class="section-header">
+          <p class="section-label">Expertise</p>
+          <h2 class="section-title">Skills &amp; Capabilities</h2>
+          <p class="section-subtitle">A broad toolkit applied to real problems — from content design to systems thinking.</p>
+        </div>
+        <div class="skills-grid">
+
+          <div class="skill-card">
+            <div class="card-accent accent-blue"></div>
+            <div class="skill-card-header">
+              <div class="skill-icon si-blue">🎓</div>
+              <h3>Learning &amp; Development</h3>
+            </div>
+            <div class="skill-tags">
+              <span class="skill-tag">Instructional Design</span>
+              <span class="skill-tag">Curriculum Development</span>
+              <span class="skill-tag">Needs Analysis</span>
+              <span class="skill-tag">Training Delivery</span>
+              <span class="skill-tag">Performance Consulting</span>
+            </div>
+          </div>
+
+          <div class="skill-card">
+            <div class="card-accent accent-violet"></div>
+            <div class="skill-card-header">
+              <div class="skill-icon si-violet">🗂️</div>
+              <h3>Knowledge Management</h3>
+            </div>
+            <div class="skill-tags">
+              <span class="skill-tag">Knowledge Base Architecture</span>
+              <span class="skill-tag">Content Strategy</span>
+              <span class="skill-tag">Information Design</span>
+              <span class="skill-tag">Taxonomy</span>
+              <span class="skill-tag">Documentation Systems</span>
+            </div>
+          </div>
+
+          <div class="skill-card">
+            <div class="card-accent accent-teal"></div>
+            <div class="skill-card-header">
+              <div class="skill-icon si-teal">💻</div>
+              <h3>Learning Technologies</h3>
+            </div>
+            <div class="skill-tags">
+              <span class="skill-tag">LMS Administration</span>
+              <span class="skill-tag">Articulate 360</span>
+              <span class="skill-tag">SCORM / xAPI</span>
+              <span class="skill-tag">eLearning Development</span>
+              <span class="skill-tag">Workday Learning</span>
+            </div>
+          </div>
+
+          <div class="skill-card">
+            <div class="card-accent accent-cyan"></div>
+            <div class="skill-card-header">
+              <div class="skill-icon si-cyan">⚙️</div>
+              <h3>Technical Skills</h3>
+            </div>
+            <div class="skill-tags">
+              <span class="skill-tag">HTML / CSS</span>
+              <span class="skill-tag">SharePoint</span>
+              <span class="skill-tag">Power Automate</span>
+              <span class="skill-tag">Microsoft 365</span>
+              <span class="skill-tag">Adobe Creative Suite</span>
+            </div>
+          </div>
+
+          <div class="skill-card">
+            <div class="card-accent accent-orange"></div>
+            <div class="skill-card-header">
+              <div class="skill-icon si-orange">🤖</div>
+              <h3>AI &amp; Automation</h3>
+            </div>
+            <div class="skill-tags">
+              <span class="skill-tag">AI Integration</span>
+              <span class="skill-tag">Prompt Engineering</span>
+              <span class="skill-tag">Workflow Automation</span>
+              <span class="skill-tag">Knowledge Bot Development</span>
+            </div>
+          </div>
+
+          <div class="skill-card">
+            <div class="card-accent accent-multi"></div>
+            <div class="skill-card-header">
+              <div class="skill-icon si-green">🎨</div>
+              <h3>Creative &amp; Production</h3>
+            </div>
+            <div class="skill-tags">
+              <span class="skill-tag">Video Production</span>
+              <span class="skill-tag">Camtasia</span>
+              <span class="skill-tag">Canva</span>
+              <span class="skill-tag">Instructional Graphics</span>
+              <span class="skill-tag">Storyboarding</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Projects -->
+    <section class="section" id="projects">
+      <div class="container">
+        <div class="section-header">
+          <p class="section-label">Work</p>
+          <h2 class="section-title">Featured Projects</h2>
+          <p class="section-subtitle">A selection of initiatives that delivered measurable outcomes.</p>
+        </div>
+        <div class="featured-grid">
+
+          <article class="featured-card">
+            <div class="featured-card-img fci-violet">🤖</div>
+            <div class="featured-card-body">
+              <div class="tags">
+                <span class="tag tag-violet">AI Initiative</span>
+                <span class="tag tag-blue">Knowledge Management</span>
+              </div>
+              <h3>AI-Powered Knowledge Assistant</h3>
+              <p>Designed and launched an AI knowledge retrieval tool to help operations staff surface accurate answers in real time during live customer interactions.</p>
+              <a href="portfolio.html" class="card-link">View project →</a>
+            </div>
+          </article>
+
+          <article class="featured-card">
+            <div class="featured-card-img fci-blue">🌍</div>
+            <div class="featured-card-body">
+              <div class="tags">
+                <span class="tag tag-blue">Learning &amp; Development</span>
+              </div>
+              <h3>Global Trainer Certification Program</h3>
+              <p>Designed a comprehensive train-the-trainer program to standardize onboarding quality across global training teams and multiple countries.</p>
+              <a href="portfolio.html" class="card-link">View project →</a>
+            </div>
+          </article>
+
+          <article class="featured-card">
+            <div class="featured-card-img fci-teal">🗂️</div>
+            <div class="featured-card-body">
+              <div class="tags">
+                <span class="tag tag-teal">Knowledge Management</span>
+              </div>
+              <h3>Knowledge Base Modernization</h3>
+              <p>Led a full overhaul of fragmented internal documentation, consolidating content across legacy wikis and shared drives into a centralized, searchable system.</p>
+              <a href="portfolio.html" class="card-link">View project →</a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+      <div class="cta-inner">
+        <h2>Let's Build Better Learning Systems</h2>
+        <p>Explore the full portfolio to see how these skills have been applied to real organizational challenges.</p>
+        <div class="hero-actions">
+          <a href="portfolio.html" class="btn btn-primary">View Portfolio</a>
+          <a href="personal.html" class="btn btn-outline">About Me</a>
+        </div>
+      </div>
+    </section>
+
   </main>
 
+  <!-- Footer -->
   <footer class="site-footer">
-    <p>&copy; <span id="year"></span> Jesse Becker</p>
+    <div class="footer-inner">
+      <div class="footer-logo-mark">JB</div>
+      <p class="footer-name">Jesse Becker</p>
+      <p class="footer-tag">Learning &amp; Development · Knowledge Management · Training</p>
+      <nav class="footer-links">
+        <a href="index.html" class="footer-link">Home</a>
+        <a href="portfolio.html" class="footer-link">Portfolio</a>
+        <a href="personal.html" class="footer-link">Personal</a>
+      </nav>
+      <p class="footer-copy">&copy; <span class="year"></span> Jesse Becker. All rights reserved.</p>
+    </div>
   </footer>
 
   <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
+    document.querySelectorAll('.year').forEach(el => el.textContent = new Date().getFullYear());
+    const toggle = document.querySelector('.nav-toggle');
+    const links  = document.querySelector('.nav-links');
+    toggle.addEventListener('click', () => {
+      const open = links.classList.toggle('open');
+      toggle.classList.toggle('open', open);
+      toggle.setAttribute('aria-expanded', open);
+    });
   </script>
 
 </body>
