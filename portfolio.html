@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio | Jesse Becker</title>
+  <meta name="description" content="Selected work by Jesse Becker across global training operations, knowledge management, learning systems, and creative production.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="bg-orbs" aria-hidden="true">
+    <div class="orb orb-1"></div><div class="orb orb-2"></div><div class="orb orb-3"></div>
+  </div>
+
+  <nav class="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo"><span class="nav-logo-mark">JB</span><span class="nav-logo-name">Jesse Becker</span></a>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+      <ul class="nav-links">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="#projects" class="nav-link active">Portfolio</a></li>
+        <li><a href="personal.html" class="nav-link">Personal</a></li>
+        <li><a href="resume.html" class="nav-link nav-link-resume">Resume</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header class="page-banner">
+    <div class="page-banner-inner">
+      <div class="page-banner-icon">WORK</div>
+      <h1>Portfolio</h1>
+      <p>Systems, tools, and programs designed to make learning more useful and work more effective.</p>
+    </div>
+  </header>
+
+  <main>
+    <section class="section" id="projects">
+      <div class="container">
+        <div class="section-header">
+          <p class="section-label">Case Studies</p>
+          <h2 class="section-title">Selected Work</h2>
+          <p class="section-subtitle">Filter the portfolio by focus area, or browse the full mix of learning strategy, technical work, and operations design.</p>
+        </div>
+
+        <div class="filter-row" role="tablist" aria-label="Portfolio filters">
+          <button class="filter-tab active" data-filter="all">All Projects</button>
+          <button class="filter-tab" data-filter="km">Knowledge Management</button>
+          <button class="filter-tab" data-filter="ld">Learning &amp; Development</button>
+          <button class="filter-tab" data-filter="lt">Learning Systems</button>
+          <button class="filter-tab" data-filter="ops">Operations</button>
+          <button class="filter-tab" data-filter="creative">Creative</button>
+        </div>
+
+        <div class="project-grid" id="project-grid">
+          <article class="project-card" id="copilot" data-category="km">
+            <div class="card-accent accent-violet"></div>
+            <div class="project-card-top"><span class="badge badge-violet">Knowledge Management</span></div>
+            <h3 class="project-title">Talkdesk Copilot Knowledge Integration</h3>
+            <p class="project-summary">Led the integration of KnowledgeOwl content into Talkdesk's AI-driven Copilot to help teams surface more relevant information during customer interactions.</p>
+            <div class="tags"><span class="tag tag-violet">KnowledgeOwl</span><span class="tag">Talkdesk Copilot</span><span class="tag">Metadata</span><span class="tag">Intent Mapping</span></div>
+            <div class="project-meta">
+              <div><div class="meta-label">Challenge</div><div class="meta-value">Make a growing knowledge base easier to search in the flow of work.</div></div>
+              <div><div class="meta-label">Approach</div><div class="meta-value">Built tagging, intent, and metadata structures to improve AI-assisted results.</div></div>
+            </div>
+          </article>
+
+          <article class="project-card" id="trainer-enablement" data-category="ops">
+            <div class="card-accent accent-blue"></div>
+            <div class="project-card-top"><span class="badge badge-blue">Training Operations</span></div>
+            <h3 class="project-title">Global Trainer Enablement System</h3>
+            <p class="project-summary">Designed onboarding plans, scorecards, and mentoring structures for trainers supporting six client programs across a distributed organization.</p>
+            <div class="tags"><span class="tag tag-blue">Trainer Management</span><span class="tag">Scorecards</span><span class="tag">Mentoring</span><span class="tag">Program Operations</span></div>
+            <div class="project-meta">
+              <div><div class="meta-label">Scope</div><div class="meta-value">Oversee scheduling and development for three trainers across six client programs.</div></div>
+              <div><div class="meta-label">Approach</div><div class="meta-value">Created repeatable onboarding and coaching structures for training staff.</div></div>
+            </div>
+          </article>
+
+          <article class="project-card" id="call-flows" data-category="km">
+            <div class="card-accent accent-teal"></div>
+            <div class="project-card-top"><span class="badge badge-teal">Performance Support</span></div>
+            <h3 class="project-title">Interactive Decision Trees &amp; Call Flows</h3>
+            <p class="project-summary">Built browser-based decision trees and call-flow tools that give frontline staff clearer, more usable guidance during training and live work.</p>
+            <div class="tags"><span class="tag tag-teal">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span><span class="tag">Self-Service Learning</span></div>
+            <div class="project-meta">
+              <div><div class="meta-label">Challenge</div><div class="meta-value">Turn complex call procedures into practical, easy-to-follow support.</div></div>
+              <div><div class="meta-label">Approach</div><div class="meta-value">Designed interactive tools around real agent workflows.</div></div>
+            </div>
+          </article>
+
+          <article class="project-card" data-category="lt">
+            <div class="card-accent accent-cyan"></div>
+            <div class="project-card-top"><span class="badge badge-cyan">Learning Systems</span></div>
+            <h3 class="project-title">LearnUpon Learning Infrastructure</h3>
+            <p class="project-summary">Administer enterprise learning infrastructure, including user management, course builds, certification paths, and performance reporting.</p>
+            <div class="tags"><span class="tag tag-cyan">LearnUpon</span><span class="tag">LMS Administration</span><span class="tag">Certification Paths</span><span class="tag">Reporting</span></div>
+            <div class="project-meta">
+              <div><div class="meta-label">Need</div><div class="meta-value">Support repeatable training and certification across multiple client programs.</div></div>
+              <div><div class="meta-label">Result</div><div class="meta-value">A maintained learning environment for onboarding, upskilling, and performance reporting.</div></div>
+            </div>
+          </article>
+
+          <article class="project-card" data-category="ops">
+            <div class="card-accent accent-blue"></div>
+            <div class="project-card-top"><span class="badge badge-blue">Workflow Design</span></div>
+            <h3 class="project-title">SharePoint Onboarding Hubs &amp; Automations</h3>
+            <p class="project-summary">Built SharePoint onboarding hubs and Power Automate workflows to streamline trainer coordination and progress tracking.</p>
+            <div class="tags"><span class="tag tag-blue">SharePoint</span><span class="tag">Power Automate</span><span class="tag">Microsoft Forms</span><span class="tag">Progress Tracking</span></div>
+            <div class="project-meta">
+              <div><div class="meta-label">Challenge</div><div class="meta-value">Coordinate onboarding progress across trainers and distributed teams.</div></div>
+              <div><div class="meta-label">Approach</div><div class="meta-value">Centralized resources and automated repeatable coordination tasks.</div></div>
+            </div>
+          </article>
+
+          <article class="project-card" data-category="ld">
+            <div class="card-accent accent-violet"></div>
+            <div class="project-card-top"><span class="badge badge-violet">Learning &amp; Development</span></div>
+            <h3 class="project-title">Global Onboarding &amp; Upskilling Programs</h3>
+            <p class="project-summary">Deliver new-hire, upskilling, and soft-skills programs for agents and managers across U.S., Ireland, and Philippines operations.</p>
+            <div class="tags"><span class="tag tag-violet">Facilitation</span><span class="tag">Coaching</span><span class="tag">Customer Experience</span><span class="tag">Communication Skills</span></div>
+            <div class="project-meta">
+              <div><div class="meta-label">Reach</div><div class="meta-value">Live and virtual learning across three global regions.</div></div>
+              <div><div class="meta-label">Outcome</div><div class="meta-value">Maintained learner satisfaction above 4.5/5 and 90%+ first-time certification pass rates.</div></div>
+            </div>
+          </article>
+
+          <article class="project-card" data-category="creative">
+            <div class="card-accent accent-orange"></div>
+            <div class="project-card-top"><span class="badge badge-orange">Creative Production</span></div>
+            <h3 class="project-title">Branded Multimedia Learning Assets</h3>
+            <p class="project-summary">Produced branded video and e-learning assets used in company-wide onboarding and client training sessions.</p>
+            <div class="tags"><span class="tag tag-orange">Premiere Pro</span><span class="tag">After Effects</span><span class="tag">Photoshop</span><span class="tag">Audition</span></div>
+            <div class="project-meta">
+              <div><div class="meta-label">Need</div><div class="meta-value">Create a consistent, professional visual language for L&amp;D content.</div></div>
+              <div><div class="meta-label">Result</div><div class="meta-value">Reusable production standards, including branded video intros and outros.</div></div>
+            </div>
+          </article>
+
+          <article class="project-card" data-category="ops">
+            <div class="card-accent accent-teal"></div>
+            <div class="project-card-top"><span class="badge badge-teal">Continuous Improvement</span></div>
+            <h3 class="project-title">Recertification Program Transition</h3>
+            <p class="project-summary">Created and transitioned company-wide recertification programs, including SOP development and documentation management.</p>
+            <div class="tags"><span class="tag tag-teal">SOP Creation</span><span class="tag">Documentation</span><span class="tag">Change Management</span><span class="tag">Certification</span></div>
+            <div class="project-meta">
+              <div><div class="meta-label">Challenge</div><div class="meta-value">Make a recurring company-wide process easier to manage and sustain.</div></div>
+              <div><div class="meta-label">Approach</div><div class="meta-value">Defined the process, documented it clearly, and transitioned ownership.</div></div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-section">
+      <div class="cta-inner">
+        <h2>The work behind the resume</h2>
+        <p>See the full career timeline, tools, education, and recognition.</p>
+        <div class="hero-actions"><a href="resume.html" class="btn btn-primary">View Resume</a><a href="jesse-becker-resume.pdf" download class="btn btn-outline">Download PDF</a></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-logo-mark">JB</div><p class="footer-name">Jesse Becker</p>
+      <p class="footer-tag">Global L&amp;D Manager | Knowledge Management | Training Operations</p>
+      <nav class="footer-links"><a href="index.html" class="footer-link">Home</a><a href="#projects" class="footer-link">Portfolio</a><a href="resume.html" class="footer-link">Resume</a><a href="personal.html" class="footer-link">Personal</a></nav>
+      <p class="footer-copy">&copy; <span class="year"></span> Jesse Becker. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.querySelectorAll('.year').forEach(el => el.textContent = new Date().getFullYear());
+    const toggle = document.querySelector('.nav-toggle');
+    const links = document.querySelector('.nav-links');
+    toggle.addEventListener('click', () => {
+      const open = links.classList.toggle('open');
+      toggle.classList.toggle('open', open);
+      toggle.setAttribute('aria-expanded', open);
+    });
+    const tabs = document.querySelectorAll('.filter-tab');
+    const cards = document.querySelectorAll('.project-card');
+    tabs.forEach(tab => tab.addEventListener('click', () => {
+      tabs.forEach(item => item.classList.remove('active'));
+      tab.classList.add('active');
+      cards.forEach(card => card.hidden = tab.dataset.filter !== 'all' && card.dataset.category !== tab.dataset.filter);
+    }));
+  </script>
+</body>
+</html>
