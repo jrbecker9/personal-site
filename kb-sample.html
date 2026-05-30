@@ -29,13 +29,12 @@
     .kb-sec+.kb-sec{margin-top:26px}
     .kb-sec__label{font-family:var(--kb-font);margin:0 0 6px;font-size:12px;letter-spacing:1px;text-transform:uppercase;color:var(--kb-label);line-height:1.2;display:flex;align-items:center;gap:6px}
     .kb-sec__icon{font-size:12px;opacity:.75}
-    .kb-sec__title{font-family:var(--kb-font);margin:0;font-size:22px;font-weight:650;color:var(--kb-title);line-height:1.15;display:inline-block;position:relative}
-    .kb-sec__title::after{content:"";position:absolute;left:-.35em;right:-.35em;bottom:.12em;height:.55em;background:var(--kb-swipe);border-radius:999px;z-index:-1}
+    .kb-sec__title{font-family:var(--kb-font);margin:0;padding:0 .22em;font-size:22px;font-weight:650;color:var(--kb-title);line-height:1.15;display:inline-block;background:linear-gradient(to bottom,transparent 55%,var(--kb-swipe) 55%,var(--kb-swipe) 90%,transparent 90%)}
     .kb-sec__desc{font-family:var(--kb-font);margin:8px 0 0;font-size:14px;color:var(--kb-desc);line-height:1.45}
     .kb-sec--sm .kb-sec__title{font-size:19px;font-weight:620}
     .kb-sec--mini{margin:16px 0 10px}
     .kb-sec--mini .kb-sec__title{font-size:16px}
-    .kb-sec--mini .kb-sec__title::after{height:.42em;left:-.30em;right:-.30em}
+    .kb-sec--mini .kb-sec__title{background:linear-gradient(to bottom,transparent 62%,var(--kb-swipe) 62%,var(--kb-swipe) 92%,transparent 92%)}
     .kb-swipe--peach{--kb-swipe:var(--kb-swipe-peach)}
     .kb-swipe--blue{--kb-swipe:var(--kb-swipe-blue)}
     .kb-swipe--mint{--kb-swipe:var(--kb-swipe-mint)}
@@ -70,8 +69,8 @@
     .spoiler-dropdown:hover{transform:translateY(-1px);box-shadow:0 6px 16px #00000010}
     .spoiler-dropdown summary{font-weight:750;color:#15181A;cursor:pointer;list-style:none;display:flex;align-items:center;gap:8px}
     .spoiler-dropdown summary::-webkit-details-marker{display:none}
-    .spoiler-dropdown summary .arrow{display:inline-block;transition:transform 160ms}
-    .spoiler-dropdown[open] summary .arrow{transform:rotate(90deg)}
+    .spoiler-dropdown summary .arrow{display:inline-block;width:8px;height:8px;border:solid currentColor;border-width:0 2px 2px 0;transform:rotate(-45deg);transition:transform 160ms}
+    .spoiler-dropdown[open] summary .arrow{transform:rotate(45deg)}
     .spoiler-dropdown p{padding-top:10px;color:var(--kb-card-muted);line-height:1.6}
 
     /* Tables */
@@ -252,7 +251,7 @@
   </div>
 
   <details class="spoiler-dropdown">
-    <summary><span class="arrow">?</span> Members subscription - full inclusions</summary>
+    <summary><span class="arrow" aria-hidden="true"></span> Members subscription - full inclusions</summary>
     <ul>
       <li>Member dashboard with all recorded expert sessions</li>
       <li>Private community access (Slack workspace)</li>
@@ -295,7 +294,7 @@
   </ol>
 
   <details class="spoiler-dropdown">
-    <summary><span class="arrow">?</span> Why magic links fail - troubleshoot before generating a new one</summary>
+    <summary><span class="arrow" aria-hidden="true"></span> Why magic links fail - troubleshoot before generating a new one</summary>
     <ul>
       <li><strong>Link expired</strong> - links are valid for 6 hours. Generate a new one if the customer waited.</li>
       <li><strong>Cookie conflict</strong> - ask the customer to try an incognito/private window first.</li>

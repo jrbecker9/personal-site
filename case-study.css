@@ -296,8 +296,7 @@
     /* Section headers */
     .kb-sec { margin: 0 0 12px; }
     .kb-sec__label { font-family:var(--kb-font); font-size:12px; letter-spacing:1px; text-transform:uppercase; color:var(--kb-label); display:flex; align-items:center; gap:6px; margin-bottom:4px; }
-    .kb-sec__title { font-family:var(--kb-font); font-size:22px; font-weight:650; color:var(--kb-title); display:inline-block; position:relative; }
-    .kb-sec__title::after { content:""; position:absolute; left:-.35em; right:-.35em; bottom:.12em; height:.55em; background:var(--kb-swipe); border-radius:999px; z-index:-1; }
+    .kb-sec__title { font-family:var(--kb-font); padding:0 .22em; font-size:22px; font-weight:650; color:var(--kb-title); display:inline-block; background:linear-gradient(to bottom,transparent 55%,var(--kb-swipe) 55%,var(--kb-swipe) 90%,transparent 90%); }
     .kb-swipe--peach { --kb-swipe: var(--kb-swipe-peach); }
     .kb-swipe--blue  { --kb-swipe: var(--kb-swipe-blue);  }
     .kb-swipe--mint  { --kb-swipe: var(--kb-swipe-mint);  }
