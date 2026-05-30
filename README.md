@@ -94,6 +94,10 @@ When changing `style.css`, increment its query-string version in every HTML file
 
 Apply the same pattern to page-specific CSS files when they change. This prevents browsers and Cloudflare from serving stale styles.
 
+### Refresh the downloadable resume
+
+The printable resume uses `resume.html` as its source of truth. After changing resume content, export `resume.html` to `jesse-becker-resume.pdf` with browser print output so the web and downloadable versions stay aligned.
+
 ## Design Notes
 
 - Shared navigation and footer patterns are reused across all pages.
