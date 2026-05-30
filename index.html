@@ -1,23 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jesse Becker</title>
-
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jesse Becker</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <h1>Jesse Becker</h1>
+  <div class="bg-orbs" aria-hidden="true">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+  </div>
 
-    <p>
-        Learning & Development Trainer
-    </p>
+  <header class="hero">
+    <div class="hero-inner">
+      <div class="avatar" aria-hidden="true">JB</div>
+      <h1>Jesse Becker</h1>
+      <p class="tagline">Learning &amp; Development Trainer</p>
+      <div class="pill-row">
+        <span class="pill">Knowledge Management</span>
+        <span class="pill">Training</span>
+        <span class="pill">Sci-Fi Writing</span>
+      </div>
+    </div>
+  </header>
 
-    <p>
-        Knowledge Management • Training • Sci-Fi Writing
-    </p>
+  <main class="container">
+    <section class="card-grid">
+
+      <article class="card">
+        <div class="card-accent accent-blue"></div>
+        <div class="card-icon">📚</div>
+        <h2>Training &amp; Development</h2>
+        <p>
+          Designing and delivering learning experiences that stick —
+          from onboarding programs to technical skill-building workshops.
+        </p>
+      </article>
+
+      <article class="card">
+        <div class="card-accent accent-violet"></div>
+        <div class="card-icon">🗂️</div>
+        <h2>Knowledge Management</h2>
+        <p>
+          Building systems that capture, organize, and surface the right
+          information at the right moment for teams and organizations.
+        </p>
+      </article>
+
+      <article class="card">
+        <div class="card-accent accent-cyan"></div>
+        <div class="card-icon">🚀</div>
+        <h2>Sci-Fi Writing</h2>
+        <p>
+          Exploring futures, ideas, and the human condition through
+          speculative fiction — one story at a time.
+        </p>
+      </article>
+
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; <span id="year"></span> Jesse Becker</p>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 
 </body>
 </html>
