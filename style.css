@@ -589,7 +589,7 @@ p { color: var(--text-secondary); line-height: 1.7; }
 }
 
 .summary-mini:hover { transform: translateY(-3px); }
-.summary-mini-icon  { font-size: 1.75rem; margin-bottom: .5rem; }
+.summary-mini-icon  { font-size: 1.2rem; font-weight: 800; letter-spacing: .06em; margin-bottom: .5rem; }
 .summary-mini-label { font-size: .78rem; font-weight: 600; color: var(--text-secondary); }
 
 /* -- Skills ----------------------------------------------- */
@@ -620,7 +620,9 @@ p { color: var(--text-secondary); line-height: 1.7; }
   width: 42px;
   height: 42px;
   border-radius: var(--r-md);
-  font-size: 1.2rem;
+  font-size: .72rem;
+  font-weight: 800;
+  letter-spacing: .03em;
   flex-shrink: 0;
 }
 
@@ -993,20 +995,6 @@ p { color: var(--text-secondary); line-height: 1.7; }
   box-shadow: var(--shadow-card);
 }
 
-.personal-callout-mark {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 52px;
-  height: 52px;
-  flex-shrink: 0;
-  border-radius: var(--r-lg);
-  background: rgba(249,115,22,.12);
-  color: var(--orange-dark);
-  font-size: 1.5rem;
-  font-weight: 700;
-}
-
 .personal-callout h3 { margin-bottom: .4rem; font-size: 1rem; }
 .personal-callout p { font-size: .9rem; }
 
@@ -1084,7 +1072,9 @@ p { color: var(--text-secondary); line-height: 1.7; }
   width: 36px;
   height: 36px;
   border-radius: var(--r-md);
-  font-size: 1rem;
+  font-size: .62rem;
+  font-weight: 800;
+  letter-spacing: .03em;
   flex-shrink: 0;
 }
 
@@ -1208,8 +1198,6 @@ p { color: var(--text-secondary); line-height: 1.7; }
   align-items: center;
   gap: .5rem;
 }
-
-.sidebar-card h3 span { font-size: 1rem; }
 
 /* Skills in sidebar */
 .sidebar-skill-group { margin-bottom: 1.25rem; }
