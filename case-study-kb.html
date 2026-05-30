@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Knowledge Base Design System - Jesse Becker</title>
+  <meta name="description" content="Case study: custom CSS component system built for a KnowledgeOwl knowledge base - improving information density, scannability, and agent usability.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="case-study.css">
+</head>
+<body>
+
+  <div class="bg-orbs" aria-hidden="true">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+  </div>
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <span class="nav-logo-mark">JB</span>
+        <span class="nav-logo-name">Jesse Becker</span>
+      </a>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="index.html"    class="nav-link">Home</a></li>
+        <li><a href="portfolio.html#projects" class="nav-link active">Portfolio</a></li>
+        <li><a href="personal.html"  class="nav-link">Personal</a></li>
+        <li><a href="resume.html"    class="nav-link nav-link-resume">Resume</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Page Banner -->
+  <header class="page-banner">
+    <div class="page-banner-inner">
+      <div class="page-banner-icon">DEEP DIVE</div>
+      <h1>Knowledge Base Design System</h1>
+      <p>A custom CSS component library built for a KnowledgeOwl knowledge base - turning plain article text into a scannable, visually structured information system used by frontline operations staff.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:.5rem;justify-content:center;margin-top:1.25rem;">
+        <span class="pill">Knowledge Management</span>
+        <span class="pill">CSS / HTML</span>
+        <span class="pill">KnowledgeOwl</span>
+        <span class="pill">Information Design</span>
+        <span class="pill">Training Operations</span>
+      </div>
+      <p class="cs-anonymized-note">Anonymized portfolio sample. Names, URLs, pricing, and policy details are fictionalized.</p>
+    </div>
+  </header>
+
+  <main>
+    <section class="section">
+      <div class="container">
+
+        <!-- Overview cards -->
+        <div class="cs-meta-grid">
+          <div class="cs-meta-card">
+            <div class="card-accent accent-violet"></div>
+            <div class="cs-meta-card-label">The Challenge</div>
+            <h3>Plain articles weren't working</h3>
+            <p>The default KnowledgeOwl theme rendered all article content as uniform paragraphs. During live customer interactions, agents had to read full articles to locate a single policy detail - slowing handle time and increasing errors.</p>
+          </div>
+          <div class="cs-meta-card">
+            <div class="card-accent accent-blue"></div>
+            <div class="cs-meta-card-label">The Approach</div>
+            <h3>A modular component library</h3>
+            <p>Designed and built a complete CSS component system injected via KnowledgeOwl's custom CSS field. Components are written as reusable HTML snippets that any article author can insert - no coding knowledge required.</p>
+          </div>
+          <div class="cs-meta-card">
+            <div class="card-accent accent-teal"></div>
+            <div class="cs-meta-card-label">The Outcome</div>
+            <h3>Faster, more consistent lookups</h3>
+            <p>Articles became immediately scannable. Color-coded alerts, structured steps, and collapsible sections let agents locate the exact information they need in seconds - during active calls, without reading full articles.</p>
+          </div>
+        </div>
+
+        <!-- Stat row -->
+        <div class="cs-stat-row">
+          <div class="cs-stat">
+            <div class="cs-stat-value">700+</div>
+            <div class="cs-stat-label">Lines of CSS written</div>
+          </div>
+          <div class="cs-stat">
+            <div class="cs-stat-value">15+</div>
+            <div class="cs-stat-label">Reusable components</div>
+          </div>
+          <div class="cs-stat">
+            <div class="cs-stat-value">Zero</div>
+            <div class="cs-stat-label">Dependencies or frameworks</div>
+          </div>
+          <div class="cs-stat">
+            <div class="cs-stat-value">Live</div>
+            <div class="cs-stat-label">In production today</div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- -- Interactive Showcase -------------------------- -->
+    <section class="section section-alt">
+      <div class="container">
+
+        <div class="section-header">
+          <p class="section-label">Interactive Showcase</p>
+          <h2 class="section-title">See the System in Action</h2>
+          <p class="section-subtitle">Browse the complete rendered article, or explore individual components alongside the HTML that produces them.</p>
+        </div>
+
+        <!-- Tab bar -->
+        <div class="cs-tab-bar" role="tablist">
+          <button class="cs-tab active" data-cs-tab="preview" role="tab" aria-selected="true" aria-controls="cs-panel-preview">Full Article Preview</button>
+          <button class="cs-tab" data-cs-tab="explorer" role="tab" aria-selected="false" aria-controls="cs-panel-explorer">Component Explorer</button>
+        </div>
+
+        <!-- -- Panel 1: Browser mockup ----------------- -->
+        <div class="cs-panel active" id="cs-panel-preview">
+          <div class="browser-mockup">
+            <div class="browser-chrome">
+              <div class="browser-dots">
+                <div class="browser-dot browser-dot--red"></div>
+                <div class="browser-dot browser-dot--yellow"></div>
+                <div class="browser-dot browser-dot--green"></div>
+              </div>
+              <div class="browser-url-bar">
+                <span class="lock">Secure</span>
+                support.apexpro.io/knowledge-base/subscription-tiers-access
+              </div>
+            </div>
+            <div class="browser-body">
+              <iframe src="kb-sample.html"
+                      title="Sample KB Article - Apex Pro Subscription & Access Guide"
+                      loading="lazy"></iframe>
+            </div>
+          </div>
+          <p style="margin-top:1rem;font-size:.82rem;color:var(--text-muted);text-align:center;">
+            Scrollable article preview with fictional content demonstrating the component system in context
+          </p>
+        </div>
+
+        <!-- -- Panel 2: Component Explorer ------------ -->
+        <div class="cs-panel" id="cs-panel-explorer">
+          <div class="comp-explorer">
+
+            <!-- Sidebar nav -->
+            <nav class="comp-nav" role="tablist" aria-label="Component list">
+              <button class="comp-nav-item active" data-comp="headers" type="button" aria-selected="true" aria-controls="comp-headers">
+                <div class="dot" style="background:var(--violet)"></div>
+                Section Headers
+              </button>
+              <button class="comp-nav-item" data-comp="cards" type="button" aria-selected="false" aria-controls="comp-cards">
+                <div class="dot" style="background:var(--blue)"></div>
+                Info Cards
+              </button>
+              <button class="comp-nav-item" data-comp="steps" type="button" aria-selected="false" aria-controls="comp-steps">
+                <div class="dot" style="background:var(--teal)"></div>
+                Guided Steps
+              </button>
+              <button class="comp-nav-item" data-comp="table" type="button" aria-selected="false" aria-controls="comp-table">
+                <div class="dot" style="background:var(--cyan)"></div>
+                Data Tables
+              </button>
+              <button class="comp-nav-item" data-comp="tier" type="button" aria-selected="false" aria-controls="comp-tier">
+                <div class="dot" style="background:var(--orange)"></div>
+                Tier Comparison
+              </button>
+            </nav>
+
+            <!-- Component detail panels -->
+            <div>
+
+              <!-- -- Headers ------------- -->
+              <div class="comp-panel active" id="comp-headers">
+                <div class="comp-split">
+                  <div class="code-viewer">
+                    <div class="code-viewer__header">
+                      <div class="code-viewer__filename">
+                        <span>kb-section-header.html</span>
+                      </div>
+                      <span class="code-viewer__badge">HTML</span>
+                    </div>
+                    <div class="code-viewer__body"><pre
+><span class="hl-cm">&lt;!-- Standard header --&gt;</span>
+<span class="hl-tag">&lt;div</span> <span class="hl-attr">class</span>=<span class="hl-val">"kb-sec kb-swipe--peach"</span><span class="hl-tag">&gt;</span>
+  <span class="hl-tag">&lt;div</span> <span class="hl-attr">class</span>=<span class="hl-val">"kb-sec__label"</span><span class="hl-tag">&gt;</span>
+    <span class="hl-tag">&lt;i</span> <span class="hl-attr">class</span>=<span class="hl-val">"fa-regular fa-tag"</span><span class="hl-tag">&gt;&lt;/i&gt;</span>
+    Plans &amp; Pricing
+  <span class="hl-tag">&lt;/div&gt;</span>
+  <span class="hl-tag">&lt;div</span> <span class="hl-attr">class</span>=<span class="hl-val">"kb-sec__title"</span><span class="hl-tag">&gt;</span>
+    What We Sell
+  <span class="hl-tag">&lt;/div&gt;</span>
+<span class="hl-tag">&lt;/div&gt;</span>
+
+<span class="hl-cm">&lt;!-- Available swipe colors --&gt;</span>
+<span class="hl-cm">&lt;!-- kb-swipe--peach    (warm amber) --&gt;</span>
+<span class="hl-cm">&lt;!-- kb-swipe--blue     (cobalt)     --&gt;</span>
+<span class="hl-cm">&lt;!-- kb-swipe--mint     (green)      --&gt;</span>
+<span class="hl-cm">&lt;!-- kb-swipe--lavender (purple)     --&gt;</span>
+<span class="hl-cm">&lt;!-- kb-swipe--gray     (neutral)    --&gt;</span>
+</pre></div>
+                  </div>
+                  <div class="preview-pane">
+                    <div class="preview-pane__label">Live render</div>
+                    <div class="kb-live">
+                      <div class="kb-sec kb-swipe--peach" style="margin:0 0 16px">
+                        <div class="kb-sec__label">Plans &amp; Pricing</div>
+                        <div class="kb-sec__title">What We Sell</div>
+                      </div>
+                      <div class="kb-sec kb-swipe--blue" style="margin:0 0 16px">
+                        <div class="kb-sec__label">Website &amp; Access</div>
+                        <div class="kb-sec__title">Key URLs &amp; Login</div>
+                      </div>
+                      <div class="kb-sec kb-swipe--mint" style="margin:0 0 16px">
+                        <div class="kb-sec__label">Refund Policy</div>
+                        <div class="kb-sec__title">By Product</div>
+                      </div>
+                      <div class="kb-sec kb-swipe--lavender" style="margin:0">
+                        <div class="kb-sec__label">Escalation</div>
+                        <div class="kb-sec__title">Who to Contact</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- -- Cards --------------- -->
+              <div class="comp-panel" id="comp-cards">
+                <div class="comp-split">
+                  <div class="code-viewer">
+                    <div class="code-viewer__header">
+                      <div class="code-viewer__filename">kb-info-cards.html</div>
+                      <span class="code-viewer__badge">HTML</span>
+                    </div>
+                    <div class="code-viewer__body"><pre
+><span class="hl-cm">&lt;!-- Tip / best-practice --&gt;</span>
+<span class="hl-tag">&lt;div</span> <span class="hl-attr">class</span>=<span class="hl-val">"tip-card"</span><span class="hl-tag">&gt;</span>
+  <span class="hl-tag">&lt;span</span> <span class="hl-attr">class</span>=<span class="hl-val">"tip-label"</span><span class="hl-tag">&gt;</span>
+    <span class="hl-tag">&lt;i</span> <span class="hl-attr">class</span>=<span class="hl-val">"fa-solid fa-lightbulb"</span><span class="hl-tag">&gt;&lt;/i&gt;</span>
+  <span class="hl-tag">&lt;/span&gt;</span>
+  <span class="hl-tag">&lt;strong&gt;</span>Pro tip<span class="hl-tag">&lt;/strong&gt;</span> - Content here.
+<span class="hl-tag">&lt;/div&gt;</span>
+
+<span class="hl-cm">&lt;!-- Alert / warning --&gt;</span>
+<span class="hl-tag">&lt;div</span> <span class="hl-attr">class</span>=<span class="hl-val">"alert-card"</span><span class="hl-tag">&gt;</span>
+  <span class="hl-tag">&lt;span</span> <span class="hl-attr">class</span>=<span class="hl-val">"alert-label"</span><span class="hl-tag">&gt;</span>
+    <span class="hl-tag">&lt;i</span> <span class="hl-attr">class</span>=<span class="hl-val">"fa-solid fa-triangle-exclamation"</span><span class="hl-tag">&gt;&lt;/i&gt;</span>
+  <span class="hl-tag">&lt;/span&gt;</span>
+  <span class="hl-tag">&lt;strong&gt;</span>Warning<span class="hl-tag">&lt;/strong&gt;</span> - Content here.
+<span class="hl-tag">&lt;/div&gt;</span>
+
+<span class="hl-cm">&lt;!-- Info / informational --&gt;</span>
+<span class="hl-tag">&lt;div</span> <span class="hl-attr">class</span>=<span class="hl-val">"info-card"</span><span class="hl-tag">&gt;</span>
+  <span class="hl-tag">&lt;span</span> <span class="hl-attr">class</span>=<span class="hl-val">"info-label"</span><span class="hl-tag">&gt;</span>
+    <span class="hl-tag">&lt;i</span> <span class="hl-attr">class</span>=<span class="hl-val">"fa-solid fa-circle-info"</span><span class="hl-tag">&gt;&lt;/i&gt;</span>
+  <span class="hl-tag">&lt;/span&gt;</span>
+  <span class="hl-tag">&lt;strong&gt;</span>Note<span class="hl-tag">&lt;/strong&gt;</span> - Content here.
+<span class="hl-tag">&lt;/div&gt;</span>
+
+<span class="hl-cm">&lt;!-- Did you know --&gt;</span>
+<span class="hl-tag">&lt;div</span> <span class="hl-attr">class</span>=<span class="hl-val">"dyk-card"</span><span class="hl-tag">&gt;</span>
+  <span class="hl-tag">&lt;span</span> <span class="hl-attr">class</span>=<span class="hl-val">"dyk-label"</span><span class="hl-tag">&gt;</span>
+    <span class="hl-tag">&lt;i</span> <span class="hl-attr">class</span>=<span class="hl-val">"fa-solid fa-circle-question"</span><span class="hl-tag">&gt;&lt;/i&gt;</span>
+  <span class="hl-tag">&lt;/span&gt;</span>
+  <span class="hl-tag">&lt;strong&gt;</span>Did you know?<span class="hl-tag">&lt;/strong&gt;</span> - Content here.
+<span class="hl-tag">&lt;/div&gt;</span>
+</pre></div>
+                  </div>
+                  <div class="preview-pane">
+                    <div class="preview-pane__label">Live render</div>
+                    <div class="kb-live">
+                      <div class="tip-card"><span class="tip-label"><i class="fa-solid fa-lightbulb"></i></span><strong>Pro tip</strong> - Verify pricing against the customer's order confirmation before quoting.</div>
+                      <div class="alert-card"><span class="alert-label"><i class="fa-solid fa-triangle-exclamation"></i></span><strong>Escalate immediately</strong> - Do not process this refund independently.</div>
+                      <div class="info-card"><span class="info-label"><i class="fa-solid fa-circle-info"></i></span><strong>Note</strong> - Recordings are provided case-by-case; do not guarantee access.</div>
+                      <div class="dyk-card"><span class="dyk-label"><i class="fa-solid fa-circle-question"></i></span><strong>Common confusion</strong> - Two separate $99 charges can appear on the same order.</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- -- Steps ---------------- -->
+              <div class="comp-panel" id="comp-steps">
+                <div class="comp-split">
+                  <div class="code-viewer">
+                    <div class="code-viewer__header">
+                      <div class="code-viewer__filename">kb-steps.html</div>
+                      <span class="code-viewer__badge">HTML</span>
+                    </div>
+                    <div class="code-viewer__body"><pre
+><span class="hl-cm">&lt;!-- Auto-numbered step list.
+     CSS handles all counter logic -
+     authors just write &lt;li&gt; items. --&gt;</span>
+
+<span class="hl-tag">&lt;ol</span> <span class="hl-attr">class</span>=<span class="hl-val">"kb-steps"</span><span class="hl-tag">&gt;</span>
+  <span class="hl-tag">&lt;li&gt;</span>
+    Navigate to <span class="hl-tag">&lt;code&gt;</span>app.apexpro.io/admin<span class="hl-tag">&lt;/code&gt;</span>
+    and enter the admin key.
+  <span class="hl-tag">&lt;/li&gt;</span>
+  <span class="hl-tag">&lt;li&gt;</span>
+    Enter the customer's email address
+    as it appears on their order.
+  <span class="hl-tag">&lt;/li&gt;</span>
+  <span class="hl-tag">&lt;li&gt;</span>
+    Select the correct tier and
+    any applicable add-ons.
+  <span class="hl-tag">&lt;/li&gt;</span>
+  <span class="hl-tag">&lt;li&gt;</span>
+    Generate and send the link.
+    Valid for <span class="hl-tag">&lt;strong&gt;</span>6 hours<span class="hl-tag">&lt;/strong&gt;</span>.
+  <span class="hl-tag">&lt;/li&gt;</span>
+<span class="hl-tag">&lt;/ol&gt;</span>
+
+<span class="hl-cm">&lt;!-- CSS does all the styling.
+     No classes needed on &lt;li&gt;. --&gt;</span>
+</pre></div>
+                  </div>
+                  <div class="preview-pane">
+                    <div class="preview-pane__label">Live render</div>
+                    <div class="kb-live">
+                      <ol class="kb-steps">
+                        <li>Navigate to <code>app.apexpro.io/admin</code> and enter the admin key.</li>
+                        <li>Enter the customer's email address as it appears on their order.</li>
+                        <li>Select the correct tier and any applicable add-ons.</li>
+                        <li>Generate and send the link. Valid for <strong>6 hours</strong>.</li>
+                      </ol>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- -- Table ---------------- -->
+              <div class="comp-panel" id="comp-table">
+                <div class="comp-split">
+                  <div class="code-viewer">
+                    <div class="code-viewer__header">
+                      <div class="code-viewer__filename">kb-table.html</div>
+                      <span class="code-viewer__badge">HTML</span>
+                    </div>
+                    <div class="code-viewer__body"><pre
+><span class="hl-cm">&lt;!-- Add kb-table--striped for
+     zebra-stripe rows. --&gt;</span>
+
+<span class="hl-tag">&lt;table</span> <span class="hl-attr">class</span>=<span class="hl-val">"kb-table kb-table--striped"</span><span class="hl-tag">&gt;</span>
+  <span class="hl-tag">&lt;thead&gt;</span>
+    <span class="hl-tag">&lt;tr&gt;</span>
+      <span class="hl-tag">&lt;th&gt;</span>Product<span class="hl-tag">&lt;/th&gt;</span>
+      <span class="hl-tag">&lt;th&gt;</span>Policy<span class="hl-tag">&lt;/th&gt;</span>
+      <span class="hl-tag">&lt;th&gt;</span>Notes<span class="hl-tag">&lt;/th&gt;</span>
+    <span class="hl-tag">&lt;/tr&gt;</span>
+  <span class="hl-tag">&lt;/thead&gt;</span>
+  <span class="hl-tag">&lt;tbody&gt;</span>
+    <span class="hl-tag">&lt;tr&gt;</span>
+      <span class="hl-tag">&lt;td&gt;&lt;strong&gt;</span>Standard<span class="hl-tag">&lt;/strong&gt;&lt;/td&gt;</span>
+      <span class="hl-tag">&lt;td&gt;</span>30-day full refund<span class="hl-tag">&lt;/td&gt;</span>
+      <span class="hl-tag">&lt;td&gt;</span>Original payment method.<span class="hl-tag">&lt;/td&gt;</span>
+    <span class="hl-tag">&lt;/tr&gt;</span>
+    <span class="hl-tag">&lt;tr&gt;</span>
+      <span class="hl-tag">&lt;td&gt;&lt;strong&gt;</span>Professional<span class="hl-tag">&lt;/strong&gt;&lt;/td&gt;</span>
+      <span class="hl-tag">&lt;td&gt;</span>30-day full refund<span class="hl-tag">&lt;/td&gt;</span>
+      <span class="hl-tag">&lt;td&gt;</span>Original payment method.<span class="hl-tag">&lt;/td&gt;</span>
+    <span class="hl-tag">&lt;/tr&gt;</span>
+    <span class="hl-tag">&lt;tr&gt;</span>
+      <span class="hl-tag">&lt;td&gt;&lt;strong&gt;</span>Members<span class="hl-tag">&lt;/strong&gt;&lt;/td&gt;</span>
+      <span class="hl-tag">&lt;td&gt;</span>TBD - escalate<span class="hl-tag">&lt;/td&gt;</span>
+      <span class="hl-tag">&lt;td&gt;</span>Try retention first.<span class="hl-tag">&lt;/td&gt;</span>
+    <span class="hl-tag">&lt;/tr&gt;</span>
+  <span class="hl-tag">&lt;/tbody&gt;</span>
+<span class="hl-tag">&lt;/table&gt;</span>
+</pre></div>
+                  </div>
+                  <div class="preview-pane">
+                    <div class="preview-pane__label">Live render</div>
+                    <div class="kb-live">
+                      <table class="kb-table kb-table--striped">
+                        <thead><tr><th>Product</th><th>Policy</th><th>Notes</th></tr></thead>
+                        <tbody>
+                          <tr><td><strong>Standard</strong></td><td>30-day full refund</td><td>Original payment method.</td></tr>
+                          <tr><td><strong>Professional</strong></td><td>30-day full refund</td><td>Original payment method.</td></tr>
+                          <tr><td><strong>Members</strong></td><td>TBD - escalate</td><td>Try retention first.</td></tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- -- Tier compare --------- -->
+              <div class="comp-panel" id="comp-tier">
+                <div class="comp-split">
+                  <div class="code-viewer">
+                    <div class="code-viewer__header">
+                      <div class="code-viewer__filename">kb-tier-compare.html</div>
+                      <span class="code-viewer__badge">HTML</span>
+                    </div>
+                    <div class="code-viewer__body"><pre
+><span class="hl-tag">&lt;div</span> <span class="hl-attr">class</span>=<span class="hl-val">"kb-tier-compare"</span><span class="hl-tag">&gt;</span>
+
+  <span class="hl-cm">&lt;!-- Column headers --&gt;</span>
+  <span class="hl-tag">&lt;div</span> <span class="hl-attr">class</span>=<span class="hl-val">"kb-tier-compare__head"</span><span class="hl-tag">&gt;</span>
+    <span class="hl-tag">&lt;div</span> <span class="hl-attr">class</span>=<span class="hl-val">"kb-tier-compare__head-blank"</span><span class="hl-tag">&gt;&lt;/div&gt;</span>
+    <span class="hl-tag">&lt;div</span> <span class="hl-attr">class</span>=<span class="hl-val">"kb-tier-compare__head-tier
+          kb-tier-compare__head-tier--silver"</span><span class="hl-tag">&gt;</span>
+      <span class="hl-tag">&lt;div</span> <span class="hl-attr">class</span>=<span class="hl-val">"kb-tier-compare__tier-name
+            kb-tier-compare__tier-name--silver"</span><span class="hl-tag">&gt;</span>
+        Standard
+      <span class="hl-tag">&lt;/div&gt;</span>
+    <span class="hl-tag">&lt;/div&gt;</span>
+    <span class="hl-tag">&lt;div</span> <span class="hl-attr">class</span>=<span class="hl-val">"kb-tier-compare__head-tier
+          kb-tier-compare__head-tier--gold"</span><span class="hl-tag">&gt;</span>
+      <span class="hl-tag">&lt;div</span> <span class="hl-attr">class</span>=<span class="hl-val">"kb-tier-compare__tier-name
+            kb-tier-compare__tier-name--gold"</span><span class="hl-tag">&gt;</span>
+        Professional
+      <span class="hl-tag">&lt;/div&gt;</span>
+    <span class="hl-tag">&lt;/div&gt;</span>
+  <span class="hl-tag">&lt;/div&gt;</span>
+
+  <span class="hl-cm">&lt;!-- Section label --&gt;</span>
+  <span class="hl-tag">&lt;span</span> <span class="hl-attr">class</span>=<span class="hl-val">"kb-tier-compare__section"</span><span class="hl-tag">&gt;</span>
+    Core features
+  <span class="hl-tag">&lt;/span&gt;</span>
+
+  <span class="hl-cm">&lt;!-- Data row --&gt;</span>
+  <span class="hl-tag">&lt;div</span> <span class="hl-attr">class</span>=<span class="hl-val">"kb-tier-compare__row"</span><span class="hl-tag">&gt;</span>
+    <span class="hl-tag">&lt;div</span> <span class="hl-attr">class</span>=<span class="hl-val">"kb-tier-compare__feature"</span><span class="hl-tag">&gt;</span>
+      API access
+    <span class="hl-tag">&lt;/div&gt;</span>
+    <span class="hl-tag">&lt;div</span> <span class="hl-attr">class</span>=<span class="hl-val">"kb-tier-compare__cell
+          kb-tier-compare__cell--no"</span><span class="hl-tag">&gt;</span>&amp;mdash;<span class="hl-tag">&lt;/div&gt;</span>
+    <span class="hl-tag">&lt;div</span> <span class="hl-attr">class</span>=<span class="hl-val">"kb-tier-compare__cell
+          kb-tier-compare__cell--yes"</span><span class="hl-tag">&gt;</span>
+      <span class="hl-tag">&lt;i</span> <span class="hl-attr">class</span>=<span class="hl-val">"fa-solid fa-check"</span><span class="hl-tag">&gt;&lt;/i&gt;</span>
+    <span class="hl-tag">&lt;/div&gt;</span>
+  <span class="hl-tag">&lt;/div&gt;</span>
+
+<span class="hl-tag">&lt;/div&gt;</span>
+</pre></div>
+                  </div>
+                  <div class="preview-pane">
+                    <div class="preview-pane__label">Live render</div>
+                    <div class="kb-live">
+                      <div class="kb-tier-compare">
+                        <div class="kb-tier-compare__head">
+                          <div class="kb-tier-compare__head-blank" style="padding:10px 12px;font-size:11px;color:#6B6F72;">Feature</div>
+                          <div class="kb-tier-compare__head-tier kb-tier-compare__head-tier--silver">
+                            <div class="kb-tier-compare__tier-name kb-tier-compare__tier-name--silver">Standard</div>
+                            <div class="kb-tier-compare__tier-price">$39-$99</div>
+                          </div>
+                          <div class="kb-tier-compare__head-tier kb-tier-compare__head-tier--gold">
+                            <div class="kb-tier-compare__tier-name kb-tier-compare__tier-name--gold">Professional</div>
+                            <div class="kb-tier-compare__tier-price">$99-$249</div>
+                          </div>
+                        </div>
+                        <span class="kb-tier-compare__section">Core features</span>
+                        <div class="kb-tier-compare__row"><div class="kb-tier-compare__feature">Template library</div><div class="kb-tier-compare__cell kb-tier-compare__cell--yes"><i class="fa-solid fa-check"></i></div><div class="kb-tier-compare__cell kb-tier-compare__cell--yes"><i class="fa-solid fa-check"></i></div></div>
+                        <div class="kb-tier-compare__row"><div class="kb-tier-compare__feature">API access &amp; webhooks</div><div class="kb-tier-compare__cell kb-tier-compare__cell--no">&mdash;</div><div class="kb-tier-compare__cell kb-tier-compare__cell--yes"><i class="fa-solid fa-check"></i></div></div>
+                        <div class="kb-tier-compare__row kb-tier-compare__row--gold-only"><div class="kb-tier-compare__feature">White-label reports</div><div class="kb-tier-compare__cell kb-tier-compare__cell--no">&mdash;</div><div class="kb-tier-compare__cell kb-tier-compare__cell--yes"><i class="fa-solid fa-check"></i></div></div>
+                        <div class="kb-tier-compare__row kb-tier-compare__row--gold-only"><div class="kb-tier-compare__feature">SLA guarantee (99.9%)</div><div class="kb-tier-compare__cell kb-tier-compare__cell--no">&mdash;</div><div class="kb-tier-compare__cell kb-tier-compare__cell--yes"><i class="fa-solid fa-check"></i></div></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div><!-- /comp panels -->
+          </div><!-- /comp-explorer -->
+        </div><!-- /cs-panel-explorer -->
+
+      </div><!-- /container -->
+    </section>
+
+    <!-- -- How it was built ------------------------------ -->
+    <section class="section">
+      <div class="container">
+
+        <div class="section-header">
+          <p class="section-label">Process</p>
+          <h2 class="section-title">How It Was Built</h2>
+        </div>
+
+        <div class="skills-grid" style="margin-bottom:3rem;">
+          <div class="skill-card">
+            <div class="card-accent accent-violet"></div>
+            <div class="skill-card-header">
+              <div class="skill-icon si-violet">01</div>
+              <h3>Audit &amp; Pain-Pointing</h3>
+            </div>
+            <p style="font-size:.875rem;">Reviewed existing articles with operations team members during live call simulations. Identified friction points: buried alerts, no visual hierarchy, no way to distinguish warnings from tips, inconsistent formatting across authors.</p>
+          </div>
+          <div class="skill-card">
+            <div class="card-accent accent-blue"></div>
+            <div class="skill-card-header">
+              <div class="skill-icon si-blue">02</div>
+              <h3>Component Design</h3>
+            </div>
+            <p style="font-size:.875rem;">Sketched a component vocabulary based on agent information needs: procedural steps, caution flags, quick-reference tables, and tier comparisons. Designed for fast visual scanning, not linear reading.</p>
+          </div>
+          <div class="skill-card">
+            <div class="card-accent accent-teal"></div>
+            <div class="skill-card-header">
+              <div class="skill-icon si-teal">03</div>
+              <h3>CSS Implementation</h3>
+            </div>
+            <p style="font-size:.875rem;">Built entirely in native CSS - no preprocessors, no frameworks. Injected via KnowledgeOwl's custom CSS field. Used CSS custom properties for consistent theming and easy color overrides by article authors.</p>
+          </div>
+          <div class="skill-card">
+            <div class="card-accent accent-cyan"></div>
+            <div class="skill-card-header">
+              <div class="skill-icon si-cyan">04</div>
+              <h3>Author Documentation</h3>
+            </div>
+            <p style="font-size:.875rem;">Wrote an internal style guide and HTML snippet library that lets non-technical content authors insert any component by copying a short code block - no CSS knowledge required to use the system.</p>
+          </div>
+        </div>
+
+        <!-- Tech stack -->
+        <div class="section-header" style="text-align:left;margin-bottom:1.25rem;">
+          <p class="section-label">Technology</p>
+          <h2 class="section-title" style="font-size:1.5rem;">Tech Stack</h2>
+        </div>
+        <div class="tech-grid">
+          <div class="tech-pill"><div class="tech-dot" style="width:8px;height:8px;border-radius:50%;background:#3B82F6;"></div>CSS3 Custom Properties</div>
+          <div class="tech-pill"><div class="tech-dot" style="width:8px;height:8px;border-radius:50%;background:#8B5CF6;"></div>Semantic HTML5</div>
+          <div class="tech-pill"><div class="tech-dot" style="width:8px;height:8px;border-radius:50%;background:#14B8A6;"></div>KnowledgeOwl</div>
+          <div class="tech-pill"><div class="tech-dot" style="width:8px;height:8px;border-radius:50%;background:#F97316;"></div>Font Awesome 6</div>
+          <div class="tech-pill"><div class="tech-dot" style="width:8px;height:8px;border-radius:50%;background:#EC4899;"></div>Google Fonts (Poppins)</div>
+          <div class="tech-pill"><div class="tech-dot" style="width:8px;height:8px;border-radius:50%;background:#06B6D4;"></div>CSS Grid &amp; Flexbox</div>
+          <div class="tech-pill"><div class="tech-dot" style="width:8px;height:8px;border-radius:50%;background:#84CC16;"></div>CSS Animations</div>
+          <div class="tech-pill"><div class="tech-dot" style="width:8px;height:8px;border-radius:50%;background:#6B7280;"></div>No build step - pure CSS</div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+      <div class="cta-inner">
+        <h2>See More Projects</h2>
+        <p>This is one example of applied knowledge management work. The full portfolio includes AI-powered tools, training programs, and platform migrations.</p>
+        <div class="hero-actions">
+          <a href="portfolio.html#projects" class="btn btn-primary">Back to Portfolio</a>
+          <a href="resume.html" class="btn btn-outline">View Resume</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-logo-mark">JB</div>
+      <p class="footer-name">Jesse Becker</p>
+      <p class="footer-tag">Global L&amp;D Manager | Knowledge Management | Training Operations</p>
+      <nav class="footer-links">
+        <a href="index.html"     class="footer-link">Home</a>
+        <a href="portfolio.html#projects" class="footer-link">Portfolio</a>
+        <a href="resume.html"    class="footer-link">Resume</a>
+        <a href="personal.html"  class="footer-link">Personal</a>
+      </nav>
+      <p class="footer-copy">&copy; <span class="year"></span> Jesse Becker. All rights reserved.</p>
+    </div>
+  </footer>
+  <script src="case-study.js"></script>
+</body>
+</html>

@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Apex Pro - Subscription Tiers &amp; Account Access</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous">
+  <style>
+    html,body{margin:0;background:#fff;font-family:"Poppins",Arial,sans-serif;font-size:14px;color:#15181A;line-height:1.6}
+    .article-wrap{max-width:900px;margin:0 auto;padding:32px 28px 80px}
+
+    /* -- KB CSS Component System --------------------------- */
+    :root{
+      --kb-font:"Poppins",Arial,sans-serif;
+      --kb-title:#15181A; --kb-label:#6B6F72; --kb-desc:#4A4D50;
+      --kb-card-text:#1F2123; --kb-card-muted:#4A4D50; --kb-card-border:#00000014;
+      --kb-bg-gray:#00000008; --kb-bg-red:#DC35451A; --kb-bg-blue:#8AA6FF1F;
+      --kb-bg-purple:#BE96FF1F; --kb-bg-mint:#78D6AA1F;
+      --kb-swipe:#F8B88B59; --kb-swipe-peach:#F8B88B59; --kb-swipe-blue:#8AA6FF4D;
+      --kb-swipe-mint:#78D6AA47; --kb-swipe-lavender:#BE96FF47; --kb-swipe-gray:#0000001A;
+      --kb-accent-green:#215732; --kb-accent-red:#DC3545;
+      --kb-accent-purple:#7D4C9E; --kb-accent-blue:#2F6FED; --kb-accent-teal:#1F7A58;
+    }
+
+    /* Section headers */
+    .kb-sec{margin:32px 0 16px}
+    .kb-sec+.kb-sec{margin-top:26px}
+    .kb-sec__label{font-family:var(--kb-font);margin:0 0 6px;font-size:12px;letter-spacing:1px;text-transform:uppercase;color:var(--kb-label);line-height:1.2;display:flex;align-items:center;gap:6px}
+    .kb-sec__icon{font-size:12px;opacity:.75}
+    .kb-sec__title{font-family:var(--kb-font);margin:0;font-size:22px;font-weight:650;color:var(--kb-title);line-height:1.15;display:inline-block;position:relative}
+    .kb-sec__title::after{content:"";position:absolute;left:-.35em;right:-.35em;bottom:.12em;height:.55em;background:var(--kb-swipe);border-radius:999px;z-index:-1}
+    .kb-sec__desc{font-family:var(--kb-font);margin:8px 0 0;font-size:14px;color:var(--kb-desc);line-height:1.45}
+    .kb-sec--sm .kb-sec__title{font-size:19px;font-weight:620}
+    .kb-sec--mini{margin:16px 0 10px}
+    .kb-sec--mini .kb-sec__title{font-size:16px}
+    .kb-sec--mini .kb-sec__title::after{height:.42em;left:-.30em;right:-.30em}
+    .kb-swipe--peach{--kb-swipe:var(--kb-swipe-peach)}
+    .kb-swipe--blue{--kb-swipe:var(--kb-swipe-blue)}
+    .kb-swipe--mint{--kb-swipe:var(--kb-swipe-mint)}
+    .kb-swipe--lavender{--kb-swipe:var(--kb-swipe-lavender)}
+    .kb-swipe--gray{--kb-swipe:var(--kb-swipe-gray)}
+
+    /* TL;DR */
+    .kb-tldr{background:linear-gradient(135deg,#F8B88B26 0%,#F8B88B0F 100%);border:1px solid #F8B88B40;border-radius:12px;padding:16px 20px;margin:16px 0;font-family:var(--kb-font)}
+    .kb-tldr__label{font-size:11px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;color:#C97A3E;margin-bottom:6px}
+    .kb-tldr>p,.kb-tldr>div{margin:0;font-size:15px;line-height:1.5;color:var(--kb-title)}
+
+    /* Mini TOC */
+    .mini-toc{display:flex;flex-wrap:wrap;align-items:center;gap:14px;margin:10px 0 24px;padding:0 0 14px;border-bottom:1px solid #00000010}
+    .mini-toc__label{font-family:var(--kb-font);font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.4px;color:var(--kb-label)}
+    .mini-toc a{font-family:var(--kb-font);font-size:13px;font-weight:650;color:#1F7A58;text-decoration:none;border-bottom:1px solid #21573226;padding-bottom:1px;transition:border-color 160ms,color 160ms}
+    .mini-toc a:hover{border-bottom-color:#215732;color:#215732}
+
+    /* Cards */
+    .tip-card,.alert-card,.speech-card,.info-card,.dyk-card{position:relative;margin:12px 0;padding:14px 16px 14px 58px;border-radius:12px;border:1px solid var(--kb-card-border);box-shadow:0 2px 6px #0000000A,inset 4px 0 0 var(--kb-accent);transition:transform 140ms,box-shadow 140ms;font-family:var(--kb-font);color:var(--kb-card-text);line-height:1.55;background:#fff;overflow:hidden;--kb-badge-bg:#0000000A;--kb-badge-border:#00000012;--kb-badge-icon:#15181A;--kb-accent:#21573233}
+    .tip-card:hover,.alert-card:hover,.info-card:hover,.dyk-card:hover,.speech-card:hover{transform:translateY(-2px);box-shadow:0 6px 16px #00000012,inset 4px 0 0 var(--kb-accent)}
+    .tip-label,.alert-label,.speech-label,.info-label,.dyk-label{position:absolute;left:12px;top:50%;transform:translateY(-50%);width:34px;height:34px;border-radius:12px;display:inline-flex;align-items:center;justify-content:center;background:var(--kb-badge-bg);border:1px solid var(--kb-badge-border);box-shadow:0 3px 10px #00000014}
+    .tip-label i,.alert-label i,.speech-label i,.info-label i,.dyk-label i{font-size:14px;line-height:1;color:var(--kb-badge-icon)}
+    .tip-card{background:var(--kb-bg-gray);--kb-badge-bg:#21573214;--kb-badge-border:#21573226;--kb-badge-icon:#215732;--kb-accent:#2157323D}
+    .alert-card{background:var(--kb-bg-red);border-color:#DC354533;--kb-badge-bg:#DC354514;--kb-badge-border:#DC354526;--kb-badge-icon:#DC3545;--kb-accent:#DC35454D}
+    .info-card{background:var(--kb-bg-blue);border-color:#8AA6FF33;--kb-badge-bg:#8AA6FF14;--kb-badge-border:#8AA6FF26;--kb-badge-icon:#2F6FED;--kb-accent:#8AA6FF4D}
+    .dyk-card{background:var(--kb-bg-mint);border-color:#78D6AA33;--kb-badge-bg:#78D6AA14;--kb-badge-border:#78D6AA26;--kb-badge-icon:#1F7A58;--kb-accent:#78D6AA4D}
+    @keyframes pulse-soft{0%,100%{transform:scale(1)}50%{transform:scale(1.08)}}
+    .alert-label i{animation:pulse-soft 2.4s ease-in-out infinite}
+
+    /* Spoiler */
+    .spoiler-dropdown{border:1px solid #00000014;border-radius:12px;padding:12px 14px;margin:16px 0;background:#fff;box-shadow:0 2px 6px #0000000A;transition:box-shadow 140ms,transform 140ms;font-family:var(--kb-font)}
+    .spoiler-dropdown:hover{transform:translateY(-1px);box-shadow:0 6px 16px #00000010}
+    .spoiler-dropdown summary{font-weight:750;color:#15181A;cursor:pointer;list-style:none;display:flex;align-items:center;gap:8px}
+    .spoiler-dropdown summary::-webkit-details-marker{display:none}
+    .spoiler-dropdown summary .arrow{display:inline-block;transition:transform 160ms}
+    .spoiler-dropdown[open] summary .arrow{transform:rotate(90deg)}
+    .spoiler-dropdown p{padding-top:10px;color:var(--kb-card-muted);line-height:1.6}
+
+    /* Tables */
+    .kb-table{width:100%;border-collapse:collapse;font-family:var(--kb-font);font-size:14px;margin:14px 0;border:1px solid #00000014;border-radius:8px;overflow:hidden}
+    .kb-table th{background:#00000008;text-align:left;padding:10px 12px;font-size:11px;font-weight:600;letter-spacing:.5px;text-transform:uppercase;color:var(--kb-label);border-bottom:1px solid #00000014}
+    .kb-table td{padding:10px 12px;border-bottom:1px solid #00000010;color:var(--kb-desc);vertical-align:top;line-height:1.5}
+    .kb-table tr:last-child td{border-bottom:none}
+    .kb-table--striped tbody tr:nth-child(even){background:#00000004}
+    code{font-family:ui-monospace,"SF Mono",Menlo,Consolas,monospace;font-size:.88em;background:#F1F3F5;padding:1px 5px;border-radius:3px;color:var(--kb-title);white-space:nowrap}
+
+    /* Tier compare */
+    .kb-tier-compare{margin:16px 0;border-radius:12px;overflow:hidden;border:1px solid #00000014;box-shadow:0 2px 6px #0000000A;font-family:var(--kb-font)}
+    .kb-tier-compare__head{display:grid;grid-template-columns:1fr 110px 120px 120px}
+    .kb-tier-compare__head-blank{background:#00000005;padding:14px 16px}
+    .kb-tier-compare__head-tier{padding:14px 12px;text-align:center;border-left:1px solid #00000010}
+    .kb-tier-compare__head-tier--free{background:#00000008}
+    .kb-tier-compare__head-tier--silver{background:#8AA6FF22}
+    .kb-tier-compare__head-tier--gold{background:#F8B88B2A}
+    .kb-tier-compare__tier-name{font-weight:700;font-size:14px;line-height:1.2}
+    .kb-tier-compare__tier-name--free{color:var(--kb-label)}
+    .kb-tier-compare__tier-name--silver{color:#4F6FCC}
+    .kb-tier-compare__tier-name--gold{color:#C97A3E}
+    .kb-tier-compare__tier-price{font-size:11px;font-weight:500;color:var(--kb-label);margin-top:3px;letter-spacing:.2px}
+    .kb-tier-compare__section{display:block;padding:6px 16px;background:#00000009;font-size:10px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;color:var(--kb-label);border-top:1px solid #00000014}
+    .kb-tier-compare__row{display:grid;grid-template-columns:1fr 110px 120px 120px;border-top:1px solid #00000009;align-items:center;transition:background 120ms}
+    .kb-tier-compare__row:hover{background:#00000007}
+    .kb-tier-compare__row--gold-only{background:#F8B88B07}
+    .kb-tier-compare__row--gold-only:hover{background:#F8B88B14}
+    .kb-tier-compare__feature{padding:10px 16px;font-size:13.5px;color:var(--kb-desc);line-height:1.4}
+    .kb-tier-compare__cell{text-align:center;padding:10px 8px;border-left:1px solid #00000009}
+    .kb-tier-compare__cell--yes{font-size:15px;color:#215732}
+    .kb-tier-compare__cell--no{font-size:13px;color:#C8CACB;letter-spacing:.5px}
+    .kb-tier-compare__cell--limited{font-size:13px;color:#C97A3E}
+
+    /* Steps */
+    .kb-steps{counter-reset:kb-step;margin:16px 0;padding:0!important;list-style:none!important;font-family:var(--kb-font)}
+    .kb-steps>li{counter-increment:kb-step;position:relative;display:block;list-style:none!important;margin:12px 0;padding:14px 16px 14px 56px!important;background:#fff;border:1px solid #00000014;border-radius:12px;box-shadow:0 2px 6px #0000000A;line-height:1.55}
+    .kb-steps>li::marker{content:""}
+    .kb-steps>li::before{content:counter(kb-step);position:absolute;left:14px;top:14px;width:28px;height:28px;border-radius:10px;background:#F8B88B33;color:#15181A;display:inline-flex;align-items:center;justify-content:center;font-weight:750;font-size:13px}
+
+    /* Escalation */
+    .kb-escalation{display:flex;align-items:center;gap:14px;padding:14px 18px;background:#BE96FF14;border:1px solid #BE96FF33;border-left:4px solid #7D4C9E;border-radius:12px;margin:14px 0;font-family:var(--kb-font)}
+    .kb-escalation__icon{width:38px;height:38px;border-radius:10px;background:#BE96FF26;display:flex;align-items:center;justify-content:center;color:#7D4C9E;font-size:16px;flex-shrink:0}
+    .kb-escalation__content{flex:1;min-width:0}
+    .kb-escalation__label{font-size:10px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;color:var(--kb-label);margin-bottom:2px}
+    .kb-escalation__name{font-weight:700;font-size:15px;color:var(--kb-title);line-height:1.3}
+    .kb-escalation__meta{font-size:12px;color:var(--kb-desc);margin-top:3px;display:flex;flex-wrap:wrap;gap:4px 14px}
+
+    /* New tag */
+    .new-tag{font-family:var(--kb-font);background:#215732;color:#fff;font-size:.78rem;font-weight:800;text-transform:uppercase;padding:4px 10px;border-radius:999px;display:inline-block;margin-left:6px;line-height:1;cursor:default;box-shadow:0 2px 6px #00000014}
+
+    /* Pills */
+    .kb-pill-row{display:flex;flex-wrap:wrap;gap:6px;margin:12px 0}
+    .kb-pill{font-family:var(--kb-font);font-size:11px;font-weight:600;padding:3px 10px;border-radius:999px;background:#00000008;color:var(--kb-desc);border:1px solid #00000010;display:inline-flex;align-items:center;gap:5px;line-height:1.4}
+    .kb-pill--blue{background:#2F6FED14;color:#2F6FED;border-color:#2F6FED26}
+    .kb-pill--mint{background:#1F7A5814;color:#1F7A58;border-color:#1F7A5826}
+    .kb-pill--green{background:#21573214;color:#215732;border-color:#21573226}
+
+    mark{background:var(--kb-swipe-peach);padding:1px 5px;border-radius:3px;color:inherit}
+
+    hr{border:none;border-top:1px dashed #00000020;margin:28px 0}
+  </style>
+</head>
+<body>
+<div class="article-wrap">
+
+  <!-- Title -->
+  <div class="kb-sec kb-swipe--mint">
+    <h1 class="kb-sec__title">Apex Pro - Subscription Tiers &amp; Account Access</h1>
+  </div>
+
+  <div class="kb-tldr">
+    <div class="kb-tldr__label">Article at a glance</div>
+    <p>Apex Pro is a workflow automation platform sold in three tiers: a limited free plan, Standard, and Professional. A Members subscription adds live coaching and a practitioner directory. <strong>All accounts use magic-link login - there are no passwords.</strong></p>
+  </div>
+
+  <nav class="mini-toc">
+    <span class="mini-toc__label">On this page:</span>
+    <a href="#products">Plans &amp; Pricing</a>
+    <a href="#access">Access &amp; Login</a>
+    <a href="#refunds">Refunds</a>
+    <a href="#contacts">Escalation</a>
+  </nav>
+
+  <!-- -- Products ----------------------------------------- -->
+  <div class="kb-sec kb-swipe--peach" id="products">
+    <div class="kb-sec__label"><i class="fa-regular fa-tag kb-sec__icon"></i> Plans &amp; Pricing</div>
+    <div class="kb-sec__title">What We Sell</div>
+  </div>
+
+  <p>Pricing reflects current A/B test variants. Always verify against the customer's order confirmation before quoting a figure.</p>
+
+  <table class="kb-table kb-table--striped">
+    <thead><tr><th>Product</th><th>Price</th><th>Type</th><th>Refund</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Standard Tier</strong></td><td>$39 - $69 - $99</td><td>One-time purchase</td><td>30 days</td></tr>
+      <tr><td><strong>Professional Tier</strong></td><td>$99 - $149 - $249</td><td>One-time purchase</td><td>30 days</td></tr>
+      <tr><td><strong>Apex Live</strong> - Expert Sessions <span class="new-tag">New</span></td><td>$149 <em>(flash: $79)</em></td><td>Live virtual event</td><td>Tiered - see Refunds</td></tr>
+      <tr><td><strong>Members</strong></td><td>$59/mo - $549/yr</td><td>Recurring subscription</td><td>Escalate</td></tr>
+    </tbody>
+  </table>
+
+  <div class="kb-tier-compare">
+    <div class="kb-tier-compare__head">
+      <div class="kb-tier-compare__head-blank"></div>
+      <div class="kb-tier-compare__head-tier kb-tier-compare__head-tier--free">
+        <div class="kb-tier-compare__tier-name kb-tier-compare__tier-name--free">Free</div>
+        <div class="kb-tier-compare__tier-price">Limited access</div>
+      </div>
+      <div class="kb-tier-compare__head-tier kb-tier-compare__head-tier--silver">
+        <div class="kb-tier-compare__tier-name kb-tier-compare__tier-name--silver">Standard</div>
+        <div class="kb-tier-compare__tier-price">$39 / $69 / $99</div>
+      </div>
+      <div class="kb-tier-compare__head-tier kb-tier-compare__head-tier--gold">
+        <div class="kb-tier-compare__tier-name kb-tier-compare__tier-name--gold">Professional</div>
+        <div class="kb-tier-compare__tier-price">$99 / $149 / $249</div>
+      </div>
+    </div>
+
+    <span class="kb-tier-compare__section">Core platform</span>
+    <div class="kb-tier-compare__row">
+      <div class="kb-tier-compare__feature">Workflow automation engine</div>
+      <div class="kb-tier-compare__cell kb-tier-compare__cell--limited"><i class="fa-regular fa-clock" title="3 active workflows"></i></div>
+      <div class="kb-tier-compare__cell kb-tier-compare__cell--yes"><i class="fa-solid fa-check"></i></div>
+      <div class="kb-tier-compare__cell kb-tier-compare__cell--yes"><i class="fa-solid fa-check"></i></div>
+    </div>
+    <div class="kb-tier-compare__row">
+      <div class="kb-tier-compare__feature">Full template library (500+ templates)</div>
+      <div class="kb-tier-compare__cell kb-tier-compare__cell--no">&mdash;</div>
+      <div class="kb-tier-compare__cell kb-tier-compare__cell--yes"><i class="fa-solid fa-check"></i></div>
+      <div class="kb-tier-compare__cell kb-tier-compare__cell--yes"><i class="fa-solid fa-check"></i></div>
+    </div>
+    <div class="kb-tier-compare__row">
+      <div class="kb-tier-compare__feature">API access &amp; webhooks</div>
+      <div class="kb-tier-compare__cell kb-tier-compare__cell--no">&mdash;</div>
+      <div class="kb-tier-compare__cell kb-tier-compare__cell--no">&mdash;</div>
+      <div class="kb-tier-compare__cell kb-tier-compare__cell--yes"><i class="fa-solid fa-check"></i></div>
+    </div>
+
+    <span class="kb-tier-compare__section">Included in both paid tiers</span>
+    <div class="kb-tier-compare__row">
+      <div class="kb-tier-compare__feature">Priority email support</div>
+      <div class="kb-tier-compare__cell kb-tier-compare__cell--no">&mdash;</div>
+      <div class="kb-tier-compare__cell kb-tier-compare__cell--yes"><i class="fa-solid fa-check"></i></div>
+      <div class="kb-tier-compare__cell kb-tier-compare__cell--yes"><i class="fa-solid fa-check"></i></div>
+    </div>
+    <div class="kb-tier-compare__row">
+      <div class="kb-tier-compare__feature">Advanced analytics dashboard</div>
+      <div class="kb-tier-compare__cell kb-tier-compare__cell--no">&mdash;</div>
+      <div class="kb-tier-compare__cell kb-tier-compare__cell--yes"><i class="fa-solid fa-check"></i></div>
+      <div class="kb-tier-compare__cell kb-tier-compare__cell--yes"><i class="fa-solid fa-check"></i></div>
+    </div>
+
+    <span class="kb-tier-compare__section">Professional only</span>
+    <div class="kb-tier-compare__row kb-tier-compare__row--gold-only">
+      <div class="kb-tier-compare__feature">Dedicated onboarding specialist</div>
+      <div class="kb-tier-compare__cell kb-tier-compare__cell--no">&mdash;</div>
+      <div class="kb-tier-compare__cell kb-tier-compare__cell--no">&mdash;</div>
+      <div class="kb-tier-compare__cell kb-tier-compare__cell--yes"><i class="fa-solid fa-check"></i></div>
+    </div>
+    <div class="kb-tier-compare__row kb-tier-compare__row--gold-only">
+      <div class="kb-tier-compare__feature">White-label reports</div>
+      <div class="kb-tier-compare__cell kb-tier-compare__cell--no">&mdash;</div>
+      <div class="kb-tier-compare__cell kb-tier-compare__cell--no">&mdash;</div>
+      <div class="kb-tier-compare__cell kb-tier-compare__cell--yes"><i class="fa-solid fa-check"></i></div>
+    </div>
+    <div class="kb-tier-compare__row kb-tier-compare__row--gold-only">
+      <div class="kb-tier-compare__feature">SLA guarantee (99.9% uptime)</div>
+      <div class="kb-tier-compare__cell kb-tier-compare__cell--no">&mdash;</div>
+      <div class="kb-tier-compare__cell kb-tier-compare__cell--no">&mdash;</div>
+      <div class="kb-tier-compare__cell kb-tier-compare__cell--yes"><i class="fa-solid fa-check"></i></div>
+    </div>
+  </div>
+
+  <div class="tip-card">
+    <span class="tip-label"><i class="fa-solid fa-lightbulb"></i></span>
+    <strong>A/B price testing is live.</strong> The same checkout page may show different prices to different visitors. Always confirm against the customer's order receipt - never quote a price from memory.
+  </div>
+
+  <details class="spoiler-dropdown">
+    <summary><span class="arrow">?</span> Members subscription - full inclusions</summary>
+    <ul>
+      <li>Member dashboard with all recorded expert sessions</li>
+      <li>Private community access (Slack workspace)</li>
+      <li>Monthly live Q&amp;A with the founding team</li>
+      <li>Apex Expert Directory - verified specialists in 4 categories</li>
+    </ul>
+    <p><strong>Pre-launch pricing:</strong> A subset of early customers are on $49/month (pre-launch rate). If a customer references this figure, see the escalation flag in the Contacts section.</p>
+  </details>
+
+  <hr>
+
+  <!-- -- Access -------------------------------------------- -->
+  <div class="kb-sec kb-swipe--blue" id="access">
+    <div class="kb-sec__label">Website &amp; Access</div>
+    <div class="kb-sec__title">Key URLs &amp; Login</div>
+  </div>
+
+  <table class="kb-table">
+    <thead><tr><th>Destination</th><th>URL</th><th>Notes</th></tr></thead>
+    <tbody>
+      <tr><td>Customer login</td><td><code>app.apexpro.io/login</code></td><td>Magic-link only. Most common URL to share.</td></tr>
+      <tr><td>Members portal</td><td><code>members.apexpro.io/login</code></td><td></td></tr>
+      <tr><td>Sales page</td><td><code>apexpro.io/upgrade</code></td><td>Main purchase page.</td></tr>
+      <tr><td><strong>Admin link generator</strong></td><td><code>app.apexpro.io/admin/links</code></td><td><mark>Internal only - never share with customers.</mark></td></tr>
+    </tbody>
+  </table>
+
+  <div class="kb-sec kb-sec--mini kb-swipe--gray">
+    <div class="kb-sec__title">Resending a Magic Link</div>
+  </div>
+
+  <p>There are no passwords on this platform. If a customer cannot log in, generate a fresh link:</p>
+
+  <ol class="kb-steps">
+    <li>Navigate to <code>app.apexpro.io/admin/links</code> and enter the admin key.</li>
+    <li>Enter the customer's email address as it appears on their order confirmation.</li>
+    <li>Select the correct access tier and any applicable add-ons.</li>
+    <li>Generate the link and send it directly to the customer's inbox.</li>
+    <li>Advise the customer to open the link within 6 hours and in a fresh browser session.</li>
+  </ol>
+
+  <details class="spoiler-dropdown">
+    <summary><span class="arrow">?</span> Why magic links fail - troubleshoot before generating a new one</summary>
+    <ul>
+      <li><strong>Link expired</strong> - links are valid for 6 hours. Generate a new one if the customer waited.</li>
+      <li><strong>Cookie conflict</strong> - ask the customer to try an incognito/private window first.</li>
+      <li><strong>Spam folder</strong> - have the customer check before requesting a resend.</li>
+      <li><strong>Wrong email</strong> - search both addresses; issue the link to whichever has the active order.</li>
+    </ul>
+  </details>
+
+  <div class="alert-card">
+    <span class="alert-label"><i class="fa-solid fa-triangle-exclamation"></i></span>
+    <strong>Members billing discrepancy - escalate immediately.</strong> Some customers were placed on $49/month when they intended the $549 annual plan. These customers are being migrated to annual at a locked rate. If a customer references either figure, flag to the client contact before taking any action.
+  </div>
+
+  <hr>
+
+  <!-- -- Refunds ------------------------------------------- -->
+  <div class="kb-sec kb-swipe--gray" id="refunds">
+    <div class="kb-sec__label"><i class="fa-regular fa-circle-info kb-sec__icon"></i> Refund Policy</div>
+    <div class="kb-sec__title">By Product</div>
+  </div>
+
+  <table class="kb-table">
+    <thead><tr><th>Product</th><th>Policy</th><th>Notes</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Standard Tier</strong></td><td>30-day full refund</td><td>Refund to original payment method.</td></tr>
+      <tr><td><strong>Professional Tier</strong></td><td>30-day full refund</td><td>Refund to original payment method.</td></tr>
+      <tr><td><strong>Apex Live</strong></td><td>Tiered by timing</td><td>Full ? 72+ hrs before. 50% ? within 72 hrs. None ? within 24 hrs.</td></tr>
+      <tr><td><strong>Members</strong></td><td>TBD</td><td>Attempt retention first. Escalate if needed.</td></tr>
+    </tbody>
+  </table>
+
+  <hr>
+
+  <!-- -- Escalation ---------------------------------------- -->
+  <div class="kb-sec kb-swipe--lavender" id="contacts">
+    <div class="kb-sec__label"><i class="fa-regular fa-arrow-up-right-from-square kb-sec__icon"></i> Escalation &amp; Contacts</div>
+    <div class="kb-sec__title">Who to Contact</div>
+  </div>
+
+  <div class="kb-escalation">
+    <div class="kb-escalation__icon"><i class="fa-solid fa-user-tie"></i></div>
+    <div class="kb-escalation__content">
+      <div class="kb-escalation__label">Escalate to client for</div>
+      <div class="kb-escalation__name">Apex Pro - Client Operations Team</div>
+      <div class="kb-escalation__meta">
+        <span>Annual billing migration ($49/mo ? $549/yr)</span>
+        <span>Refunds outside defined policy</span>
+        <span>Slack: <code>#apex-pro-support</code></span>
+      </div>
+    </div>
+  </div>
+
+  <div class="kb-pill-row">
+    <span class="kb-pill kb-pill--green"><i class="fa-solid fa-circle"></i> Active client</span>
+    <span class="kb-pill kb-pill--blue">Last updated: Q1 2026</span>
+    <span class="kb-pill kb-pill--mint">Slack-first escalation</span>
+  </div>
+
+  <div class="dyk-card">
+    <span class="dyk-label"><i class="fa-solid fa-circle-question"></i></span>
+    <strong>Common confusion: Standard + Apex Live double-charge.</strong> Both products are priced at $99 on certain promotions. Customers occasionally see two $99 charges and assume an error. They are distinct purchases. A canned response for this situation exists in the response library - use it rather than ad-libbing.
+  </div>
+
+</div><!-- /article-wrap -->
+</body>
+</html>
