@@ -29,9 +29,9 @@
     .cs-meta-card h3 { font-size: 1rem; margin-bottom: .6rem; }
     .cs-meta-card p  { font-size: .875rem; }
 
-    .cs-anonymized-note {
+    .page-banner .cs-anonymized-note {
       width: fit-content;
-      margin: 1rem auto 0;
+      margin: 1.5rem auto 0;
       padding: .45rem .8rem;
       border: 1px solid rgba(255,255,255,.2);
       border-radius: var(--r-full);
@@ -296,12 +296,12 @@
     /* Section headers */
     .kb-sec { margin: 0 0 12px; }
     .kb-sec__label { font-family:var(--kb-font); font-size:12px; letter-spacing:1px; text-transform:uppercase; color:var(--kb-label); display:flex; align-items:center; gap:6px; margin-bottom:4px; }
-    .kb-sec__title { font-family:var(--kb-font); padding:0 .22em; font-size:22px; font-weight:650; color:var(--kb-title); display:inline-block; background:linear-gradient(to bottom,transparent 55%,var(--kb-swipe) 55%,var(--kb-swipe) 90%,transparent 90%); }
-    .kb-swipe--peach { --kb-swipe: var(--kb-swipe-peach); }
-    .kb-swipe--blue  { --kb-swipe: var(--kb-swipe-blue);  }
-    .kb-swipe--mint  { --kb-swipe: var(--kb-swipe-mint);  }
-    .kb-swipe--lavender { --kb-swipe: var(--kb-swipe-lavender); }
-    .kb-swipe--gray  { --kb-swipe: var(--kb-swipe-gray);  }
+    .kb-sec__title { font-family:var(--kb-font); padding:0 .22em; font-size:22px; font-weight:650; color:var(--kb-title); display:inline-block; background:linear-gradient(to bottom,transparent 55%,var(--kb-swipe-color,#F8B88B59) 55%,var(--kb-swipe-color,#F8B88B59) 90%,transparent 90%); }
+    .kb-swipe--peach .kb-sec__title { --kb-swipe-color:#F8B88B59; }
+    .kb-swipe--blue .kb-sec__title { --kb-swipe-color:#8AA6FF4D; }
+    .kb-swipe--mint .kb-sec__title { --kb-swipe-color:#78D6AA47; }
+    .kb-swipe--lavender .kb-sec__title { --kb-swipe-color:#BE96FF47; }
+    .kb-swipe--gray .kb-sec__title { --kb-swipe-color:#0000001A; }
 
     /* Cards */
     .tip-card,.alert-card,.info-card,.dyk-card { position:relative; margin:8px 0; padding:12px 14px 12px 52px; border-radius:12px; border:1px solid var(--kb-card-border); box-shadow:0 2px 6px #0000000A, inset 4px 0 0 var(--kb-accent); font-family:var(--kb-font); color:var(--kb-card-text); line-height:1.55; background:#fff; overflow:hidden; --kb-badge-bg:#0000000A; --kb-badge-border:#00000012; --kb-badge-icon:#15181A; --kb-accent:#21573233; }
