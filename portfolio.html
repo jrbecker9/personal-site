@@ -46,12 +46,12 @@
         </div>
 
         <div class="filter-row" role="tablist" aria-label="Portfolio filters">
-          <button class="filter-tab active" data-filter="all">All Projects</button>
-          <button class="filter-tab" data-filter="km">Knowledge Management</button>
-          <button class="filter-tab" data-filter="ld">Learning &amp; Development</button>
-          <button class="filter-tab" data-filter="lt">Learning Systems</button>
-          <button class="filter-tab" data-filter="ops">Operations</button>
-          <button class="filter-tab" data-filter="creative">Creative</button>
+          <button class="filter-tab active" data-filter="all" aria-pressed="true">All Projects</button>
+          <button class="filter-tab" data-filter="km" aria-pressed="false">Knowledge Management</button>
+          <button class="filter-tab" data-filter="ld" aria-pressed="false">Learning &amp; Development</button>
+          <button class="filter-tab" data-filter="lt" aria-pressed="false">Learning Systems</button>
+          <button class="filter-tab" data-filter="ops" aria-pressed="false">Operations</button>
+          <button class="filter-tab" data-filter="creative" aria-pressed="false">Creative</button>
         </div>
 
         <div class="project-grid" id="project-grid">
@@ -184,9 +184,16 @@
     const tabs = document.querySelectorAll('.filter-tab');
     const cards = document.querySelectorAll('.project-card');
     tabs.forEach(tab => tab.addEventListener('click', () => {
-      tabs.forEach(item => item.classList.remove('active'));
+      tabs.forEach(item => {
+        item.classList.remove('active');
+        item.setAttribute('aria-pressed', 'false');
+      });
       tab.classList.add('active');
-      cards.forEach(card => card.hidden = tab.dataset.filter !== 'all' && card.dataset.category !== tab.dataset.filter);
+      tab.setAttribute('aria-pressed', 'true');
+      cards.forEach(card => {
+        const show = tab.dataset.filter === 'all' || card.dataset.category === tab.dataset.filter;
+        card.style.display = show ? '' : 'none';
+      });
     }));
   </script>
 </body>
