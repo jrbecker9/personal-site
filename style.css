@@ -1019,6 +1019,45 @@ p { color: var(--text-secondary); line-height: 1.7; }
 .resume-actions-left h2 { font-size: 1.1rem; margin-bottom: .2rem; }
 .resume-actions-left p  { font-size: .82rem; color: var(--text-muted); }
 
+.resume-contact,
+.footer-contact {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: .45rem;
+  font-size: .78rem;
+}
+
+.resume-contact {
+  justify-content: flex-start;
+  margin-top: .55rem;
+}
+
+.resume-contact a,
+.footer-contact a {
+  color: var(--blue-dark);
+  font-weight: 600;
+  transition: color .2s;
+}
+
+.resume-contact a:hover,
+.footer-contact a:hover {
+  color: var(--violet-dark);
+}
+
+.resume-contact span,
+.footer-contact span {
+  color: var(--text-muted);
+}
+
+.resume-contact small,
+.footer-contact small {
+  color: var(--text-muted);
+  font-size: .68rem;
+  font-weight: 500;
+}
+
 /* Two-column layout */
 .resume-layout {
   display: grid;
@@ -1290,7 +1329,9 @@ p { color: var(--text-secondary); line-height: 1.7; }
 }
 
 .footer-name  { font-size: 1rem; font-weight: 700; margin-bottom: .25rem; }
-.footer-tag   { font-size: .8rem; color: var(--text-muted); margin-bottom: 1.5rem; }
+.footer-tag   { font-size: .8rem; color: var(--text-muted); margin-bottom: .75rem; }
+
+.footer-contact { margin-bottom: 1.5rem; }
 
 .footer-links { display: flex; justify-content: center; gap: 1.5rem; margin-bottom: 1.5rem; }
 
@@ -1346,6 +1387,7 @@ p { color: var(--text-secondary); line-height: 1.7; }
   .personal-card-wide { grid-column: auto; }
 
   .resume-actions { flex-direction: column; align-items: flex-start; }
+  .resume-contact { align-items: flex-start; }
   .experience-card-header { flex-direction: column; }
   .experience-meta { align-items: flex-start; }
 }

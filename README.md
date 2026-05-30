@@ -97,6 +97,7 @@ Apply the same pattern to page-specific CSS files when they change. This prevent
 ## Design Notes
 
 - Shared navigation and footer patterns are reused across all pages.
+- Contact links are available in every footer and at the top of the web resume.
 - Portfolio filters are implemented with a small inline script in `portfolio.html`.
 - The knowledge-base sample is anonymized and rendered inside an iframe.
 - The training timeline progressively enhances: the full content remains visible if JavaScript is unavailable.
