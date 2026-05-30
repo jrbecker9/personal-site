@@ -1,10 +1,232 @@
-body {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 2rem;
-    font-family: Arial, sans-serif;
+/* ── Reset & base ─────────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-h1 {
-    color: #215732;
+:root {
+  --blue:        #3B82F6;
+  --blue-dark:   #1D4ED8;
+  --violet:      #8B5CF6;
+  --violet-dark: #6D28D9;
+  --cyan:        #06B6D4;
+  --cyan-dark:   #0E7490;
+
+  --grad-hero:   linear-gradient(135deg, #1E3A8A 0%, #4C1D95 60%, #0E7490 100%);
+  --grad-pill:   linear-gradient(90deg, #3B82F6, #8B5CF6);
+
+  --surface:     rgba(255, 255, 255, 0.85);
+  --shadow-card: 0 4px 24px rgba(30, 58, 138, 0.10),
+                 0 1px 4px  rgba(30, 58, 138, 0.08);
+  --shadow-hover:0 8px 40px rgba(30, 58, 138, 0.18),
+                 0 2px 8px  rgba(30, 58, 138, 0.12);
+
+  --text-primary:   #0F172A;
+  --text-secondary: #475569;
+  --radius-card:    1rem;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background: #F0F4FF;
+  color: var(--text-primary);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* ── Ambient background orbs ──────────────────────────────── */
+.bg-orbs {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.35;
+}
+
+.orb-1 {
+  width: 600px; height: 600px;
+  background: radial-gradient(circle, #3B82F6, transparent 70%);
+  top: -200px; left: -150px;
+}
+
+.orb-2 {
+  width: 500px; height: 500px;
+  background: radial-gradient(circle, #8B5CF6, transparent 70%);
+  top: 10%; right: -180px;
+}
+
+.orb-3 {
+  width: 400px; height: 400px;
+  background: radial-gradient(circle, #06B6D4, transparent 70%);
+  bottom: -100px; left: 40%;
+}
+
+/* ── Hero ─────────────────────────────────────────────────── */
+.hero {
+  position: relative;
+  z-index: 1;
+  background: var(--grad-hero);
+  padding: 5rem 1.5rem 4rem;
+  text-align: center;
+  clip-path: ellipse(120% 100% at 50% 0%);
+}
+
+.hero-inner {
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+/* Avatar monogram */
+.avatar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.15);
+  border: 2px solid rgba(255, 255, 255, 0.35);
+  backdrop-filter: blur(8px);
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 0.05em;
+  margin-bottom: 1.25rem;
+}
+
+.hero h1 {
+  font-size: clamp(2rem, 5vw, 3.25rem);
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+  margin-bottom: 0.6rem;
+}
+
+.tagline {
+  font-size: clamp(1rem, 2.5vw, 1.2rem);
+  color: rgba(255, 255, 255, 0.80);
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+}
+
+/* Pill tags */
+.pill-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+}
+
+.pill {
+  padding: 0.35rem 0.9rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.30);
+  backdrop-filter: blur(6px);
+  color: #fff;
+  font-size: 0.82rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+/* ── Main layout ──────────────────────────────────────────── */
+.container {
+  position: relative;
+  z-index: 1;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem 4rem;
+}
+
+/* ── Card grid ────────────────────────────────────────────── */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+
+.card {
+  position: relative;
+  background: var(--surface);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.70);
+  border-radius: var(--radius-card);
+  padding: 2rem 1.75rem 1.75rem;
+  box-shadow: var(--shadow-card);
+  overflow: hidden;
+  transition: transform 0.22s ease, box-shadow 0.22s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-hover);
+}
+
+/* Colored top accent bar */
+.card-accent {
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 4px;
+  border-radius: var(--radius-card) var(--radius-card) 0 0;
+}
+
+.accent-blue   { background: linear-gradient(90deg, var(--blue-dark), var(--blue)); }
+.accent-violet { background: linear-gradient(90deg, var(--violet-dark), var(--violet)); }
+.accent-cyan   { background: linear-gradient(90deg, var(--cyan-dark), var(--cyan)); }
+
+.card-icon {
+  font-size: 2rem;
+  margin-bottom: 0.85rem;
+  line-height: 1;
+}
+
+.card h2 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.6rem;
+  letter-spacing: -0.01em;
+}
+
+.card p {
+  font-size: 0.9rem;
+  line-height: 1.65;
+  color: var(--text-secondary);
+}
+
+/* ── Footer ───────────────────────────────────────────────── */
+.site-footer {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: 1.5rem;
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  border-top: 1px solid rgba(148, 163, 184, 0.25);
+}
+
+/* ── Responsive tweaks ────────────────────────────────────── */
+@media (max-width: 480px) {
+  .hero {
+    clip-path: none;
+    padding: 3.5rem 1.25rem 3rem;
+  }
+
+  .card-grid {
+    grid-template-columns: 1fr;
+  }
 }
