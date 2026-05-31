@@ -1065,10 +1065,9 @@ p { color: var(--text-secondary); line-height: 1.7; }
 
 .personal-intro {
   display: grid;
-  grid-template-columns: minmax(0, 1.35fr) minmax(240px, .65fr);
-  gap: 2rem;
-  align-items: center;
-  max-width: 1000px;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  max-width: 860px;
   padding: 2.25rem;
   margin: 0 auto;
   border: 1px solid var(--border-card);
@@ -1083,9 +1082,9 @@ p { color: var(--text-secondary); line-height: 1.7; }
 
 .personal-intro-figure {
   width: 100%;
-  max-width: 300px;
+  max-width: 760px;
   margin: 0;
-  justify-self: end;
+  justify-self: center;
   overflow: hidden;
   border: 1px solid var(--border-card);
   border-radius: var(--r-lg);
@@ -1095,9 +1094,9 @@ p { color: var(--text-secondary); line-height: 1.7; }
 
 .personal-intro-figure img {
   width: 100%;
-  aspect-ratio: 4 / 5;
+  aspect-ratio: 16 / 9;
   object-fit: cover;
-  object-position: center 58%;
+  object-position: center;
 }
 
 .personal-intro-figure figcaption {
@@ -1676,10 +1675,6 @@ p { color: var(--text-secondary); line-height: 1.7; }
 
   .summary-grid { grid-template-columns: 1fr; gap: 2.5rem; }
   .summary-visual { order: -1; }
-
-  .personal-intro { grid-template-columns: 1fr; gap: 1.5rem; text-align: left; }
-  .personal-intro-figure { max-width: 520px; justify-self: center; }
-  .personal-intro-figure img { aspect-ratio: 4 / 3; object-position: center 62%; }
 
   .writing-feature { grid-template-columns: 1fr; }
   .writing-feature-visual { min-height: 140px; }
