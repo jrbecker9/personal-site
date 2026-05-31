@@ -333,6 +333,70 @@ p { color: var(--text-secondary); line-height: 1.7; }
 .cs-crumbs .cs-crumbs-current { color: rgba(255,255,255,.95); font-weight: 600; }
 .cs-crumbs .cs-crumbs-sep { color: rgba(255,255,255,.4); }
 
+/* Deep-dive banner: breadcrumb, project identity, then supporting metadata. */
+.cs-page-banner {
+  padding-top: 2.5rem;
+  padding-bottom: 2.75rem;
+}
+
+.cs-page-banner .page-banner-inner { max-width: 780px; }
+
+.cs-page-banner .cs-crumbs {
+  width: fit-content;
+  max-width: 100%;
+  margin: 0 auto 1.35rem;
+  padding: .45rem .8rem;
+  border: 1px solid rgba(255,255,255,.16);
+  border-radius: var(--r-full);
+  background: rgba(255,255,255,.07);
+  font-size: .72rem;
+}
+
+.cs-hero-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: .55rem;
+  margin-bottom: .65rem;
+  color: rgba(255,255,255,.72);
+  font-size: .68rem;
+  font-weight: 700;
+  letter-spacing: .12em;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.cs-hero-kicker span {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: rgba(255,255,255,.5);
+}
+
+.cs-page-banner h1 {
+  max-width: 700px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.cs-page-banner > .page-banner-inner > p:not(.cs-anonymized-note) {
+  max-width: 650px;
+}
+
+.cs-hero-tags {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: .5rem;
+  margin-top: 1.15rem;
+}
+
+.page-banner.cs-page-banner .cs-anonymized-note {
+  margin-top: 1.25rem;
+  border-color: transparent;
+  background: rgba(255,255,255,.06);
+  font-size: .7rem;
+}
+
 /* -- Buttons ---------------------------------------------- */
 
 .btn {
@@ -1466,6 +1530,9 @@ p { color: var(--text-secondary); line-height: 1.7; }
 
 @media (max-width: 768px) {
   .nav-toggle { display: flex; }
+
+  .cs-page-banner { padding-top: 2rem; padding-bottom: 2.25rem; }
+  .cs-page-banner .cs-crumbs { border-radius: var(--r-lg); }
 
   .nav-links {
     display: none;
