@@ -1,5 +1,5 @@
 /* ----------------------------------------------------------
-   Interactive Call-Flow case study — page + decision-tree engine
+   Interactive Call-Flow case study - page + decision-tree engine
 ---------------------------------------------------------- */
 
 document.querySelectorAll('.year').forEach(el => el.textContent = new Date().getFullYear());
@@ -36,19 +36,19 @@ if ('IntersectionObserver' in window) {
   const TREE = {
     start: {
       q: 'What is the customer contacting us about?',
-      help: 'Pick the category that best matches the customer’s opening statement.',
+      help: "Pick the category that best matches the customer's opening statement.",
       options: [
         { label: 'Refund request',      next: 'refund_age' },
         { label: 'Billing question',    next: 'billing_recognized' },
         { label: 'Cancellation',        next: 'cancel_trial' },
-        { label: 'Can’t access content', next: 'access_login' }
+        { label: "Can't access content", next: 'access_login' }
       ]
     },
     refund_age: {
       q: 'How long ago was the purchase?',
       options: [
         { label: '30 days or less', next: 'refund_plan' },
-        { label: '31–60 days',  next: 'r_partial' },
+        { label: '31-60 days',  next: 'r_partial' },
         { label: 'More than 60 days', next: 'r_closed' }
       ]
     },
@@ -63,29 +63,29 @@ if ('IntersectionObserver' in window) {
     billing_recognized: {
       q: 'Does the customer recognize the charge?',
       options: [
-        { label: 'Yes — just wants it explained', next: 'b_explain' },
-        { label: 'No — possible duplicate',       next: 'billing_dupe' }
+        { label: 'Yes - just wants it explained', next: 'b_explain' },
+        { label: 'No - possible duplicate',       next: 'billing_dupe' }
       ]
     },
     billing_dupe: {
       q: 'Are there two identical charges on the same order?',
       options: [
-        { label: 'Yes — identical amounts', next: 'b_dupe' },
-        { label: 'No — the amounts differ', next: 'b_investigate' }
+        { label: 'Yes - identical amounts', next: 'b_dupe' },
+        { label: 'No - the amounts differ', next: 'b_investigate' }
       ]
     },
     cancel_trial: {
       q: 'Is the customer still inside the free-trial window?',
       options: [
-        { label: 'Yes — within trial', next: 'c_free' },
-        { label: 'No — trial has ended', next: 'c_retain' }
+        { label: 'Yes - within trial', next: 'c_free' },
+        { label: 'No - trial has ended', next: 'c_retain' }
       ]
     },
     access_login: {
       q: 'Can the customer log in to their account?',
       options: [
-        { label: 'No — login fails',          next: 'a_reset' },
-        { label: 'Yes — but content is missing', next: 'a_sync' }
+        { label: 'No - login fails',          next: 'a_reset' },
+        { label: 'Yes - but content is missing', next: 'a_sync' }
       ]
     },
 
@@ -94,25 +94,25 @@ if ('IntersectionObserver' in window) {
       tone: 'approve',
       title: 'Approve a full refund',
       detail: 'Process a full refund to the original payment method. No manager approval is required inside the 30-day window for Standard and Professional plans.',
-      script: `“You’re still inside our 30-day window, so I can process that full refund back to your original card right now.”`
+      script: `"You're still inside our 30-day window, so I can process that full refund back to your original card right now."`
     },
     r_escalate: {
       tone: 'escalate',
-      title: 'Escalate — do not refund',
-      detail: 'Members / lifetime plans are handled by the retention team. Do not process this refund independently — create an escalation and warm-transfer the customer.',
-      script: `“Your plan is looked after by a specialist team — let me connect you with the right person who can take care of this.”`
+      title: 'Escalate - do not refund',
+      detail: 'Members / lifetime plans are handled by the retention team. Do not process this refund independently - create an escalation and warm-transfer the customer.',
+      script: `"Your plan is looked after by a specialist team - let me connect you with the right person who can take care of this."`
     },
     r_partial: {
       tone: 'info',
       title: 'Offer a partial credit',
       detail: 'Outside 30 days but within 60: offer account credit or a partial refund. Manager approval is required before committing to an amount.',
-      script: `“You’re just past the full-refund window, but I can look into a partial credit for you — let me confirm the details.”`
+      script: `"You're just past the full-refund window, but I can look into a partial credit for you - let me confirm the details."`
     },
     r_closed: {
       tone: 'info',
       title: 'Refund window is closed',
-      detail: 'Past 60 days the refund window is closed. Acknowledge it directly, then offer retention options — a pause, downgrade, or extended access.',
-      script: `“That purchase is outside our refund window, but I do have a couple of options that might help — can I walk you through them?”`
+      detail: 'Past 60 days the refund window is closed. Acknowledge it directly, then offer retention options - a pause, downgrade, or extended access.',
+      script: `"That purchase is outside our refund window, but I do have a couple of options that might help - can I walk you through them?"`
     },
     b_explain: {
       tone: 'info',
@@ -141,7 +141,7 @@ if ('IntersectionObserver' in window) {
     c_retain: {
       tone: 'info',
       title: 'Attempt retention, then cancel',
-      detail: 'Past the trial, offer one retention path — pause, downgrade, or discount. If it’s declined, process the cancellation and confirm in writing.',
+      detail: "Past the trial, offer one retention path - pause, downgrade, or discount. If it's declined, process the cancellation and confirm in writing.",
       script: null
     },
     a_reset: {
@@ -153,7 +153,7 @@ if ('IntersectionObserver' in window) {
     a_sync: {
       tone: 'approve',
       title: 'Re-sync the entitlement',
-      detail: 'Login works but content is missing — regenerate the access link / re-sync the entitlement, then confirm the content appears for the customer.',
+      detail: 'Login works but content is missing - regenerate the access link / re-sync the entitlement, then confirm the content appears for the customer.',
       script: null
     }
   };
@@ -245,4 +245,30 @@ if ('IntersectionObserver' in window) {
   }
 
   render();
+})();
+
+/* -- Animated stat counters (mirrors the KB case study) ----- */
+(function () {
+  const row = document.querySelector('.cs-stat-row');
+  if (!row) return;
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return; // keep static final values
+  const els = row.querySelectorAll('.cs-stat-value');
+  const defs = [
+    { idx: 0, end: 12,  suffix: '+' },
+    { idx: 2, end: 100, suffix: '%' }
+  ];
+  let ran = false;
+  const ease = t => t < .5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
+  new IntersectionObserver(([e], obs) => {
+    if (!e.isIntersecting || ran) return;
+    ran = true;
+    obs.disconnect();
+    const t0 = performance.now(), dur = 1100;
+    function frame(now) {
+      const p = Math.min((now - t0) / dur, 1), ep = ease(p);
+      defs.forEach(d => { els[d.idx].textContent = Math.round(d.end * ep) + d.suffix; });
+      if (p < 1) requestAnimationFrame(frame);
+    }
+    requestAnimationFrame(frame);
+  }, { threshold: 0.5 }).observe(row);
 })();

@@ -8,12 +8,12 @@
   <meta property="og:type" content="article">
   <meta property="og:site_name" content="Jesse Becker">
   <meta property="og:title" content="Interactive Decision Trees &amp; Call Flows | Case Study">
-  <meta property="og:description" content="Browser-based decision trees that walk agents to the right action step by step — built from scratch in HTML, CSS, and JavaScript. Try the live demo.">
+  <meta property="og:description" content="Browser-based decision trees that walk agents to the right action step by step - built from scratch in HTML, CSS, and JavaScript. Try the live demo.">
   <meta property="og:url" content="https://jesserbecker.com/case-study-callflows.html">
   <meta property="og:image" content="https://jesserbecker.com/images/headshot.jpg">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Interactive Decision Trees &amp; Call Flows | Case Study">
-  <meta name="twitter:description" content="Browser-based decision trees that walk agents to the right action step by step — built from scratch in HTML, CSS, and JavaScript. Try the live demo.">
+  <meta name="twitter:description" content="Browser-based decision trees that walk agents to the right action step by step - built from scratch in HTML, CSS, and JavaScript. Try the live demo.">
   <meta name="twitter:image" content="https://jesserbecker.com/images/headshot.jpg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -54,9 +54,14 @@
   <!-- Page Banner -->
   <header class="page-banner">
     <div class="page-banner-inner">
+      <nav class="cs-crumbs" aria-label="Breadcrumb">
+        <a href="portfolio.html#projects">Portfolio</a>
+        <span class="cs-crumbs-sep" aria-hidden="true">/</span>
+        <span class="cs-crumbs-current" aria-current="page">Interactive Decision Trees &amp; Call Flows</span>
+      </nav>
       <div class="page-banner-icon">Deep Dive</div>
       <h1>Interactive Decision Trees &amp; Call Flows</h1>
-      <p>Browser-based tools that walk frontline agents to the right action one question at a time — built from scratch in HTML, CSS, and JavaScript, with no framework and no build step.</p>
+      <p>Browser-based tools that walk frontline agents to the right action one question at a time - built from scratch in HTML, CSS, and JavaScript, with no framework and no build step.</p>
       <div style="display:flex;flex-wrap:wrap;gap:.5rem;justify-content:center;margin-top:1.25rem;">
         <span class="pill">Performance Support</span>
         <span class="pill">HTML / CSS / JS</span>
@@ -79,13 +84,13 @@
             <div class="card-accent accent-violet"></div>
             <div class="cs-meta-card-label">The Challenge</div>
             <h3>The answer was buried in the article</h3>
-            <p>Complex procedures lived inside long knowledge-base articles. On a live call, an agent had to read through dense policy text to find the one branch that applied — slow, inconsistent, and easy to get wrong under pressure.</p>
+            <p>Complex procedures lived inside long knowledge-base articles. On a live call, an agent had to read through dense policy text to find the one branch that applied - slow, inconsistent, and easy to get wrong under pressure.</p>
           </div>
           <div class="cs-meta-card">
             <div class="card-accent accent-blue"></div>
             <div class="cs-meta-card-label">The Approach</div>
             <h3>Model the decision, not the document</h3>
-            <p>I mapped the real decision points into a data-driven tree. Each answer narrows to the next question until the agent lands on a single, unambiguous action — with clear escalation boundaries built in. All of it is plain HTML, CSS, and JavaScript.</p>
+            <p>I mapped the real decision points into a data-driven tree. Each answer narrows to the next question until the agent lands on a single, unambiguous action - with clear escalation boundaries built in. All of it is plain HTML, CSS, and JavaScript.</p>
           </div>
           <div class="cs-meta-card">
             <div class="card-accent accent-teal"></div>
@@ -124,7 +129,7 @@
         <div class="section-header">
           <p class="section-label">Try It</p>
           <h2 class="section-title">Walk a Call, Step by Step</h2>
-          <p class="section-subtitle">Answer as if you were the agent. Each choice narrows the path until you reach a single recommended action — exactly how the tool works in the flow of a real call.</p>
+          <p class="section-subtitle">Answer as if you were the agent. Each choice narrows the path until you reach a single recommended action - exactly how the tool works in the flow of a real call.</p>
         </div>
 
         <div id="cf-demo" class="cf-demo" aria-live="polite">
@@ -172,7 +177,7 @@
 
   <span class="hl-prop">r_escalate</span>: {
     <span class="hl-prop">tone</span>:   <span class="hl-str">"escalate"</span>,
-    <span class="hl-prop">title</span>:  <span class="hl-str">"Escalate &mdash; do not refund"</span>,
+    <span class="hl-prop">title</span>:  <span class="hl-str">"Escalate - do not refund"</span>,
     <span class="hl-prop">detail</span>: <span class="hl-str">"Members are handled by retention&hellip;"</span>
   }
 
@@ -182,10 +187,10 @@
           <div class="preview-pane">
             <div class="preview-pane__label">Why it's built this way</div>
             <div class="skill-tags" style="flex-direction:column;align-items:flex-start;gap:.85rem;">
-              <p style="font-size:.875rem;margin:0;"><strong>Editable by non-developers.</strong> Adding a branch means adding an object — no logic to rewire. A subject-matter expert can read and sanity-check the flow.</p>
+              <p style="font-size:.875rem;margin:0;"><strong>Editable by non-developers.</strong> Adding a branch means adding an object - no logic to rewire. A subject-matter expert can read and sanity-check the flow.</p>
               <p style="font-size:.875rem;margin:0;"><strong>Single source of truth.</strong> The questions, paths, and recommended actions all live in one place, so the tool and the training stay in sync.</p>
               <p style="font-size:.875rem;margin:0;"><strong>Accessible by default.</strong> Options are real buttons, the path is announced via a live region, and focus moves to each new step for keyboard and screen-reader users.</p>
-              <p style="font-size:.875rem;margin:0;"><strong>Portable.</strong> No framework, no build step — it drops straight into a knowledge base, SharePoint page, or a standalone HTML file.</p>
+              <p style="font-size:.875rem;margin:0;"><strong>Portable.</strong> No framework, no build step - it drops straight into a knowledge base, SharePoint page, or a standalone HTML file.</p>
             </div>
           </div>
         </div>
@@ -198,7 +203,7 @@
               <div class="skill-icon si-violet">MAP</div>
               <h3>Map the Real Decision</h3>
             </div>
-            <p style="font-size:.875rem;">Shadowed live calls and walked procedures with experienced agents to capture the actual branch points — including the edge cases that the written policy glossed over.</p>
+            <p style="font-size:.875rem;">Shadowed live calls and walked procedures with experienced agents to capture the actual branch points - including the edge cases that the written policy glossed over.</p>
           </div>
           <div class="skill-card">
             <div class="card-accent accent-blue"></div>
@@ -206,7 +211,7 @@
               <div class="skill-icon si-blue">JS</div>
               <h3>Build the State Machine</h3>
             </div>
-            <p style="font-size:.875rem;">Turned the map into a node graph: questions route to questions, and terminal nodes return a clearly toned action — approve, escalate, or handle / follow up.</p>
+            <p style="font-size:.875rem;">Turned the map into a node graph: questions route to questions, and terminal nodes return a clearly toned action - approve, escalate, or handle / follow up.</p>
           </div>
           <div class="skill-card">
             <div class="card-accent accent-teal"></div>
@@ -222,7 +227,7 @@
               <div class="skill-icon si-cyan">FIT</div>
               <h3>Fit the Flow of Work</h3>
             </div>
-            <p style="font-size:.875rem;">Packaged it to live where agents already are — embeddable in the knowledge base and training, with the same logic reusable across different procedures.</p>
+            <p style="font-size:.875rem;">Packaged it to live where agents already are - embeddable in the knowledge base and training, with the same logic reusable across different procedures.</p>
           </div>
         </div>
 
@@ -237,7 +242,7 @@
           <div class="tech-pill"><div class="tech-dot" style="width:8px;height:8px;border-radius:50%;background:#14B8A6;"></div>CSS Custom Properties</div>
           <div class="tech-pill"><div class="tech-dot" style="width:8px;height:8px;border-radius:50%;background:#06B6D4;"></div>CSS Grid &amp; Flexbox</div>
           <div class="tech-pill"><div class="tech-dot" style="width:8px;height:8px;border-radius:50%;background:#F97316;"></div>ARIA live regions</div>
-          <div class="tech-pill"><div class="tech-dot" style="width:8px;height:8px;border-radius:50%;background:#6B7280;"></div>No build step — drop-in</div>
+          <div class="tech-pill"><div class="tech-dot" style="width:8px;height:8px;border-radius:50%;background:#6B7280;"></div>No build step - drop-in</div>
         </div>
 
       </div>

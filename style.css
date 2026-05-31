@@ -317,6 +317,22 @@ p { color: var(--text-secondary); line-height: 1.7; }
   margin: 0 auto;
 }
 
+/* Breadcrumb on deep-dive / case-study pages (sits in the dark banner) */
+.cs-crumbs {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: .5rem;
+  margin-bottom: 1rem;
+  font-size: .78rem;
+}
+
+.cs-crumbs a { color: rgba(255,255,255,.78); font-weight: 600; transition: color .2s; }
+.cs-crumbs a:hover { color: #fff; text-decoration: underline; }
+.cs-crumbs .cs-crumbs-current { color: rgba(255,255,255,.95); font-weight: 600; }
+.cs-crumbs .cs-crumbs-sep { color: rgba(255,255,255,.4); }
+
 /* -- Buttons ---------------------------------------------- */
 
 .btn {
@@ -736,7 +752,7 @@ p { color: var(--text-secondary); line-height: 1.7; }
   font-weight: 800;
   letter-spacing: -.03em;
   flex-shrink: 0;
-  /* Frosted glass text — stroke rendered under fill to hide counter artifacts */
+  /* Frosted glass text - stroke rendered under fill to hide counter artifacts */
   color: rgba(255,255,255,.38);
   -webkit-text-stroke: 2px rgba(255,255,255,.78);
   paint-order: stroke fill;
@@ -1481,7 +1497,7 @@ p { color: var(--text-secondary); line-height: 1.7; }
     align-items: center;
   }
 
-  /* Kill shadow on mobile — it overflows and creates visual overlap */
+  /* Kill shadow on mobile - it overflows and creates visual overlap */
   .nav-link-resume {
     justify-content: center;
     box-shadow: none;
@@ -1571,7 +1587,7 @@ p { color: var(--text-secondary); line-height: 1.7; }
   transition: transform .25s ease, box-shadow .25s, opacity .55s ease;
 }
 
-/* Hero avatar — headshot (image applied via inline style on the element) */
+/* Hero avatar - headshot (image applied via inline style on the element) */
 .hero-avatar {
   width: 120px;
   height: 120px;
@@ -1601,7 +1617,7 @@ p { color: var(--text-secondary); line-height: 1.7; }
 /* Card hover consistency */
 .summary-mini:hover { transform: translateY(-4px); }
 
-/* Project card — add opacity to transition for filter fade */
+/* Project card - add opacity to transition for filter fade */
 .project-card { transition: transform .25s, box-shadow .25s, opacity .3s; }
 
 /* Philippines photo in timeline card */
@@ -1632,7 +1648,7 @@ p { color: var(--text-secondary); line-height: 1.7; }
 
 /* -- Accessibility ----------------------------------------- */
 
-/* Skip-to-content link — visually hidden until focused */
+/* Skip-to-content link - visually hidden until focused */
 .skip-link {
   position: fixed;
   top: .5rem;
@@ -1664,7 +1680,7 @@ button:focus-visible,
   border-radius: var(--r-sm);
 }
 
-/* Reduced motion — respect user preference */
+/* Reduced motion - respect user preference */
 @media (prefers-reduced-motion: reduce) {
   .hero-avatar, .hero h1, .hero-title, .hero-tagline,
   .hero-actions, .pill-row, .page-banner-inner {
