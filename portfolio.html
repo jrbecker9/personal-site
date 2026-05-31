@@ -5,13 +5,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>L&amp;D Portfolio | LMS, KMS &amp; Training Operations | Jesse Becker</title>
   <meta name="description" content="Selected work by Jesse Becker across global learning operations, training enablement, LMS administration, knowledge management systems (KMS), workflow design, and performance support.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Jesse Becker">
+  <meta property="og:title" content="L&amp;D Portfolio | Jesse Becker">
+  <meta property="og:description" content="Selected work across learning operations, LMS administration, knowledge management, workflow design, and front-end performance-support tools — including interactive case studies.">
+  <meta property="og:url" content="https://jesserbecker.com/portfolio.html">
+  <meta property="og:image" content="https://jesserbecker.com/images/headshot.jpg">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="L&amp;D Portfolio | Jesse Becker">
+  <meta name="twitter:description" content="Selected work across learning operations, LMS administration, knowledge management, workflow design, and front-end performance-support tools.">
+  <meta name="twitter:image" content="https://jesserbecker.com/images/headshot.jpg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=20260530-8">
+  <link rel="stylesheet" href="style.css?v=20260531-1">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
   <div class="bg-orbs" aria-hidden="true">
     <div class="orb orb-1"></div><div class="orb orb-2"></div><div class="orb orb-3"></div>
   </div>
@@ -22,7 +33,7 @@
       <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
       <ul class="nav-links">
         <li><a href="index.html" class="nav-link">Home</a></li>
-        <li><a href="#projects" class="nav-link active">Portfolio</a></li>
+        <li><a href="#projects" class="nav-link active" aria-current="page">Portfolio</a></li>
         <li><a href="personal.html" class="nav-link">Personal</a></li>
         <li><a href="resume.html" class="nav-link nav-link-resume">Resume</a></li>
       </ul>
@@ -37,13 +48,14 @@
     </div>
   </header>
 
-  <main>
+  <main id="main">
     <section class="section" id="projects">
       <div class="container">
         <div class="section-header">
           <p class="section-label">Case Studies</p>
           <h2 class="section-title">Selected Work</h2>
           <p class="section-subtitle">Filter the portfolio by focus area, or browse the full mix of learning strategy, technical work, and operations design.</p>
+          <p class="section-note">Several examples are anonymized — client names, URLs, pricing, and policy details have been fictionalized to protect proprietary information.</p>
         </div>
 
         <div class="filter-row" role="tablist" aria-label="Portfolio filters">
@@ -83,6 +95,7 @@
             <div class="project-meta">
               <div><div class="meta-label">Challenge</div><div class="meta-value">Make a growing knowledge base easier to search in the flow of work.</div></div>
               <div><div class="meta-label">Approach</div><div class="meta-value">Built tagging, intent, and metadata structures to improve AI-assisted results.</div></div>
+              <div class="meta-full"><div class="meta-label">Outcome</div><div class="meta-value">Agents surface more relevant articles directly inside Talkdesk, with less manual searching during live customer interactions.</div></div>
             </div>
           </article>
 
@@ -95,6 +108,7 @@
             <div class="project-meta">
               <div><div class="meta-label">Scope</div><div class="meta-value">Support 8+ clients, oversee three trainers, and have led three client onboardings.</div></div>
               <div><div class="meta-label">Approach</div><div class="meta-value">Created repeatable onboarding and coaching structures for training staff.</div></div>
+              <div class="meta-full"><div class="meta-label">Outcome</div><div class="meta-value">More consistent delivery across trainers and clearer expectations, so new training staff ramp faster.</div></div>
             </div>
           </article>
 
@@ -116,14 +130,16 @@
 
           <article class="project-card" id="call-flows" data-category="km tech">
             <div class="card-accent accent-teal"></div>
-            <div class="project-card-top"><span class="badge badge-teal">Performance Support</span><span class="badge badge-cyan">Front-End</span></div>
+            <div class="project-card-top"><span class="badge badge-teal">Performance Support</span><span class="badge badge-violet">Deep Dive</span><span class="badge badge-cyan">Front-End</span></div>
             <h3 class="project-title">Interactive Decision Trees &amp; Call Flows</h3>
-            <p class="project-summary">Built browser-based decision trees and call-flow tools that give frontline staff clearer, more usable guidance during training and live work.</p>
+            <p class="project-summary">Built browser-based decision trees and call-flow tools that give frontline staff clearer, more usable guidance during training and live work — coded from scratch in HTML, CSS, and JavaScript.</p>
             <div class="tags"><span class="tag tag-teal">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span><span class="tag">Self-Service Learning</span></div>
             <div class="project-meta">
               <div><div class="meta-label">Challenge</div><div class="meta-value">Turn complex call procedures into practical, easy-to-follow support.</div></div>
               <div><div class="meta-label">Approach</div><div class="meta-value">Designed interactive tools around real agent workflows.</div></div>
+              <div class="meta-full"><div class="meta-label">Outcome</div><div class="meta-value">Agents reach the right step-by-step answer faster, with more consistent handling and fewer unnecessary escalations.</div></div>
             </div>
+            <a href="case-study-callflows.html" class="card-link">Try the interactive demo &rarr;</a>
           </article>
 
           <article class="project-card" data-category="lt">
@@ -147,6 +163,7 @@
             <div class="project-meta">
               <div><div class="meta-label">Challenge</div><div class="meta-value">Coordinate onboarding progress across trainers and distributed teams.</div></div>
               <div><div class="meta-label">Approach</div><div class="meta-value">Centralized resources and automated repeatable coordination tasks.</div></div>
+              <div class="meta-full"><div class="meta-label">Outcome</div><div class="meta-value">A single hub for onboarding resources and automated status tracking, replacing scattered email and manual follow-up.</div></div>
             </div>
           </article>
 
@@ -159,6 +176,7 @@
             <div class="project-meta">
               <div><div class="meta-label">Need</div><div class="meta-value">Create a clearer, shared intake process for knowledge base, ILT, and e-learning work.</div></div>
               <div><div class="meta-label">Approach</div><div class="meta-value">Worked with IT to deploy Jira forms tailored to each request type.</div></div>
+              <div class="meta-full"><div class="meta-label">Outcome</div><div class="meta-value">One trackable intake in the tool teams already use, with clearer prioritization and shared visibility for IT and L&amp;D.</div></div>
             </div>
           </article>
 
@@ -195,6 +213,7 @@
             <div class="project-meta">
               <div><div class="meta-label">Challenge</div><div class="meta-value">Make a recurring company-wide process easier to manage and sustain.</div></div>
               <div><div class="meta-label">Approach</div><div class="meta-value">Defined the process, documented it clearly, and transitioned ownership.</div></div>
+              <div class="meta-full"><div class="meta-label">Outcome</div><div class="meta-value">A repeatable, documented recertification program that's easier to sustain and hand off to new owners.</div></div>
             </div>
           </article>
         </div>
@@ -216,6 +235,12 @@
       <p class="footer-tag">Global L&amp;D Manager | Learning Systems | Knowledge Management &amp; Tools</p>
       <div class="footer-contact" aria-label="Contact Jesse Becker"><a href="mailto:contact@jesserbecker.com">contact@jesserbecker.com</a><span aria-hidden="true">|</span><a href="tel:+19786212223">978-621-2223 <small>Text or call</small></a></div>
       <nav class="footer-links"><a href="index.html" class="footer-link">Home</a><a href="#projects" class="footer-link">Portfolio</a><a href="resume.html" class="footer-link">Resume</a><a href="personal.html" class="footer-link">Personal</a></nav>
+      <div class="footer-social">
+        <a href="https://www.linkedin.com/in/jesse-becker-830997100/" target="_blank" rel="noopener noreferrer" aria-label="Jesse Becker on LinkedIn">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.07 2.07 0 1 1 0-4.13 2.07 2.07 0 0 1 0 4.13zm1.78 13.02H3.55V9h3.57v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
+          LinkedIn
+        </a>
+      </div>
       <p class="footer-copy">&copy; <span class="year"></span> Jesse Becker. All rights reserved.</p>
     </div>
   </footer>

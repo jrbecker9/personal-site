@@ -5,15 +5,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Knowledge Base Design System - Jesse Becker</title>
   <meta name="description" content="Case study: custom CSS component system built for a KnowledgeOwl knowledge management system (KMS), improving information density, scannability, and frontline usability.">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Jesse Becker">
+  <meta property="og:title" content="Knowledge Base Design System | Case Study">
+  <meta property="og:description" content="A custom CSS component library built for a KnowledgeOwl knowledge base — turning plain articles into a scannable information system. 700+ lines of CSS, 15+ components, zero dependencies.">
+  <meta property="og:url" content="https://jesserbecker.com/case-study-kb.html">
+  <meta property="og:image" content="https://jesserbecker.com/images/headshot.jpg">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Knowledge Base Design System | Case Study">
+  <meta name="twitter:description" content="A custom CSS component library built for a KnowledgeOwl knowledge base — turning plain articles into a scannable information system.">
+  <meta name="twitter:image" content="https://jesserbecker.com/images/headshot.jpg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous">
-  <link rel="stylesheet" href="style.css?v=20260530-8">
+  <link rel="stylesheet" href="style.css?v=20260531-1">
   <link rel="stylesheet" href="case-study.css?v=20260530-2">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
 
   <div class="bg-orbs" aria-hidden="true">
     <div class="orb orb-1"></div>
@@ -33,7 +44,7 @@
       </button>
       <ul class="nav-links">
         <li><a href="index.html"    class="nav-link">Home</a></li>
-        <li><a href="portfolio.html#projects" class="nav-link active">Portfolio</a></li>
+        <li><a href="portfolio.html#projects" class="nav-link active" aria-current="page">Portfolio</a></li>
         <li><a href="personal.html"  class="nav-link">Personal</a></li>
         <li><a href="resume.html"    class="nav-link nav-link-resume">Resume</a></li>
       </ul>
@@ -57,7 +68,7 @@
     </div>
   </header>
 
-  <main>
+  <main id="main">
     <section class="section">
       <div class="container">
 
@@ -570,6 +581,12 @@
         <a href="resume.html"    class="footer-link">Resume</a>
         <a href="personal.html"  class="footer-link">Personal</a>
       </nav>
+      <div class="footer-social">
+        <a href="https://www.linkedin.com/in/jesse-becker-830997100/" target="_blank" rel="noopener noreferrer" aria-label="Jesse Becker on LinkedIn">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.07 2.07 0 1 1 0-4.13 2.07 2.07 0 0 1 0 4.13zm1.78 13.02H3.55V9h3.57v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
+          LinkedIn
+        </a>
+      </div>
       <p class="footer-copy">&copy; <span class="year"></span> Jesse Becker. All rights reserved.</p>
     </div>
   </footer>

@@ -1,0 +1,227 @@
+/* ----------------------------------------------------------
+   Interactive Call-Flow case study — decision-tree widget
+   Reuses tokens + shell from style.css and case-study.css
+---------------------------------------------------------- */
+
+.cf-demo {
+  max-width: 760px;
+  margin: 0 auto;
+  background: var(--surface);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid var(--border-card);
+  border-radius: var(--r-2xl);
+  box-shadow: var(--shadow-card);
+  padding: 1.75rem;
+}
+
+/* Top bar: progress + restart */
+.cf-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.1rem;
+}
+
+.cf-progress {
+  font-size: .7rem;
+  font-weight: 700;
+  letter-spacing: .09em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.cf-restart {
+  display: inline-flex;
+  align-items: center;
+  gap: .4rem;
+  padding: .4rem .85rem;
+  border-radius: var(--r-full);
+  border: 1.5px solid var(--border);
+  background: var(--surface-solid);
+  color: var(--text-secondary);
+  font-family: inherit;
+  font-size: .78rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: border-color .18s, color .18s;
+}
+
+.cf-restart:hover { border-color: var(--blue); color: var(--blue-dark); }
+.cf-restart[hidden] { display: none; }
+
+/* Breadcrumb of choices made */
+.cf-breadcrumb {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: .35rem;
+  min-height: 1.6rem;
+  margin-bottom: 1.25rem;
+}
+
+.cf-crumb {
+  font-size: .72rem;
+  font-weight: 600;
+  padding: .25rem .6rem;
+  border-radius: var(--r-full);
+  background: rgba(59,130,246,.08);
+  color: var(--blue-dark);
+  border: 1px solid rgba(59,130,246,.16);
+}
+
+.cf-crumb-sep { color: var(--text-muted); font-size: .7rem; }
+
+.cf-breadcrumb-empty { font-size: .78rem; color: var(--text-muted); font-style: italic; }
+
+/* Stage (question or result) */
+.cf-stage { animation: cfFade .3s ease both; }
+
+@keyframes cfFade {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.cf-question {
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: -.01em;
+  margin-bottom: .35rem;
+  outline: none;
+}
+
+.cf-help { font-size: .85rem; color: var(--text-muted); margin-bottom: 1.25rem; }
+
+.cf-options { display: grid; gap: .6rem; }
+
+.cf-option {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  width: 100%;
+  text-align: left;
+  padding: .9rem 1.1rem;
+  border-radius: var(--r-md);
+  border: 1.5px solid var(--border);
+  background: var(--surface-solid);
+  color: var(--text-primary);
+  font-family: inherit;
+  font-size: .9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: border-color .18s, transform .18s, box-shadow .18s, background .18s;
+}
+
+.cf-option:hover {
+  border-color: var(--blue);
+  background: rgba(59,130,246,.04);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-card);
+}
+
+.cf-option::after {
+  content: "\2192";
+  color: var(--blue);
+  font-size: 1.05rem;
+  flex-shrink: 0;
+  transition: transform .18s;
+}
+
+.cf-option:hover::after { transform: translateX(3px); }
+
+/* Controls */
+.cf-controls { margin-top: 1.25rem; display: flex; gap: .6rem; flex-wrap: wrap; }
+
+.cf-back {
+  display: inline-flex;
+  align-items: center;
+  gap: .4rem;
+  padding: .5rem 1rem;
+  border-radius: var(--r-full);
+  border: 1.5px solid var(--border);
+  background: transparent;
+  color: var(--text-secondary);
+  font-family: inherit;
+  font-size: .8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: border-color .18s, color .18s;
+}
+
+.cf-back:hover { border-color: var(--blue); color: var(--blue-dark); }
+
+/* Result card */
+.cf-result {
+  position: relative;
+  border-radius: var(--r-lg);
+  border: 1px solid var(--border);
+  padding: 1.5rem;
+  overflow: hidden;
+}
+
+.cf-result-tone {
+  font-size: .68rem;
+  font-weight: 800;
+  letter-spacing: .09em;
+  text-transform: uppercase;
+  margin-bottom: .5rem;
+}
+
+.cf-result h3 { font-size: 1.2rem; margin-bottom: .5rem; }
+.cf-result p  { font-size: .9rem; line-height: 1.6; }
+
+.cf-script {
+  margin-top: 1rem;
+  padding: .85rem 1rem;
+  border-radius: var(--r-md);
+  background: rgba(255,255,255,.6);
+  border-left: 3px solid var(--cf-accent, var(--blue));
+  font-size: .875rem;
+  font-style: italic;
+  color: var(--text-secondary);
+}
+
+.cf-script-label {
+  display: block;
+  font-size: .62rem;
+  font-weight: 800;
+  letter-spacing: .09em;
+  text-transform: uppercase;
+  font-style: normal;
+  color: var(--text-muted);
+  margin-bottom: .3rem;
+}
+
+/* Tones */
+.cf-result--approve  { background: rgba(20,184,166,.08);  border-color: rgba(20,184,166,.30);  --cf-accent: var(--teal-dark); }
+.cf-result--approve  .cf-result-tone { color: var(--teal-dark); }
+.cf-result--escalate { background: rgba(220,38,38,.07);   border-color: rgba(220,38,38,.30);   --cf-accent: #DC2626; }
+.cf-result--escalate .cf-result-tone { color: #DC2626; }
+.cf-result--info     { background: rgba(59,130,246,.07);  border-color: rgba(59,130,246,.28);  --cf-accent: var(--blue-dark); }
+.cf-result--info     .cf-result-tone { color: var(--blue-dark); }
+
+/* No-JS fallback */
+.cf-noscript {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 1.25rem 1.5rem;
+  border-radius: var(--r-lg);
+  border: 1px solid var(--border-card);
+  background: var(--surface);
+  font-size: .9rem;
+  color: var(--text-secondary);
+  text-align: center;
+}
+
+@media (max-width: 600px) {
+  .cf-demo { padding: 1.25rem; }
+  .cf-option { font-size: .85rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cf-stage { animation: none; }
+  .cf-option:hover { transform: none; }
+}

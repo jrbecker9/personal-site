@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive Decision Trees &amp; Call Flows | Jesse Becker</title>
+  <meta name="description" content="Case study: browser-based decision trees and call-flow tools built in vanilla HTML, CSS, and JavaScript that walk frontline agents to the right action step by step. Includes a live, interactive demo.">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Jesse Becker">
+  <meta property="og:title" content="Interactive Decision Trees &amp; Call Flows | Case Study">
+  <meta property="og:description" content="Browser-based decision trees that walk agents to the right action step by step — built from scratch in HTML, CSS, and JavaScript. Try the live demo.">
+  <meta property="og:url" content="https://jesserbecker.com/case-study-callflows.html">
+  <meta property="og:image" content="https://jesserbecker.com/images/headshot.jpg">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Interactive Decision Trees &amp; Call Flows | Case Study">
+  <meta name="twitter:description" content="Browser-based decision trees that walk agents to the right action step by step — built from scratch in HTML, CSS, and JavaScript. Try the live demo.">
+  <meta name="twitter:image" content="https://jesserbecker.com/images/headshot.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=20260531-1">
+  <link rel="stylesheet" href="case-study.css?v=20260530-2">
+  <link rel="stylesheet" href="callflow-case-study.css?v=20260531-1">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <div class="bg-orbs" aria-hidden="true">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+  </div>
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <span class="nav-logo-mark">JB</span>
+        <span class="nav-logo-name">Jesse Becker</span>
+      </a>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="index.html"    class="nav-link">Home</a></li>
+        <li><a href="portfolio.html#projects" class="nav-link active" aria-current="page">Portfolio</a></li>
+        <li><a href="personal.html"  class="nav-link">Personal</a></li>
+        <li><a href="resume.html"    class="nav-link nav-link-resume">Resume</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Page Banner -->
+  <header class="page-banner">
+    <div class="page-banner-inner">
+      <div class="page-banner-icon">Deep Dive</div>
+      <h1>Interactive Decision Trees &amp; Call Flows</h1>
+      <p>Browser-based tools that walk frontline agents to the right action one question at a time — built from scratch in HTML, CSS, and JavaScript, with no framework and no build step.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:.5rem;justify-content:center;margin-top:1.25rem;">
+        <span class="pill">Performance Support</span>
+        <span class="pill">HTML / CSS / JS</span>
+        <span class="pill">Front-End</span>
+        <span class="pill">Self-Service Learning</span>
+        <span class="pill">Training Operations</span>
+      </div>
+      <p class="cs-anonymized-note">Anonymized portfolio sample. The flow, product, and policy details below are fictionalized.</p>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- -- Overview ---------------------------------------- -->
+    <section class="section">
+      <div class="container">
+
+        <div class="cs-meta-grid">
+          <div class="cs-meta-card">
+            <div class="card-accent accent-violet"></div>
+            <div class="cs-meta-card-label">The Challenge</div>
+            <h3>The answer was buried in the article</h3>
+            <p>Complex procedures lived inside long knowledge-base articles. On a live call, an agent had to read through dense policy text to find the one branch that applied — slow, inconsistent, and easy to get wrong under pressure.</p>
+          </div>
+          <div class="cs-meta-card">
+            <div class="card-accent accent-blue"></div>
+            <div class="cs-meta-card-label">The Approach</div>
+            <h3>Model the decision, not the document</h3>
+            <p>I mapped the real decision points into a data-driven tree. Each answer narrows to the next question until the agent lands on a single, unambiguous action — with clear escalation boundaries built in. All of it is plain HTML, CSS, and JavaScript.</p>
+          </div>
+          <div class="cs-meta-card">
+            <div class="card-accent accent-teal"></div>
+            <div class="cs-meta-card-label">The Outcome</div>
+            <h3>One path, one action</h3>
+            <p>Agents reach the right step faster and handle cases more consistently, with escalation rules that are hard to miss. The same tool doubles as a training aid for new hires learning the workflow.</p>
+          </div>
+        </div>
+
+        <div class="cs-stat-row">
+          <div class="cs-stat">
+            <div class="cs-stat-value">12+</div>
+            <div class="cs-stat-label">Decision paths mapped</div>
+          </div>
+          <div class="cs-stat">
+            <div class="cs-stat-value">Zero</div>
+            <div class="cs-stat-label">Dependencies or frameworks</div>
+          </div>
+          <div class="cs-stat">
+            <div class="cs-stat-value">100%</div>
+            <div class="cs-stat-label">Vanilla HTML / CSS / JS</div>
+          </div>
+          <div class="cs-stat">
+            <div class="cs-stat-value">Live</div>
+            <div class="cs-stat-label">Used in training &amp; on calls</div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- -- Interactive demo -------------------------------- -->
+    <section class="section section-alt">
+      <div class="container">
+
+        <div class="section-header">
+          <p class="section-label">Try It</p>
+          <h2 class="section-title">Walk a Call, Step by Step</h2>
+          <p class="section-subtitle">Answer as if you were the agent. Each choice narrows the path until you reach a single recommended action — exactly how the tool works in the flow of a real call.</p>
+        </div>
+
+        <div id="cf-demo" class="cf-demo" aria-live="polite">
+          <noscript>
+            <div class="cf-noscript">This interactive demo needs JavaScript enabled. With JavaScript off, the same logic ships as a printable decision chart.</div>
+          </noscript>
+        </div>
+
+        <p style="margin-top:1rem;font-size:.82rem;color:var(--text-muted);text-align:center;">
+          A fictionalized triage flow for a sample subscription product. Real flows follow the same structure with live policy detail.
+        </p>
+
+      </div>
+    </section>
+
+    <!-- -- How it's built ---------------------------------- -->
+    <section class="section">
+      <div class="container">
+
+        <div class="section-header">
+          <p class="section-label">How It Works</p>
+          <h2 class="section-title">Data In, Decisions Out</h2>
+          <p class="section-subtitle">The whole tool is a small state machine. The logic lives in a plain data structure, so the flow can be edited or extended without touching the rendering code.</p>
+        </div>
+
+        <div class="comp-split">
+          <div class="code-viewer">
+            <div class="code-viewer__header">
+              <div class="code-viewer__filename"><span>call-flow.js</span></div>
+              <span class="code-viewer__badge">JS</span>
+            </div>
+            <div class="code-viewer__body"><pre
+><span class="hl-cm">// Each node is either a QUESTION (has options)</span>
+<span class="hl-cm">// or a RESULT (has a tone + recommended action).</span>
+<span class="hl-kw">const</span> TREE = {
+
+  <span class="hl-prop">refund_plan</span>: {
+    <span class="hl-prop">q</span>: <span class="hl-str">"Which plan is the customer on?"</span>,
+    <span class="hl-prop">options</span>: [
+      { <span class="hl-prop">label</span>: <span class="hl-str">"Standard"</span>,     <span class="hl-prop">next</span>: <span class="hl-str">"r_approve"</span> },
+      { <span class="hl-prop">label</span>: <span class="hl-str">"Professional"</span>, <span class="hl-prop">next</span>: <span class="hl-str">"r_approve"</span> },
+      { <span class="hl-prop">label</span>: <span class="hl-str">"Members"</span>,      <span class="hl-prop">next</span>: <span class="hl-str">"r_escalate"</span> }
+    ]
+  },
+
+  <span class="hl-prop">r_escalate</span>: {
+    <span class="hl-prop">tone</span>:   <span class="hl-str">"escalate"</span>,
+    <span class="hl-prop">title</span>:  <span class="hl-str">"Escalate &mdash; do not refund"</span>,
+    <span class="hl-prop">detail</span>: <span class="hl-str">"Members are handled by retention&hellip;"</span>
+  }
+
+};
+</pre></div>
+          </div>
+          <div class="preview-pane">
+            <div class="preview-pane__label">Why it's built this way</div>
+            <div class="skill-tags" style="flex-direction:column;align-items:flex-start;gap:.85rem;">
+              <p style="font-size:.875rem;margin:0;"><strong>Editable by non-developers.</strong> Adding a branch means adding an object — no logic to rewire. A subject-matter expert can read and sanity-check the flow.</p>
+              <p style="font-size:.875rem;margin:0;"><strong>Single source of truth.</strong> The questions, paths, and recommended actions all live in one place, so the tool and the training stay in sync.</p>
+              <p style="font-size:.875rem;margin:0;"><strong>Accessible by default.</strong> Options are real buttons, the path is announced via a live region, and focus moves to each new step for keyboard and screen-reader users.</p>
+              <p style="font-size:.875rem;margin:0;"><strong>Portable.</strong> No framework, no build step — it drops straight into a knowledge base, SharePoint page, or a standalone HTML file.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Process cards -->
+        <div class="skills-grid" style="margin-top:3rem;">
+          <div class="skill-card">
+            <div class="card-accent accent-violet"></div>
+            <div class="skill-card-header">
+              <div class="skill-icon si-violet">MAP</div>
+              <h3>Map the Real Decision</h3>
+            </div>
+            <p style="font-size:.875rem;">Shadowed live calls and walked procedures with experienced agents to capture the actual branch points — including the edge cases that the written policy glossed over.</p>
+          </div>
+          <div class="skill-card">
+            <div class="card-accent accent-blue"></div>
+            <div class="skill-card-header">
+              <div class="skill-icon si-blue">JS</div>
+              <h3>Build the State Machine</h3>
+            </div>
+            <p style="font-size:.875rem;">Turned the map into a node graph: questions route to questions, and terminal nodes return a clearly toned action — approve, escalate, or handle / follow up.</p>
+          </div>
+          <div class="skill-card">
+            <div class="card-accent accent-teal"></div>
+            <div class="skill-card-header">
+              <div class="skill-icon si-teal">A11Y</div>
+              <h3>Make It Usable Under Pressure</h3>
+            </div>
+            <p style="font-size:.875rem;">Designed for fast scanning and recovery: a visible breadcrumb of choices, one-tap back and restart, large targets, and clear visual tone for escalation.</p>
+          </div>
+          <div class="skill-card">
+            <div class="card-accent accent-cyan"></div>
+            <div class="skill-card-header">
+              <div class="skill-icon si-cyan">FIT</div>
+              <h3>Fit the Flow of Work</h3>
+            </div>
+            <p style="font-size:.875rem;">Packaged it to live where agents already are — embeddable in the knowledge base and training, with the same logic reusable across different procedures.</p>
+          </div>
+        </div>
+
+        <!-- Tech stack -->
+        <div class="section-header" style="text-align:left;margin:3rem 0 1.25rem;">
+          <p class="section-label">Technology</p>
+          <h2 class="section-title" style="font-size:1.5rem;">Tech Stack</h2>
+        </div>
+        <div class="tech-grid">
+          <div class="tech-pill"><div class="tech-dot" style="width:8px;height:8px;border-radius:50%;background:#3B82F6;"></div>Semantic HTML5</div>
+          <div class="tech-pill"><div class="tech-dot" style="width:8px;height:8px;border-radius:50%;background:#8B5CF6;"></div>Vanilla JavaScript</div>
+          <div class="tech-pill"><div class="tech-dot" style="width:8px;height:8px;border-radius:50%;background:#14B8A6;"></div>CSS Custom Properties</div>
+          <div class="tech-pill"><div class="tech-dot" style="width:8px;height:8px;border-radius:50%;background:#06B6D4;"></div>CSS Grid &amp; Flexbox</div>
+          <div class="tech-pill"><div class="tech-dot" style="width:8px;height:8px;border-radius:50%;background:#F97316;"></div>ARIA live regions</div>
+          <div class="tech-pill"><div class="tech-dot" style="width:8px;height:8px;border-radius:50%;background:#6B7280;"></div>No build step — drop-in</div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+      <div class="cta-inner">
+        <h2>See More Projects</h2>
+        <p>This is one example of applied front-end work in L&amp;D. The full portfolio includes a knowledge-base design system, AI knowledge tools, and training programs.</p>
+        <div class="hero-actions">
+          <a href="portfolio.html#projects" class="btn btn-primary">Back to Portfolio</a>
+          <a href="resume.html" class="btn btn-outline">View Resume</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-logo-mark">JB</div>
+      <p class="footer-name">Jesse Becker</p>
+      <p class="footer-tag">Global L&amp;D Manager | Learning Systems | Knowledge Management &amp; Tools</p>
+      <div class="footer-contact" aria-label="Contact Jesse Becker">
+        <a href="mailto:contact@jesserbecker.com">contact@jesserbecker.com</a>
+        <span aria-hidden="true">|</span>
+        <a href="tel:+19786212223">978-621-2223 <small>Text or call</small></a>
+      </div>
+      <nav class="footer-links">
+        <a href="index.html"     class="footer-link">Home</a>
+        <a href="portfolio.html#projects" class="footer-link">Portfolio</a>
+        <a href="resume.html"    class="footer-link">Resume</a>
+        <a href="personal.html"  class="footer-link">Personal</a>
+      </nav>
+      <div class="footer-social">
+        <a href="https://www.linkedin.com/in/jesse-becker-830997100/" target="_blank" rel="noopener noreferrer" aria-label="Jesse Becker on LinkedIn">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.07 2.07 0 1 1 0-4.13 2.07 2.07 0 0 1 0 4.13zm1.78 13.02H3.55V9h3.57v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
+          LinkedIn
+        </a>
+      </div>
+      <p class="footer-copy">&copy; <span class="year"></span> Jesse Becker. All rights reserved.</p>
+    </div>
+  </footer>
+  <script src="callflow-case-study.js?v=20260531-1"></script>
+</body>
+</html>
