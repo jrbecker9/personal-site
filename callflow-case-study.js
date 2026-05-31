@@ -27,6 +27,49 @@ if ('IntersectionObserver' in window) {
   });
 }
 
+/* Animated stat counters */
+(function () {
+  const counters = document.querySelectorAll('.cs-stat-value[data-count]');
+  if (!counters.length) return;
+
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function setCounter(el, value) {
+    const suffix = el.dataset.suffix || '';
+    el.textContent = Math.round(value) + suffix;
+  }
+
+  function runCounter(el) {
+    const target = Number(el.dataset.count);
+    const duration = 1100;
+    const start = performance.now();
+
+    function frame(now) {
+      const progress = Math.min((now - start) / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      setCounter(el, target * eased);
+      if (progress < 1) requestAnimationFrame(frame);
+    }
+
+    requestAnimationFrame(frame);
+  }
+
+  if (reducedMotion || !('IntersectionObserver' in window)) {
+    counters.forEach(el => setCounter(el, Number(el.dataset.count)));
+    return;
+  }
+
+  const counterObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      runCounter(entry.target);
+      counterObserver.unobserve(entry.target);
+    });
+  }, { threshold: 0.5 });
+
+  counters.forEach(el => counterObserver.observe(el));
+})();
+
 /* -- Decision-tree engine ----------------------------------- */
 (function () {
   const root = document.getElementById('cf-demo');
@@ -245,30 +288,4 @@ if ('IntersectionObserver' in window) {
   }
 
   render();
-})();
-
-/* -- Animated stat counters (mirrors the KB case study) ----- */
-(function () {
-  const row = document.querySelector('.cs-stat-row');
-  if (!row) return;
-  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return; // keep static final values
-  const els = row.querySelectorAll('.cs-stat-value');
-  const defs = [
-    { idx: 0, end: 12,  suffix: '+' },
-    { idx: 2, end: 100, suffix: '%' }
-  ];
-  let ran = false;
-  const ease = t => t < .5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
-  new IntersectionObserver(([e], obs) => {
-    if (!e.isIntersecting || ran) return;
-    ran = true;
-    obs.disconnect();
-    const t0 = performance.now(), dur = 1100;
-    function frame(now) {
-      const p = Math.min((now - t0) / dur, 1), ep = ease(p);
-      defs.forEach(d => { els[d.idx].textContent = Math.round(d.end * ep) + d.suffix; });
-      if (p < 1) requestAnimationFrame(frame);
-    }
-    requestAnimationFrame(frame);
-  }, { threshold: 0.5 }).observe(row);
 })();

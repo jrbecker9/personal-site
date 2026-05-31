@@ -25,7 +25,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css?v=20260531-1">
   <link rel="stylesheet" href="case-study.css?v=20260530-2">
-  <link rel="stylesheet" href="callflow-case-study.css?v=20260531-1">
+  <link rel="stylesheet" href="callflow-case-study.css?v=20260601-1">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
 </head>
 <body>
@@ -57,21 +57,19 @@
   </nav>
 
   <!-- Page Banner -->
-  <header class="page-banner">
+  <header class="page-banner cf-page-banner">
     <div class="page-banner-inner">
       <nav class="cs-crumbs" aria-label="Breadcrumb">
         <a href="portfolio.html#projects">Portfolio</a>
         <span class="cs-crumbs-sep" aria-hidden="true">/</span>
         <span class="cs-crumbs-current" aria-current="page">Interactive Decision Trees &amp; Call Flows</span>
       </nav>
-      <div class="page-banner-icon">Deep Dive</div>
+      <div class="cf-hero-kicker">Deep Dive <span aria-hidden="true"></span> Interactive Performance Support</div>
       <h1>Interactive Decision Trees &amp; Call Flows</h1>
       <p>Browser-based tools that walk frontline agents to the right action one question at a time - built from scratch in HTML, CSS, and JavaScript, with no framework and no build step.</p>
-      <div style="display:flex;flex-wrap:wrap;gap:.5rem;justify-content:center;margin-top:1.25rem;">
+      <div class="cf-hero-tags" aria-label="Project focus areas">
         <span class="pill">Performance Support</span>
         <span class="pill">HTML / CSS / JS</span>
-        <span class="pill">Front-End</span>
-        <span class="pill">Self-Service Learning</span>
         <span class="pill">Training Operations</span>
       </div>
       <p class="cs-anonymized-note">Anonymized portfolio sample. The flow, product, and policy details below are fictionalized.</p>
@@ -107,7 +105,7 @@
 
         <div class="cs-stat-row">
           <div class="cs-stat">
-            <div class="cs-stat-value">12+</div>
+            <div class="cs-stat-value" data-count="12" data-suffix="+">0+</div>
             <div class="cs-stat-label">Decision paths mapped</div>
           </div>
           <div class="cs-stat">
@@ -115,7 +113,7 @@
             <div class="cs-stat-label">Dependencies or frameworks</div>
           </div>
           <div class="cs-stat">
-            <div class="cs-stat-value">100%</div>
+            <div class="cs-stat-value" data-count="100" data-suffix="%">0%</div>
             <div class="cs-stat-label">Vanilla HTML / CSS / JS</div>
           </div>
           <div class="cs-stat">
@@ -293,6 +291,6 @@
       <p class="footer-copy">&copy; <span class="year"></span> Jesse Becker. All rights reserved.</p>
     </div>
   </footer>
-  <script src="callflow-case-study.js?v=20260531-1"></script>
+  <script src="callflow-case-study.js?v=20260601-1"></script>
 </body>
 </html>
