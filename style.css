@@ -1449,13 +1449,15 @@ p { color: var(--text-secondary); line-height: 1.7; }
   transform: translateY(0);
 }
 
-/* Hero avatar — headshot */
+/* Hero avatar — headshot (image applied via inline style on the element) */
 .hero-avatar {
   width: 120px;
   height: 120px;
-  background-image: url('images/headshot.jpg');
-  background-size: cover;
-  background-position: center 18%;
+}
+
+/* Cap hero height on large/tall screens so it doesn't feel too sparse */
+@media (min-height: 800px) {
+  .hero { max-height: 820px; }
 }
 
 /* Card hover consistency */
