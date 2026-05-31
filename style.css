@@ -670,9 +670,10 @@ p { color: var(--text-secondary); line-height: 1.7; }
   font-weight: 800;
   letter-spacing: -.03em;
   flex-shrink: 0;
-  /* Frosted glass text — transparent fill, white stroke, soft glow */
-  color: rgba(255,255,255,.15);
+  /* Frosted glass text — stroke rendered under fill to hide counter artifacts */
+  color: rgba(255,255,255,.38);
   -webkit-text-stroke: 2px rgba(255,255,255,.78);
+  paint-order: stroke fill;
   text-shadow:
     0 0 28px rgba(255,255,255,.45),
     0 2px 8px rgba(0,0,0,.18);
