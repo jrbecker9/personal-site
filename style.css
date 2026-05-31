@@ -1435,12 +1435,14 @@ p { color: var(--text-secondary); line-height: 1.7; }
 .reveal {
   opacity: 0;
   transform: translateY(18px);
-  transition: opacity .55s ease, transform .55s ease;
+  transition: opacity .55s ease, transform .55s ease, box-shadow .25s;
 }
 
+/* Once revealed, restore snappy hover timings for interactive cards */
 .reveal.is-visible {
   opacity: 1;
   transform: translateY(0);
+  transition: transform .25s ease, box-shadow .25s, opacity .55s ease;
 }
 
 /* Hero avatar — headshot (image applied via inline style on the element) */
@@ -1452,6 +1454,17 @@ p { color: var(--text-secondary); line-height: 1.7; }
     0 0 22px 6px rgba(139,92,246,.45),
     0 0 44px 16px rgba(59,130,246,.18),
     0 8px 32px rgba(0,0,0,.20);
+  transition: transform .35s ease, box-shadow .35s ease;
+  cursor: default;
+}
+
+.hero-avatar:hover {
+  transform: scale(1.06);
+  box-shadow:
+    0 0 0 4px rgba(255,255,255,.35),
+    0 0 32px 12px rgba(139,92,246,.60),
+    0 0 60px 22px rgba(59,130,246,.28),
+    0 12px 40px rgba(0,0,0,.24);
 }
 
 /* Cap hero height on large/tall screens so it doesn't feel too sparse */
