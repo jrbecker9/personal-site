@@ -36,3 +36,27 @@ document.querySelectorAll('.year').forEach(el => el.textContent = new Date().get
         document.getElementById('comp-' + item.dataset.comp).classList.add('active');
       });
     });
+
+    // KB stat counters (700+, 15+)
+    (function () {
+      const row = document.querySelector('.cs-stat-row');
+      if (!row) return;
+      const defs = [
+        { idx: 0, end: 700, suffix: '+' },
+        { idx: 1, end: 15,  suffix: '+' }
+      ];
+      const els = row.querySelectorAll('.cs-stat-value');
+      let ran = false;
+      const ease = t => t < .5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
+      new IntersectionObserver(([e]) => {
+        if (!e.isIntersecting || ran) return;
+        ran = true;
+        const t0 = performance.now(), dur = 1100;
+        function frame(now) {
+          const p = Math.min((now - t0) / dur, 1), ep = ease(p);
+          defs.forEach(d => { els[d.idx].textContent = Math.round(d.end * ep) + d.suffix; });
+          if (p < 1) requestAnimationFrame(frame);
+        }
+        requestAnimationFrame(frame);
+      }, { threshold: 0.5 }).observe(row);
+    })();
