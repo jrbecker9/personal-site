@@ -1370,8 +1370,27 @@ p { color: var(--text-secondary); line-height: 1.7; }
   }
 
   .nav-links.open { display: flex; }
-  .nav-link { padding: .75rem 1rem; border-radius: var(--r-md); }
-  .nav-link-resume { text-align: center; }
+
+  /* Increase gap to prevent Resume button shadow bleeding into adjacent items */
+  .nav-links { gap: .5rem; padding: 1rem .75rem; }
+
+  /* Ensure minimum 44px touch targets on all nav links */
+  .nav-link {
+    padding: .875rem 1rem;
+    border-radius: var(--r-md);
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+  }
+
+  /* Kill shadow on mobile — it overflows and creates visual overlap */
+  .nav-link-resume {
+    justify-content: center;
+    box-shadow: none;
+  }
+
+  /* Larger tap target for the hamburger toggle */
+  .nav-toggle { width: 44px; height: 44px; }
 
   .hero { padding: 3.5rem 1.25rem 5rem; }
 
@@ -1511,6 +1530,17 @@ p { color: var(--text-secondary); line-height: 1.7; }
   margin-top: .35rem;
   font-style: italic;
   text-align: right;
+}
+
+/* -- Accessibility ----------------------------------------- */
+
+/* Consistent keyboard focus ring for all interactive elements */
+a:focus-visible,
+button:focus-visible,
+[tabindex]:focus-visible {
+  outline: 2px solid var(--blue);
+  outline-offset: 3px;
+  border-radius: var(--r-sm);
 }
 
 /* Reduced motion — respect user preference */
