@@ -51,15 +51,17 @@
           <button class="filter-tab" data-filter="ld" aria-pressed="false">Learning &amp; Development</button>
           <button class="filter-tab" data-filter="lt" aria-pressed="false">Learning Systems</button>
           <button class="filter-tab" data-filter="ops" aria-pressed="false">Operations</button>
+          <button class="filter-tab" data-filter="tech" aria-pressed="false">Technical</button>
           <button class="filter-tab" data-filter="creative" aria-pressed="false">Creative</button>
         </div>
 
         <div class="project-grid" id="project-grid">
-          <article class="project-card" id="kb-design-system" data-category="km">
+          <article class="project-card" id="kb-design-system" data-category="km tech">
             <div class="card-accent accent-violet"></div>
             <div class="project-card-top">
               <span class="badge badge-violet">Knowledge Management</span>
               <span class="badge badge-blue">Deep Dive</span>
+              <span class="badge badge-cyan">Front-End</span>
             </div>
             <h3 class="project-title">Knowledge Base Design System</h3>
             <p class="project-summary">Designed and deployed a modular CSS component library for a KnowledgeOwl knowledge management system (KMS), turning plain articles into scannable operational guides for frontline teams.</p>
@@ -111,9 +113,9 @@
             <a href="case-study-training.html" class="card-link">Explore the case study &rarr;</a>
           </article>
 
-          <article class="project-card" id="call-flows" data-category="km">
+          <article class="project-card" id="call-flows" data-category="km tech">
             <div class="card-accent accent-teal"></div>
-            <div class="project-card-top"><span class="badge badge-teal">Performance Support</span></div>
+            <div class="project-card-top"><span class="badge badge-teal">Performance Support</span><span class="badge badge-cyan">Front-End</span></div>
             <h3 class="project-title">Interactive Decision Trees &amp; Call Flows</h3>
             <p class="project-summary">Built browser-based decision trees and call-flow tools that give frontline staff clearer, more usable guidance during training and live work.</p>
             <div class="tags"><span class="tag tag-teal">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span><span class="tag">Self-Service Learning</span></div>
@@ -135,7 +137,7 @@
             </div>
           </article>
 
-          <article class="project-card" data-category="ops">
+          <article class="project-card" data-category="ops tech">
             <div class="card-accent accent-blue"></div>
             <div class="project-card-top"><span class="badge badge-blue">Workflow Design</span></div>
             <h3 class="project-title">SharePoint Onboarding Hubs &amp; Automations</h3>
@@ -210,7 +212,7 @@
   <footer class="site-footer">
     <div class="footer-inner">
       <div class="footer-logo-mark">JB</div><p class="footer-name">Jesse Becker</p>
-      <p class="footer-tag">Global L&amp;D Manager | Knowledge Management | Training Operations</p>
+      <p class="footer-tag">Global L&amp;D Manager | Learning Systems | Knowledge Management &amp; Tools</p>
       <div class="footer-contact" aria-label="Contact Jesse Becker"><a href="mailto:contact@jesserbecker.com">contact@jesserbecker.com</a><span aria-hidden="true">|</span><a href="tel:+19786212223">978-621-2223 <small>Text or call</small></a></div>
       <nav class="footer-links"><a href="index.html" class="footer-link">Home</a><a href="#projects" class="footer-link">Portfolio</a><a href="resume.html" class="footer-link">Resume</a><a href="personal.html" class="footer-link">Personal</a></nav>
       <p class="footer-copy">&copy; <span class="year"></span> Jesse Becker. All rights reserved.</p>
@@ -236,7 +238,7 @@
       tab.classList.add('active');
       tab.setAttribute('aria-pressed', 'true');
       cards.forEach(card => {
-        const show = tab.dataset.filter === 'all' || card.dataset.category === tab.dataset.filter;
+        const show = tab.dataset.filter === 'all' || card.dataset.category.split(' ').includes(tab.dataset.filter);
         card.style.display = show ? '' : 'none';
       });
     }));
