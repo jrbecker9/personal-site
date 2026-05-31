@@ -8,7 +8,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=20260530-7">
+  <link rel="stylesheet" href="style.css?v=20260530-8">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
 </head>
 <body>
   <div class="bg-orbs" aria-hidden="true">
@@ -228,6 +229,21 @@
       toggle.classList.toggle('open', open);
       toggle.setAttribute('aria-expanded', open);
     });
+
+    // Scroll reveal
+    if ('IntersectionObserver' in window) {
+      const obs = new IntersectionObserver(entries => {
+        entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('is-visible'); obs.unobserve(e.target); } });
+      }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
+      document.querySelectorAll('.personal-intro, .writing-feature, .personal-callout').forEach(el => { el.classList.add('reveal'); obs.observe(el); });
+      ['.personal-grid', '.personal-grid-featured'].forEach(sel => {
+        document.querySelectorAll(sel + ' > *').forEach((el, i) => {
+          el.classList.add('reveal');
+          el.style.transitionDelay = ((i % 4) * 0.08) + 's';
+          obs.observe(el);
+        });
+      });
+    }
   </script>
 </body>
 </html>

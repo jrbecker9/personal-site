@@ -8,7 +8,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=20260530-7">
+  <link rel="stylesheet" href="style.css?v=20260530-8">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
 </head>
 <body>
   <div class="bg-orbs" aria-hidden="true">
@@ -231,17 +232,29 @@
     const tabs = document.querySelectorAll('.filter-tab');
     const cards = document.querySelectorAll('.project-card');
     tabs.forEach(tab => tab.addEventListener('click', () => {
-      tabs.forEach(item => {
-        item.classList.remove('active');
-        item.setAttribute('aria-pressed', 'false');
-      });
+      tabs.forEach(item => { item.classList.remove('active'); item.setAttribute('aria-pressed', 'false'); });
       tab.classList.add('active');
       tab.setAttribute('aria-pressed', 'true');
       cards.forEach(card => {
         const show = tab.dataset.filter === 'all' || card.dataset.category.split(' ').includes(tab.dataset.filter);
-        card.style.display = show ? '' : 'none';
+        card.dataset.visible = show ? '1' : '0';
+        if (show) {
+          card.style.display = '';
+          requestAnimationFrame(() => requestAnimationFrame(() => { card.style.opacity = ''; }));
+        } else {
+          card.style.opacity = '0';
+          setTimeout(() => { if (card.dataset.visible === '0') card.style.display = 'none'; }, 300);
+        }
       });
     }));
+
+    // Scroll reveal (section header only — filter handles card transitions)
+    if ('IntersectionObserver' in window) {
+      const obs = new IntersectionObserver(entries => {
+        entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('is-visible'); obs.unobserve(e.target); } });
+      }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
+      document.querySelectorAll('.section-header').forEach(el => { el.classList.add('reveal'); obs.observe(el); });
+    }
   </script>
 </body>
 </html>

@@ -1408,6 +1408,112 @@ p { color: var(--text-secondary); line-height: 1.7; }
   .stats-grid { grid-template-columns: repeat(2, 1fr); border-radius: var(--r-lg); }
 }
 
+/* -- Motion & Kinetics ------------------------------------ */
+
+/* Hero entrance */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.hero-avatar  { animation: fadeInUp .55s         ease both; }
+.hero h1      { animation: fadeInUp .55s  .10s   ease both; }
+.hero-title   { animation: fadeInUp .55s  .20s   ease both; }
+.hero-tagline { animation: fadeInUp .55s  .30s   ease both; }
+.hero-actions { animation: fadeInUp .55s  .42s   ease both; }
+.pill-row     { animation: fadeInUp .55s  .54s   ease both; }
+
+/* Inner page banner entrance */
+.page-banner-inner { animation: fadeInUp .5s ease both; }
+
+/* Ambient orb drift */
+@keyframes orbDrift {
+  0%, 100% { transform: translate(0, 0); }
+  33%       { transform: translate(22px, -16px); }
+  66%       { transform: translate(-12px, 11px); }
+}
+
+.orb-1 { animation: orbDrift 28s ease-in-out infinite; }
+.orb-2 { animation: orbDrift 23s ease-in-out infinite reverse; }
+.orb-3 { animation: orbDrift 33s ease-in-out infinite 6s; }
+
+/* Scroll reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity .55s ease, transform .55s ease;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Hero avatar — headshot support */
+.hero-avatar {
+  overflow: hidden;
+  width: 96px;
+  height: 96px;
+}
+
+.hero-avatar-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+
+/* Card hover consistency */
+.summary-mini:hover { transform: translateY(-4px); }
+
+/* Project card — add opacity to transition for filter fade */
+.project-card { transition: transform .25s, box-shadow .25s, opacity .3s; }
+
+/* Philippines photo in timeline card */
+.tl-photo {
+  width: 100%;
+  border-radius: var(--r-md);
+  overflow: hidden;
+  margin: 1rem 0;
+}
+
+.tl-photo img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+  transition: transform .4s ease;
+}
+
+.tl-photo:hover img { transform: scale(1.025); }
+
+.tl-photo-caption {
+  font-size: .7rem;
+  color: var(--text-muted);
+  margin-top: .35rem;
+  font-style: italic;
+  text-align: right;
+}
+
+/* Reduced motion — respect user preference */
+@media (prefers-reduced-motion: reduce) {
+  .hero-avatar, .hero h1, .hero-title, .hero-tagline,
+  .hero-actions, .pill-row, .page-banner-inner {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+
+  .orb-1, .orb-2, .orb-3 { animation: none; }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
 /* -- Printable Resume ------------------------------------- */
 
 @media print {

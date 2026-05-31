@@ -8,7 +8,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=20260530-7">
+  <link rel="stylesheet" href="style.css?v=20260530-8">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
 </head>
 <body>
   <div class="bg-orbs" aria-hidden="true">
@@ -37,7 +38,9 @@
 
   <header class="hero">
     <div class="hero-inner">
-      <div class="hero-avatar" aria-hidden="true">JB</div>
+      <div class="hero-avatar">
+        <img src="images/headshot.jpg" alt="Jesse Becker" class="hero-avatar-img">
+      </div>
       <h1>Jesse Becker</h1>
       <p class="hero-title">Global Learning &amp; Development Manager</p>
       <p class="hero-tagline">
@@ -261,6 +264,53 @@
       toggle.classList.toggle('open', open);
       toggle.setAttribute('aria-expanded', open);
     });
+
+    // Scroll reveal
+    if ('IntersectionObserver' in window) {
+      const obs = new IntersectionObserver(entries => {
+        entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('is-visible'); obs.unobserve(e.target); } });
+      }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
+
+      // Staggered grids
+      ['.skills-grid', '.featured-grid', '.summary-visual'].forEach(sel => {
+        document.querySelectorAll(sel + ' > *').forEach((el, i) => {
+          el.classList.add('reveal');
+          el.style.transitionDelay = (i * 0.08) + 's';
+          obs.observe(el);
+        });
+      });
+      // Section-level
+      document.querySelectorAll('.section-header, .summary-text').forEach(el => {
+        el.classList.add('reveal');
+        obs.observe(el);
+      });
+    }
+
+    // Stats counter
+    (function () {
+      const grid = document.querySelector('.stats-grid');
+      if (!grid) return;
+      const defs = [
+        { end: 4.5, suffix: '/5', dec: 1 },
+        { end: 90,  suffix: '%+', dec: 0 },
+        { end: 8,   suffix: '+',  dec: 0 },
+        { end: 3,   suffix: '',   dec: 0 }
+      ];
+      const els = grid.querySelectorAll('.stat-value');
+      let ran = false;
+      const ease = t => t < .5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
+      new IntersectionObserver(([e]) => {
+        if (!e.isIntersecting || ran) return;
+        ran = true;
+        const t0 = performance.now(), dur = 1100;
+        function frame(now) {
+          const p = Math.min((now - t0) / dur, 1), ep = ease(p);
+          defs.forEach((d, i) => { els[i].textContent = (d.end * ep).toFixed(d.dec) + d.suffix; });
+          if (p < 1) requestAnimationFrame(frame);
+        }
+        requestAnimationFrame(frame);
+      }, { threshold: 0.5 }).observe(grid);
+    })();
   </script>
 </body>
 </html>
