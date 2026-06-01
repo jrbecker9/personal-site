@@ -1126,6 +1126,7 @@ p { color: var(--text-secondary); line-height: 1.7; }
 .phi-blue   { background: rgba(59,130,246,.12); }
 .phi-violet { background: rgba(139,92,246,.12); }
 .phi-teal   { background: rgba(20,184,166,.12); }
+.phi-cyan   { background: rgba(6,182,212,.12); }
 .phi-orange { background: rgba(249,115,22,.12); }
 
 .personal-header-text h2 { font-size: 1.5rem; }
@@ -1241,6 +1242,127 @@ p { color: var(--text-secondary); line-height: 1.7; }
 
 .personal-callout h3 { margin-bottom: .4rem; font-size: 1rem; }
 .personal-callout p { font-size: .9rem; }
+
+/* -- Photo Gallery ----------------------------------------- */
+
+.personal-lead {
+  max-width: 70ch;
+  margin-bottom: 2rem;
+  font-size: .95rem;
+  color: var(--text-secondary);
+}
+
+.photo-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1.25rem;
+}
+
+.photo-card {
+  margin: 0;
+  border: 1px solid var(--border-card);
+  border-radius: var(--r-lg);
+  background: var(--surface-solid);
+  box-shadow: var(--shadow-card);
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform .25s, box-shadow .25s;
+}
+
+.photo-card:hover,
+.photo-card:focus-visible { transform: translateY(-4px); box-shadow: var(--shadow-hover); }
+.photo-card:focus-visible { outline: 2px solid var(--cyan); outline-offset: 2px; }
+
+.photo-card img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.photo-card figcaption {
+  padding: .65rem .75rem .75rem;
+  color: var(--text-muted);
+  font-size: .72rem;
+  font-style: italic;
+  line-height: 1.45;
+}
+
+/* Lightbox */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 2rem;
+  background: rgba(15, 23, 42, .82);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  opacity: 0;
+  transition: opacity .25s ease;
+}
+
+.lightbox.open { opacity: 1; }
+.lightbox[hidden] { display: none; }
+
+.lightbox-figure {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .75rem;
+  max-width: 90vw;
+}
+
+.lightbox-figure img {
+  max-width: 90vw;
+  max-height: 82vh;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  border-radius: var(--r-md);
+  box-shadow: var(--shadow-float);
+}
+
+.lightbox-caption {
+  color: rgba(255, 255, 255, .85);
+  font-size: .8rem;
+  font-style: italic;
+  text-align: center;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 1rem;
+  right: 1.25rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: var(--r-full);
+  background: rgba(255, 255, 255, .14);
+  color: #fff;
+  font-size: 1.75rem;
+  line-height: 1;
+  cursor: pointer;
+  transition: background .2s;
+}
+
+.lightbox-close:hover,
+.lightbox-close:focus-visible { background: rgba(255, 255, 255, .28); outline: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  .lightbox { transition: none; }
+  .photo-card { transition: none; }
+}
 
 /* -- Resume Page ------------------------------------------ */
 
