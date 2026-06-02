@@ -1,19 +1,6 @@
 document.documentElement.classList.add('training-js');
 
-document.querySelectorAll('.year').forEach(el => {
-  el.textContent = new Date().getFullYear();
-});
-
-const toggle = document.querySelector('.nav-toggle');
-const navLinks = document.querySelector('.nav-links');
-
-if (toggle && navLinks) {
-  toggle.addEventListener('click', () => {
-    const open = navLinks.classList.toggle('open');
-    toggle.classList.toggle('open', open);
-    toggle.setAttribute('aria-expanded', open);
-  });
-}
+// Footer year + nav toggle are handled by the shared site.js
 
 const wrap = document.getElementById('tl-wrap');
 const timelineEntries = document.querySelectorAll('.tl-entry');

@@ -7,12 +7,12 @@
   <meta name="description" content="Beyond the desk: Jesse Becker's interests in amateur photography, travel, science fiction writing, systems thinking, knowledge management, personal technology, and design.">
   <meta name="keywords" content="Jesse Becker, amateur photography, travel photography, systems thinking, personal knowledge management, AI-assisted workflows, responsive web design, HTML, CSS, science fiction writing">
   <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://jesserbecker.com/personal.html">
+  <link rel="canonical" href="https://jesserbecker.com/personal">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Jesse Becker">
   <meta property="og:title" content="Personal | Jesse Becker">
   <meta property="og:description" content="Beyond the desk: amateur photography, travel, science fiction writing (Heliofall), systems thinking, AI-assisted workflows, personal knowledge management, and design experiments.">
-  <meta property="og:url" content="https://jesserbecker.com/personal.html">
+  <meta property="og:url" content="https://jesserbecker.com/personal">
   <meta property="og:image" content="https://jesserbecker.com/images/headshot.jpg">
   <meta property="og:image:alt" content="Jesse Becker">
   <meta name="twitter:card" content="summary">
@@ -23,7 +23,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=20260601-7">
+  <link rel="stylesheet" href="style.css?v=20260602-1">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
 </head>
 <body>
@@ -34,13 +34,13 @@
 
   <nav class="navbar">
     <div class="nav-inner">
-      <a href="index.html" class="nav-logo"><span class="nav-logo-mark">JB</span><span class="nav-logo-name">Jesse Becker</span></a>
+      <a href="/" class="nav-logo"><span class="nav-logo-mark">JB</span><span class="nav-logo-name">Jesse Becker</span></a>
       <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
       <ul class="nav-links">
-        <li><a href="index.html" class="nav-link">Home</a></li>
-        <li><a href="portfolio.html#projects" class="nav-link">Portfolio</a></li>
-        <li><a href="personal.html" class="nav-link active" aria-current="page">Personal</a></li>
-        <li><a href="resume.html" class="nav-link nav-link-resume">R&eacute;sum&eacute;</a></li>
+        <li><a href="/" class="nav-link">Home</a></li>
+        <li><a href="/portfolio#projects" class="nav-link">Portfolio</a></li>
+        <li><a href="/personal" class="nav-link active" aria-current="page">Personal</a></li>
+        <li><a href="/resume" class="nav-link nav-link-resume">R&eacute;sum&eacute;</a></li>
       </ul>
     </div>
   </nav>
@@ -279,8 +279,8 @@
         <h2>See the professional side</h2>
         <p>The same instincts applied to learning design, knowledge management, technology, and organizational capability.</p>
         <div class="hero-actions">
-          <a href="portfolio.html#projects" class="btn btn-primary">View Portfolio</a>
-          <a href="resume.html" class="btn btn-outline">View R&eacute;sum&eacute;</a>
+          <a href="/portfolio#projects" class="btn btn-primary">View Portfolio</a>
+          <a href="/resume" class="btn btn-outline">View R&eacute;sum&eacute;</a>
         </div>
       </div>
     </section>
@@ -291,7 +291,7 @@
       <div class="footer-logo-mark">JB</div><p class="footer-name">Jesse Becker</p>
       <p class="footer-tag">Global L&amp;D Manager | Learning Systems | Knowledge Management &amp; Tools</p>
       <div class="footer-contact" aria-label="Contact Jesse Becker"><a href="mailto:contact@jesserbecker.com">contact@jesserbecker.com</a><span aria-hidden="true">|</span><a href="tel:+19786212223">978-621-2223 <small>Text or call</small></a></div>
-      <nav class="footer-links"><a href="index.html" class="footer-link">Home</a><a href="portfolio.html#projects" class="footer-link">Portfolio</a><a href="resume.html" class="footer-link">R&eacute;sum&eacute;</a><a href="personal.html" class="footer-link">Personal</a></nav>
+      <nav class="footer-links"><a href="/" class="footer-link">Home</a><a href="/portfolio#projects" class="footer-link">Portfolio</a><a href="/resume" class="footer-link">R&eacute;sum&eacute;</a><a href="/personal" class="footer-link">Personal</a></nav>
       <div class="footer-social">
         <a href="https://www.linkedin.com/in/jesse-becker-830997100/" target="_blank" rel="noopener noreferrer" aria-label="Jesse Becker on LinkedIn">
           <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.07 2.07 0 1 1 0-4.13 2.07 2.07 0 0 1 0 4.13zm1.78 13.02H3.55V9h3.57v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
@@ -310,30 +310,13 @@
     </figure>
   </div>
 
+  <script src="site.js?v=20260602-1"></script>
   <script>
-    document.querySelectorAll('.year').forEach(el => el.textContent = new Date().getFullYear());
-    const toggle = document.querySelector('.nav-toggle');
-    const links = document.querySelector('.nav-links');
-    toggle.addEventListener('click', () => {
-      const open = links.classList.toggle('open');
-      toggle.classList.toggle('open', open);
-      toggle.setAttribute('aria-expanded', open);
+    initReveal({
+      singles: ['.personal-intro', '.writing-feature', '.personal-callout'],
+      grids: ['.personal-grid', '.personal-grid-featured', '.photo-gallery'],
+      step: 0.08
     });
-
-    // Scroll reveal
-    if ('IntersectionObserver' in window) {
-      const obs = new IntersectionObserver(entries => {
-        entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('is-visible'); obs.unobserve(e.target); } });
-      }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
-      document.querySelectorAll('.personal-intro, .writing-feature, .personal-callout').forEach(el => { el.classList.add('reveal'); obs.observe(el); });
-      ['.personal-grid', '.personal-grid-featured', '.photo-gallery'].forEach(sel => {
-        document.querySelectorAll(sel + ' > *').forEach((el, i) => {
-          el.classList.add('reveal');
-          el.style.transitionDelay = ((i % 4) * 0.08) + 's';
-          obs.observe(el);
-        });
-      });
-    }
 
     // Photo lightbox
     const lightbox = document.getElementById('lightbox');
@@ -342,6 +325,9 @@
       const lbCap = lightbox.querySelector('.lightbox-caption');
       const lbClose = lightbox.querySelector('.lightbox-close');
       let lastFocused = null;
+      // Everything behind the dialog gets inert while it's open
+      const bgRegions = () => Array.prototype.filter.call(
+        document.body.children, el => el !== lightbox && el.tagName !== 'SCRIPT');
 
       const openLightbox = (img, caption) => {
         lastFocused = document.activeElement;
@@ -351,11 +337,13 @@
         lightbox.hidden = false;
         requestAnimationFrame(() => lightbox.classList.add('open'));
         document.body.style.overflow = 'hidden';
+        bgRegions().forEach(el => el.setAttribute('inert', ''));
         lbClose.focus();
       };
       const closeLightbox = () => {
         lightbox.classList.remove('open');
         document.body.style.overflow = '';
+        bgRegions().forEach(el => el.removeAttribute('inert'));
         const done = () => { lightbox.hidden = true; lbImg.src = ''; lightbox.removeEventListener('transitionend', done); };
         lightbox.addEventListener('transitionend', done);
         setTimeout(done, 300);
@@ -379,6 +367,16 @@
       lbClose.addEventListener('click', closeLightbox);
       lightbox.addEventListener('click', e => { if (e.target === lightbox) closeLightbox(); });
       document.addEventListener('keydown', e => { if (e.key === 'Escape' && !lightbox.hidden) closeLightbox(); });
+
+      // Trap focus inside the dialog while it's open
+      lightbox.addEventListener('keydown', e => {
+        if (e.key !== 'Tab') return;
+        const f = lightbox.querySelectorAll('button, [href], [tabindex]:not([tabindex="-1"])');
+        if (!f.length) return;
+        const first = f[0], last = f[f.length - 1];
+        if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+        else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+      });
     }
   </script>
 </body>

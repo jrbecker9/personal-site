@@ -22,6 +22,11 @@ while ($listener.IsListening) {
     if ($path -eq '/') { $path = '/index.html' }
     $file = Join-Path $root ($path.TrimStart('/').Replace('/', '\'))
 
+    # Clean-URL rewrite: extensionless path -> matching .html (mirrors host behavior)
+    if (-not (Test-Path $file -PathType Leaf) -and -not [System.IO.Path]::HasExtension($file)) {
+      if (Test-Path "$file.html" -PathType Leaf) { $file = "$file.html" }
+    }
+
     if (Test-Path $file -PathType Leaf) {
       $bytes = [System.IO.File]::ReadAllBytes($file)
       $ext = [System.IO.Path]::GetExtension($file).ToLower()

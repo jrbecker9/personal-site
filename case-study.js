@@ -1,25 +1,27 @@
-document.querySelectorAll('.year').forEach(el => el.textContent = new Date().getFullYear());
+// Footer year + nav toggle are handled by the shared site.js
 
-    // Main nav toggle
-    const toggle = document.querySelector('.nav-toggle');
-    const links  = document.querySelector('.nav-links');
-    toggle.addEventListener('click', () => {
-      const open = links.classList.toggle('open');
-      toggle.classList.toggle('open', open);
-      toggle.setAttribute('aria-expanded', open);
-    });
-
-    // Case study tabs
-    document.querySelectorAll('.cs-tab').forEach(btn => {
-      btn.addEventListener('click', () => {
-        document.querySelectorAll('.cs-tab').forEach(t => {
-          t.classList.remove('active');
-          t.setAttribute('aria-selected', 'false');
-        });
-        document.querySelectorAll('.cs-panel').forEach(p => p.classList.remove('active'));
-        btn.classList.add('active');
-        btn.setAttribute('aria-selected', 'true');
-        document.getElementById('cs-panel-' + btn.dataset.csTab).classList.add('active');
+    // Case study tabs (roving tabindex + arrow-key navigation)
+    const csTabs = Array.prototype.slice.call(document.querySelectorAll('.cs-tab'));
+    function activateCsTab(btn) {
+      csTabs.forEach(t => {
+        const selected = t === btn;
+        t.classList.toggle('active', selected);
+        t.setAttribute('aria-selected', selected ? 'true' : 'false');
+        t.setAttribute('tabindex', selected ? '0' : '-1');
+      });
+      document.querySelectorAll('.cs-panel').forEach(p => p.classList.remove('active'));
+      const panel = document.getElementById('cs-panel-' + btn.dataset.csTab);
+      if (panel) panel.classList.add('active');
+    }
+    csTabs.forEach((btn, i) => {
+      btn.addEventListener('click', () => activateCsTab(btn));
+      btn.addEventListener('keydown', e => {
+        let next = null;
+        if (e.key === 'ArrowRight' || e.key === 'ArrowDown') next = csTabs[(i + 1) % csTabs.length];
+        else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') next = csTabs[(i - 1 + csTabs.length) % csTabs.length];
+        else if (e.key === 'Home') next = csTabs[0];
+        else if (e.key === 'End') next = csTabs[csTabs.length - 1];
+        if (next) { e.preventDefault(); activateCsTab(next); next.focus(); }
       });
     });
 

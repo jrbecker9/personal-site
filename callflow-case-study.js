@@ -2,18 +2,7 @@
    Interactive Call-Flow case study - page + decision-tree engine
 ---------------------------------------------------------- */
 
-document.querySelectorAll('.year').forEach(el => el.textContent = new Date().getFullYear());
-
-/* Main nav toggle */
-const toggle = document.querySelector('.nav-toggle');
-const links  = document.querySelector('.nav-links');
-if (toggle && links) {
-  toggle.addEventListener('click', () => {
-    const open = links.classList.toggle('open');
-    toggle.classList.toggle('open', open);
-    toggle.setAttribute('aria-expanded', open);
-  });
-}
+/* Footer year + nav toggle are handled by the shared site.js */
 
 /* Scroll reveal */
 if ('IntersectionObserver' in window) {

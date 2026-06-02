@@ -407,7 +407,7 @@
         <div class="lms-toast" id="toast"><i class="fa-solid fa-award"></i><span id="toastTxt"></span></div>
 
         <!-- Completion overlay -->
-        <div class="lms-complete" id="complete">
+        <div class="lms-complete" id="complete" role="dialog" aria-modal="true" aria-labelledby="completeTitle" aria-hidden="true">
           <div class="lms-complete__card">
             <div class="lms-medal">
               <span class="lms-spark" style="top:6px;left:14px;animation-delay:0s"></span>
@@ -416,7 +416,7 @@
               <span class="lms-spark" style="bottom:8px;right:18px;animation-delay:1.1s"></span>
               <i class="fa-solid fa-medal"></i>
             </div>
-            <h2>Course Complete!</h2>
+            <h2 id="completeTitle">Course Complete!</h2>
             <p>You've finished Sales Fundamentals: Core Techniques.</p>
             <div class="lms-complete__stats">
               <div class="lms-complete__stat"><b id="cXp">0</b><span>XP earned</span></div>
@@ -673,11 +673,32 @@
         chip.innerHTML = '<i class="fa-solid fa-award"></i>' + b;
         wrap.appendChild(chip);
       });
-      $('#complete').classList.add('show');
+      var dlg = $('#complete');
+      completeReturnFocus = document.activeElement;
+      dlg.classList.add('show');
+      dlg.setAttribute('aria-hidden', 'false');
+      $('#reviewBtn').focus();
+    }
+    var completeReturnFocus = null;
+    function closeComplete(){
+      var dlg = $('#complete');
+      dlg.classList.remove('show');
+      dlg.setAttribute('aria-hidden', 'true');
+      if (completeReturnFocus && completeReturnFocus.focus) completeReturnFocus.focus();
     }
     $('#reviewBtn').addEventListener('click', function(){
-      $('#complete').classList.remove('show');
+      closeComplete();
       go(0);
+    });
+    // Keep focus inside the dialog and allow Escape to close it
+    $('#complete').addEventListener('keydown', function(e){
+      if (e.key === 'Escape') { e.preventDefault(); closeComplete(); go(0); return; }
+      if (e.key !== 'Tab') return;
+      var f = this.querySelectorAll('button, [href], [tabindex]:not([tabindex="-1"])');
+      if (!f.length) return;
+      var first = f[0], last = f[f.length - 1];
+      if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+      else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
     });
 
     /* ---- Mobile nav drawer ---- */

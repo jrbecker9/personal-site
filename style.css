@@ -41,7 +41,7 @@
 
   --text-primary:   #0F172A;
   --text-secondary: #475569;
-  --text-muted:     #94A3B8;
+  --text-muted:     #64748B;
   --border:         rgba(148,163,184,.20);
   --border-card:    rgba(255,255,255,.75);
 
@@ -530,7 +530,8 @@ p { color: var(--text-secondary); line-height: 1.7; }
   margin-bottom: .3rem;
 }
 
-.stat-label { font-size: .78rem; color: var(--text-muted); font-weight: 500; }
+.stat-label { font-size: .78rem; color: var(--text-secondary); font-weight: 600; }
+.stat-note { display: block; margin-top: .2rem; font-size: .66rem; font-weight: 400; color: var(--text-muted); letter-spacing: 0; line-height: 1.35; }
 
 /* -- Card accent bars ------------------------------------- */
 

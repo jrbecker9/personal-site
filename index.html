@@ -23,7 +23,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=20260601-6">
+  <link rel="stylesheet" href="style.css?v=20260602-1">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <script type="application/ld+json">
   {
@@ -67,7 +67,7 @@
 
   <nav class="navbar">
     <div class="nav-inner">
-      <a href="index.html" class="nav-logo">
+      <a href="/" class="nav-logo">
         <span class="nav-logo-mark">JB</span>
         <span class="nav-logo-name">Jesse Becker</span>
       </a>
@@ -75,10 +75,10 @@
         <span></span><span></span><span></span>
       </button>
       <ul class="nav-links">
-        <li><a href="index.html" class="nav-link active" aria-current="page">Home</a></li>
-        <li><a href="portfolio.html#projects" class="nav-link">Portfolio</a></li>
-        <li><a href="personal.html" class="nav-link">Personal</a></li>
-        <li><a href="resume.html" class="nav-link nav-link-resume">R&eacute;sum&eacute;</a></li>
+        <li><a href="/" class="nav-link active" aria-current="page">Home</a></li>
+        <li><a href="/portfolio#projects" class="nav-link">Portfolio</a></li>
+        <li><a href="/personal" class="nav-link">Personal</a></li>
+        <li><a href="/resume" class="nav-link nav-link-resume">R&eacute;sum&eacute;</a></li>
       </ul>
     </div>
   </nav>
@@ -86,17 +86,17 @@
   <header class="hero">
     <div class="hero-inner">
       <div class="hero-avatar" role="img" aria-label="Photo of Jesse Becker"
-           style="background-image:url('images/headshot.jpg');background-size:cover;background-position:center 20%"></div>
+           style="background-image:url('images/headshot-avatar.jpg');background-size:cover;background-position:center 20%"></div>
       <h1>Jesse Becker</h1>
       <p class="hero-title">Global Learning &amp; Development Manager</p>
       <p class="hero-tagline">
-        I lead global training programs - and I build what powers them. My craft is instructional
-        design and front-end enablement: LMS and knowledge systems, AI-assisted knowledge tools, and
-        browser-based performance-support tools I design and code myself in HTML, CSS, and JavaScript.
+        I lead global learning operations and build the systems behind them - LMS programs,
+        knowledge tools, AI-assisted support, and lightweight browser tools that help frontline
+        teams perform in the flow of work.
       </p>
       <div class="hero-actions hero-actions-primary">
-        <a href="portfolio.html#projects" class="btn btn-primary">Explore My Work <span aria-hidden="true">&rarr;</span></a>
-        <a href="resume.html" class="btn btn-outline">View R&eacute;sum&eacute; <span aria-hidden="true">&rarr;</span></a>
+        <a href="/portfolio#projects" class="btn btn-primary">Explore My Work <span aria-hidden="true">&rarr;</span></a>
+        <a href="/resume" class="btn btn-outline">View R&eacute;sum&eacute; <span aria-hidden="true">&rarr;</span></a>
       </div>
       <div class="pill-row">
         <span class="pill">Global Training Operations</span>
@@ -111,11 +111,11 @@
     <div class="stats-grid">
       <div class="stat-item">
         <div class="stat-value">4.5+/5</div>
-        <div class="stat-label">Learner Satisfaction</div>
+        <div class="stat-label">Learner Satisfaction <span class="stat-note">Post-training surveys, all programs</span></div>
       </div>
       <div class="stat-item">
         <div class="stat-value">90%+</div>
-        <div class="stat-label">First-Time Certification</div>
+        <div class="stat-label">First-Time Certification <span class="stat-note">New-hire certifications</span></div>
       </div>
       <div class="stat-item">
         <div class="stat-value">8+</div>
@@ -129,22 +129,27 @@
   </div>
 
   <main id="main">
-    <section class="section snapshot-section" aria-label="At a glance">
+    <section class="section snapshot-section" id="about" aria-label="About Jesse Becker">
       <div class="container">
         <div class="snapshot">
           <div class="snapshot-main">
-            <p class="section-label">At a glance</p>
+            <p class="section-label">About</p>
             <h2>Leadership and craft, in the same role</h2>
             <p>
-              Global L&amp;D Manager based in Ashland, KY, working remotely. I manage a training team
-              and partner on strategy while staying hands-on in instructional design and front-end /
-              technical enablement - building LMS and knowledge systems, AI-assisted knowledge tools,
-              and the browser-based tools I code myself. Always glad to connect with people working on
-              learning systems, enablement, and knowledge tooling.
+              I'm a Global L&amp;D Manager based in Ashland, KY, working remotely. I lead a training
+              team and partner on strategy while staying hands-on in the craft - administering the LMS
+              and knowledge base, writing the CSS that makes documentation scannable, building decision
+              trees in HTML and JavaScript, and automating coordination in Power Automate, alongside
+              running live training across the United States, Ireland, and the Philippines.
+            </p>
+            <p>
+              At 14West / The Contact Center I support distributed teams across three regions. The
+              tools and systems I build are in production and used daily.
             </p>
             <div class="snapshot-actions">
-              <a href="jesse-becker-resume.pdf" download class="btn btn-blue btn-sm">Download R&eacute;sum&eacute; (PDF)</a>
-              <a href="https://www.linkedin.com/in/jesse-becker-830997100/" target="_blank" rel="noopener noreferrer" class="btn btn-violet btn-sm">Connect on LinkedIn</a>
+              <a href="/portfolio#projects" class="btn btn-blue btn-sm">See the Portfolio</a>
+              <a href="jesse-becker-resume.pdf" download class="btn btn-violet btn-sm">Download R&eacute;sum&eacute; (PDF)</a>
+              <a href="https://www.linkedin.com/in/jesse-becker-830997100/" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">Connect on LinkedIn</a>
             </div>
           </div>
           <ul class="snapshot-facts">
@@ -153,47 +158,6 @@
             <li><span class="snapshot-fact-label">Also</span><span class="snapshot-fact-value">L&amp;D Leadership · LMS / KMS · AI Knowledge Tools</span></li>
             <li><span class="snapshot-fact-label">Stack</span><span class="snapshot-fact-value">HTML · CSS · JavaScript · Power Automate</span></li>
           </ul>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="about">
-      <div class="container">
-        <div class="summary-grid">
-          <div class="summary-text">
-            <p class="section-label">About</p>
-            <h2>Learning infrastructure that works in the real world</h2>
-            <p>
-              I manage global learning programs and build a lot of what supports them.
-              That means administering the LMS and knowledge base, writing the CSS that
-              makes documentation scannable, building decision trees in HTML and JavaScript,
-              and automating coordination workflows in Power Automate - alongside running
-              live training across the United States, Ireland, and the Philippines.
-            </p>
-            <p>
-              At 14West / The Contact Center, I support distributed teams across three
-              regions. The tools and systems I build are in production and used daily.
-            </p>
-            <a href="portfolio.html#projects" class="btn btn-blue">See the Portfolio</a>
-          </div>
-          <div class="summary-visual">
-            <div class="summary-mini">
-              <div class="summary-mini-icon">L&amp;D</div>
-              <div class="summary-mini-label">Program Strategy</div>
-            </div>
-            <div class="summary-mini">
-              <div class="summary-mini-icon">KMS</div>
-              <div class="summary-mini-label">Knowledge Systems</div>
-            </div>
-            <div class="summary-mini">
-              <div class="summary-mini-icon">LMS</div>
-              <div class="summary-mini-label">Learning Platforms</div>
-            </div>
-            <div class="summary-mini">
-              <div class="summary-mini-icon">UX</div>
-              <div class="summary-mini-label">Performance Support</div>
-            </div>
-          </div>
         </div>
       </div>
     </section>
@@ -273,7 +237,7 @@
               <div class="tags"><span class="tag tag-violet">Knowledge Management</span><span class="tag tag-blue">AI Support</span></div>
               <h3>Talkdesk Copilot Knowledge Integration</h3>
               <p>Structured KnowledgeOwl content with tags, intents, and metadata to improve AI-assisted search results for frontline teams.</p>
-              <a href="portfolio.html#copilot" class="card-link">View project &rarr;</a>
+              <a href="/portfolio#copilot" class="card-link">View project &rarr;</a>
             </div>
           </article>
           <article class="featured-card">
@@ -282,7 +246,7 @@
               <div class="tags"><span class="tag tag-violet">Knowledge Management</span><span class="tag tag-cyan">Front-End</span></div>
               <h3>Knowledge Base Design System</h3>
               <p>Built a modular CSS component library for KnowledgeOwl - 700+ lines of custom CSS, 15+ reusable components, zero dependencies, live in production.</p>
-              <a href="case-study-kb.html" class="card-link">Explore the case study &rarr;</a>
+              <a href="/case-study-kb" class="card-link">Explore the case study &rarr;</a>
             </div>
           </article>
           <article class="featured-card">
@@ -291,7 +255,7 @@
               <div class="tags"><span class="tag tag-teal">Performance Support</span><span class="tag tag-cyan">Front-End</span></div>
               <h3>Interactive Call-Flow Tools</h3>
               <p>Decision trees and call flows built in HTML, CSS, and JavaScript that walk agents to the right answer step by step - with a live, working demo you can click through.</p>
-              <a href="case-study-callflows.html" class="card-link">Try the interactive demo &rarr;</a>
+              <a href="/case-study-callflows" class="card-link">Try the interactive demo &rarr;</a>
             </div>
           </article>
         </div>
@@ -321,10 +285,10 @@
         <a href="tel:+19786212223">978-621-2223 <small>Text or call</small></a>
       </div>
       <nav class="footer-links">
-        <a href="index.html" class="footer-link">Home</a>
-        <a href="portfolio.html#projects" class="footer-link">Portfolio</a>
-        <a href="resume.html" class="footer-link">R&eacute;sum&eacute;</a>
-        <a href="personal.html" class="footer-link">Personal</a>
+        <a href="/" class="footer-link">Home</a>
+        <a href="/portfolio#projects" class="footer-link">Portfolio</a>
+        <a href="/resume" class="footer-link">R&eacute;sum&eacute;</a>
+        <a href="/personal" class="footer-link">Personal</a>
       </nav>
       <div class="footer-social">
         <a href="https://www.linkedin.com/in/jesse-becker-830997100/" target="_blank" rel="noopener noreferrer" aria-label="Jesse Becker on LinkedIn">
@@ -336,36 +300,13 @@
     </div>
   </footer>
 
+  <script src="site.js?v=20260602-1"></script>
   <script>
-    document.querySelectorAll('.year').forEach(el => el.textContent = new Date().getFullYear());
-    const toggle = document.querySelector('.nav-toggle');
-    const links = document.querySelector('.nav-links');
-    toggle.addEventListener('click', () => {
-      const open = links.classList.toggle('open');
-      toggle.classList.toggle('open', open);
-      toggle.setAttribute('aria-expanded', open);
+    // Scroll reveal (shared helper in site.js)
+    initReveal({
+      grids: ['.skills-grid', '.featured-grid'],
+      singles: ['.section-header']
     });
-
-    // Scroll reveal
-    if ('IntersectionObserver' in window) {
-      const obs = new IntersectionObserver(entries => {
-        entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('is-visible'); obs.unobserve(e.target); } });
-      }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
-
-      // Staggered grids
-      ['.skills-grid', '.featured-grid', '.summary-visual'].forEach(sel => {
-        document.querySelectorAll(sel + ' > *').forEach((el, i) => {
-          el.classList.add('reveal');
-          el.style.transitionDelay = (i * 0.08) + 's';
-          obs.observe(el);
-        });
-      });
-      // Section-level
-      document.querySelectorAll('.section-header, .summary-text').forEach(el => {
-        el.classList.add('reveal');
-        obs.observe(el);
-      });
-    }
 
     // Stats counter
     (function () {
