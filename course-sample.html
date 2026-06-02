@@ -10,10 +10,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous">
   <style>
-    /* ============================================================
-       Becker LMS - self-contained demo course player
-       Scoped under .lms; no frameworks, no build step.
-       ============================================================ */
     *,*::before,*::after{box-sizing:border-box}
     html,body{height:100%}
     body{margin:0;font-family:"Inter",system-ui,-apple-system,"Segoe UI",sans-serif;color:#1F2430;background:#EAEDF3;-webkit-font-smoothing:antialiased}
@@ -30,7 +26,6 @@
 
     .lms{height:100%;display:flex;flex-direction:column;overflow:hidden;background:var(--lms-app)}
 
-    /* -- Top bar ------------------------------------------------ */
     .lms-topbar{display:flex;align-items:center;gap:16px;padding:10px 16px;background:var(--lms-surface);border-bottom:1px solid var(--lms-line);flex-shrink:0;z-index:20}
     .lms-brand{display:flex;align-items:center;gap:9px;font-weight:800;font-size:15px;color:var(--lms-ink);white-space:nowrap}
     .lms-brand__mark{width:28px;height:28px;border-radius:8px;background:linear-gradient(135deg,var(--lms-indigo),#7C73FF);display:flex;align-items:center;justify-content:center;color:#fff;font-size:14px;box-shadow:0 3px 8px rgba(79,70,229,.35)}
@@ -48,10 +43,8 @@
     .lms-avatar{width:30px;height:30px;border-radius:50%;background:linear-gradient(135deg,#34D399,#10B981);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:12px;flex-shrink:0}
     .lms-menu-btn{display:none;background:none;border:1px solid var(--lms-line);border-radius:8px;width:34px;height:34px;color:var(--lms-ink);font-size:15px;cursor:pointer}
 
-    /* -- Shell -------------------------------------------------- */
     .lms-shell{flex:1;display:flex;min-height:0;position:relative}
 
-    /* -- Sidebar ------------------------------------------------ */
     .lms-sidebar{width:268px;flex-shrink:0;background:var(--lms-surface);border-right:1px solid var(--lms-line);display:flex;flex-direction:column;min-height:0}
     .lms-sidebar__head{padding:16px 18px 12px}
     .lms-sidebar__title{font-size:11px;font-weight:800;letter-spacing:.7px;text-transform:uppercase;color:var(--lms-muted)}
@@ -73,7 +66,6 @@
     .lms-step__type{display:block;font-size:10.5px;font-weight:600;color:#9AA1AD}
     .lms-step.active .lms-step__type{color:var(--lms-indigo)}
 
-    /* -- Main --------------------------------------------------- */
     .lms-main{flex:1;display:flex;flex-direction:column;min-width:0;min-height:0;position:relative}
     .lms-crumbs{display:flex;align-items:center;gap:7px;flex-wrap:wrap;padding:11px 28px;font-size:11.5px;color:var(--lms-muted);background:var(--lms-app);border-bottom:1px solid var(--lms-line);flex-shrink:0}
     .lms-crumbs i{font-size:8px;opacity:.6}
@@ -117,7 +109,6 @@
     .lms-stat-big{font-size:21px;font-weight:800;color:var(--lms-ink);line-height:1.2}
     .lms-card cite{display:block;font-size:11px;color:var(--lms-muted);font-style:normal;margin-top:6px}
 
-    /* -- Footer nav --------------------------------------------- */
     .lms-footer{display:flex;align-items:center;gap:12px;padding:12px 28px;background:var(--lms-surface);border-top:1px solid var(--lms-line);flex-shrink:0}
     .lms-footer__hint{font-size:11.5px;color:var(--lms-muted);font-weight:600;margin-right:auto}
     .lms-footer__hint i{color:var(--lms-gold)}
@@ -129,7 +120,6 @@
     .lms-btn--primary:hover{background:var(--lms-indigo-dark)}
     .lms-btn[disabled]{opacity:.4;cursor:not-allowed;box-shadow:none}
 
-    /* -- Knowledge check ---------------------------------------- */
     .lms-quiz-intro{margin-bottom:18px}
     .lms-q{margin:0 0 16px;padding:18px;border:1px solid var(--lms-line);border-radius:var(--lms-radius);background:#fff;box-shadow:0 1px 3px rgba(16,24,40,.04)}
     .lms-q__num{font-size:10.5px;font-weight:800;letter-spacing:.6px;text-transform:uppercase;color:var(--lms-indigo)}
@@ -157,7 +147,6 @@
     .lms-result__label{font-size:13px;color:var(--lms-muted);margin-top:4px;font-weight:600}
     .lms-result__msg{font-size:14px;color:#3C4250;margin:12px 0 16px}
 
-    /* -- Completion overlay ------------------------------------- */
     .lms-complete{position:absolute;inset:0;background:rgba(31,36,48,.62);backdrop-filter:blur(5px);-webkit-backdrop-filter:blur(5px);display:none;align-items:center;justify-content:center;padding:24px;z-index:40}
     .lms-complete.show{display:flex;animation:lms-fade .4s ease}
     .lms-complete__card{background:#fff;border-radius:20px;max-width:420px;width:100%;padding:30px 26px;text-align:center;box-shadow:0 30px 70px rgba(15,23,42,.4);position:relative;overflow:hidden}
@@ -174,12 +163,10 @@
     .lms-badges{display:flex;flex-wrap:wrap;gap:7px;justify-content:center;margin-bottom:18px}
     .lms-badge-chip{display:inline-flex;align-items:center;gap:6px;background:#FFF7E6;border:1px solid #F6D88A;color:#B45309;font-size:11.5px;font-weight:700;padding:5px 11px;border-radius:999px}
 
-    /* -- Badge toast -------------------------------------------- */
     .lms-toast{position:absolute;left:50%;bottom:78px;transform:translate(-50%,20px);background:var(--lms-ink);color:#fff;padding:11px 18px;border-radius:999px;font-size:13px;font-weight:700;display:flex;align-items:center;gap:9px;box-shadow:0 12px 30px rgba(15,23,42,.35);opacity:0;pointer-events:none;transition:opacity .3s,transform .3s;z-index:45;white-space:nowrap}
     .lms-toast.show{opacity:1;transform:translate(-50%,0)}
     .lms-toast i{color:var(--lms-gold)}
 
-    /* -- Responsive --------------------------------------------- */
     .lms-scrim{display:none}
     @media (max-width:680px){
       .lms-menu-btn{display:flex;align-items:center;justify-content:center}
@@ -195,7 +182,6 @@
       .lms-complete{overflow-y:auto;-webkit-overflow-scrolling:touch;align-items:flex-start;padding:16px}
       .lms-complete__card{margin:0 auto}
     }
-    /* Feedback widget */
     .lms-rating-box{margin:14px 0 4px;padding:14px 16px;background:var(--lms-surface);border:1px solid var(--lms-line);border-radius:12px;text-align:center;animation:lms-fade .35s ease}
     .lms-feedback__prompt{font-size:13px;font-weight:600;color:var(--lms-ink);margin:0 0 10px}
     .lms-stars{display:flex;justify-content:center;gap:6px;margin-bottom:4px}
@@ -212,7 +198,6 @@
 <body>
   <div class="lms">
 
-    <!-- Top bar -->
     <header class="lms-topbar">
       <button class="lms-menu-btn" id="menuBtn" aria-label="Toggle course menu"><i class="fa-solid fa-bars"></i></button>
       <div class="lms-brand">
@@ -239,7 +224,6 @@
     <div class="lms-shell" id="shell">
       <div class="lms-scrim" id="scrim"></div>
 
-      <!-- Sidebar -->
       <aside class="lms-sidebar" id="sidebar">
         <div class="lms-sidebar__head">
           <div class="lms-sidebar__title">Course Content</div>
@@ -249,14 +233,12 @@
         <ul class="lms-outline" id="outline"><!-- steps injected --></ul>
       </aside>
 
-      <!-- Main content -->
       <main class="lms-main">
         <nav class="lms-crumbs" id="crumbs" aria-label="Breadcrumb"></nav>
 
         <div class="lms-content" id="content">
           <div class="lms-content-inner">
 
-            <!-- Lesson 1 -->
             <section class="lms-lesson active" data-step="0">
               <span class="lms-eyebrow">Getting Started</span>
               <h1>Welcome to Sales Fundamentals</h1>
@@ -284,7 +266,6 @@
               </div>
             </section>
 
-            <!-- Lesson 2 -->
             <section class="lms-lesson" data-step="1">
               <span class="lms-eyebrow">Core Techniques &middot; Technique 1</span>
               <h1>Build Rapport First</h1>
@@ -311,7 +292,6 @@
               </div>
             </section>
 
-            <!-- Lesson 3 -->
             <section class="lms-lesson" data-step="2">
               <span class="lms-eyebrow">Core Techniques &middot; Technique 2</span>
               <h1>Discover Needs</h1>
@@ -341,7 +321,6 @@
               </div>
             </section>
 
-            <!-- Lesson 4 -->
             <section class="lms-lesson" data-step="3">
               <span class="lms-eyebrow">Core Techniques &middot; Technique 3</span>
               <h1>Handle Objections</h1>
@@ -366,7 +345,6 @@
               </div>
             </section>
 
-            <!-- Lesson 5 -->
             <section class="lms-lesson" data-step="4">
               <span class="lms-eyebrow">Core Techniques &middot; Technique 4</span>
               <h1>Ask for the Sale</h1>
@@ -393,7 +371,6 @@
               </div>
             </section>
 
-            <!-- Knowledge Check -->
             <section class="lms-lesson" data-step="5">
               <span class="lms-eyebrow">Assessment</span>
               <h1>Knowledge Check</h1>
@@ -410,17 +387,14 @@
           </div>
         </div>
 
-        <!-- Footer nav -->
         <footer class="lms-footer">
           <span class="lms-footer__hint" id="hint"><i class="fa-solid fa-star"></i> Complete lessons to earn XP</span>
           <button class="lms-btn lms-btn--ghost" id="prevBtn" type="button"><i class="fa-solid fa-arrow-left"></i> Previous</button>
           <button class="lms-btn lms-btn--primary" id="nextBtn" type="button">Mark Complete &amp; Continue <i class="fa-solid fa-arrow-right"></i></button>
         </footer>
 
-        <!-- Badge toast -->
         <div class="lms-toast" id="toast"><i class="fa-solid fa-award"></i><span id="toastTxt"></span></div>
 
-        <!-- Completion overlay -->
         <div class="lms-complete" id="complete">
           <div class="lms-complete__card">
             <div class="lms-medal">
@@ -437,7 +411,6 @@
               <div class="lms-complete__stat"><b id="cScore">0/4</b><span>Quiz score</span></div>
               <div class="lms-complete__stat"><b id="cLessons">5</b><span>Lessons</span></div>
             </div>
-            <!-- Learner feedback widget -->
             <div class="lms-rating-box" id="feedbackWidget">
               <p class="lms-feedback__prompt">How would you rate this course?</p>
               <div class="lms-stars" id="starRow" role="group" aria-label="Star rating">
@@ -448,7 +421,7 @@
                 <button class="lms-star" data-v="5" type="button" aria-label="5 stars"><i class="fa-regular fa-star"></i></button>
               </div>
               <div class="lms-feedback__comment" id="commentBox" style="display:none">
-                <textarea class="lms-feedback__textarea" id="feedbackText" placeholder="Optional — what stood out? (not stored)" rows="2" maxlength="280"></textarea>
+                <textarea class="lms-feedback__textarea" id="feedbackText" placeholder="Anything you'd like to share? (optional)" rows="2" maxlength="280"></textarea>
                 <button class="lms-btn lms-btn--primary lms-feedback__submit" id="feedbackSubmit" type="button">Submit Feedback</button>
               </div>
               <div class="lms-feedback__thanks" id="feedbackThanks" style="display:none">
@@ -502,7 +475,6 @@
     var prevBtn = $('#prevBtn'), nextBtn = $('#nextBtn');
     var RING_LEN = 75.4;
 
-    /* ---- Build sidebar outline ---- */
     var lastGroup = null;
     STEPS.forEach(function(s, i){
       if(s.group !== lastGroup){
@@ -526,7 +498,6 @@
     });
     var stepBtns = $$('.lms-step');
 
-    /* ---- Navigation ---- */
     function go(i){
       state.idx = i;
       lessons.forEach(function(l){ l.classList.toggle('active', +l.getAttribute('data-step') === i); });
@@ -562,7 +533,6 @@
       if(state.idx < STEPS.length-1){ go(state.idx+1); }
     });
 
-    /* ---- Completion + XP ---- */
     function complete(i){
       if(state.done[i]) return;
       state.done[i] = true;
@@ -603,7 +573,6 @@
       setTimeout(function(){ el.textContent = to; }, dur + 80);
     }
 
-    /* ---- Badges + toast ---- */
     var toastTimer;
     function awardBadge(name){
       if(state.badges.indexOf(name) !== -1) return;
@@ -615,7 +584,6 @@
       toastTimer = setTimeout(function(){ t.classList.remove('show'); }, 2800);
     }
 
-    /* ---- Build quiz ---- */
     var quiz = $('#quiz');
     QUESTIONS.forEach(function(item, qi){
       var card = document.createElement('div');
@@ -692,7 +660,6 @@
       $('#content').scrollTop = 0;
     });
 
-    /* ---- Completion overlay ---- */
     function showComplete(){
       awardBadge('Course Champion');
       $('#cXp').textContent = state.xp;
@@ -712,12 +679,10 @@
       go(0);
     });
 
-    /* ---- Mobile nav drawer ---- */
     function closeNav(){ $('#shell').classList.remove('nav-open'); }
     $('#menuBtn').addEventListener('click', function(){ $('#shell').classList.toggle('nav-open'); });
     $('#scrim').addEventListener('click', closeNav);
 
-    /* ---- Star rating feedback ---- */
     state.rating = 0;
     var starRow = $('#starRow');
     var commentBox = $('#commentBox');
@@ -757,7 +722,6 @@
       feedbackThanks.style.display = '';
     });
 
-    /* ---- Init ---- */
     renderCrumbs();
     refreshProgress();
     syncFooter();
