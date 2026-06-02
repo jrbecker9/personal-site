@@ -193,6 +193,18 @@
       .lms-footer__hint{display:none}
       .lms-btn{padding:9px 13px}
     }
+    /* Feedback widget */
+    .lms-rating-box{margin:14px 0 4px;padding:14px 16px;background:var(--lms-surface);border:1px solid var(--lms-line);border-radius:12px;text-align:center;animation:lms-fade .35s ease}
+    .lms-feedback__prompt{font-size:13px;font-weight:600;color:var(--lms-ink);margin:0 0 10px}
+    .lms-stars{display:flex;justify-content:center;gap:6px;margin-bottom:4px}
+    .lms-star{background:none;border:none;cursor:pointer;padding:4px;font-size:22px;color:var(--lms-line);transition:color .15s,transform .12s;line-height:1}
+    .lms-star:hover,.lms-star.hovered,.lms-star.selected{color:var(--lms-gold)}
+    .lms-star.selected{transform:scale(1.15)}
+    .lms-feedback__comment{margin-top:10px;display:flex;flex-direction:column;gap:8px}
+    .lms-feedback__textarea{width:100%;box-sizing:border-box;border:1px solid var(--lms-line);border-radius:8px;padding:8px 10px;font-size:13px;font-family:inherit;color:var(--lms-ink);resize:vertical;outline:none;transition:border-color .15s}
+    .lms-feedback__textarea:focus{border-color:var(--lms-indigo)}
+    .lms-feedback__submit{align-self:center}
+    .lms-feedback__thanks{margin-top:8px;font-size:13px;font-weight:600;color:var(--lms-green);display:flex;align-items:center;justify-content:center;gap:6px;animation:lms-fade .3s ease}
   </style>
 </head>
 <body>
@@ -422,6 +434,24 @@
               <div class="lms-complete__stat"><b id="cXp">0</b><span>XP earned</span></div>
               <div class="lms-complete__stat"><b id="cScore">0/4</b><span>Quiz score</span></div>
               <div class="lms-complete__stat"><b id="cLessons">5</b><span>Lessons</span></div>
+            </div>
+            <!-- Learner feedback widget -->
+            <div class="lms-rating-box" id="feedbackWidget">
+              <p class="lms-feedback__prompt">How would you rate this course?</p>
+              <div class="lms-stars" id="starRow" role="group" aria-label="Star rating">
+                <button class="lms-star" data-v="1" type="button" aria-label="1 star"><i class="fa-regular fa-star"></i></button>
+                <button class="lms-star" data-v="2" type="button" aria-label="2 stars"><i class="fa-regular fa-star"></i></button>
+                <button class="lms-star" data-v="3" type="button" aria-label="3 stars"><i class="fa-regular fa-star"></i></button>
+                <button class="lms-star" data-v="4" type="button" aria-label="4 stars"><i class="fa-regular fa-star"></i></button>
+                <button class="lms-star" data-v="5" type="button" aria-label="5 stars"><i class="fa-regular fa-star"></i></button>
+              </div>
+              <div class="lms-feedback__comment" id="commentBox" style="display:none">
+                <textarea class="lms-feedback__textarea" id="feedbackText" placeholder="Optional — what stood out? (not stored)" rows="2" maxlength="280"></textarea>
+                <button class="lms-btn lms-btn--primary lms-feedback__submit" id="feedbackSubmit" type="button">Submit Feedback</button>
+              </div>
+              <div class="lms-feedback__thanks" id="feedbackThanks" style="display:none">
+                <i class="fa-solid fa-circle-check"></i> Thanks for your feedback!
+              </div>
             </div>
             <div class="lms-badges" id="cBadges"></div>
             <button class="lms-btn lms-btn--primary" id="reviewBtn" type="button" style="width:100%;justify-content:center"><i class="fa-solid fa-rotate-left"></i> Review the course</button>
@@ -684,6 +714,46 @@
     function closeNav(){ $('#shell').classList.remove('nav-open'); }
     $('#menuBtn').addEventListener('click', function(){ $('#shell').classList.toggle('nav-open'); });
     $('#scrim').addEventListener('click', closeNav);
+
+    /* ---- Star rating feedback ---- */
+    state.rating = 0;
+    var starRow = $('#starRow');
+    var commentBox = $('#commentBox');
+    var feedbackThanks = $('#feedbackThanks');
+    var feedbackSubmit = $('#feedbackSubmit');
+
+    starRow.addEventListener('mouseover', function(e){
+      var btn = e.target.closest('.lms-star');
+      if(!btn) return;
+      var v = +btn.getAttribute('data-v');
+      $$('.lms-star', starRow).forEach(function(s){
+        s.classList.toggle('hovered', +s.getAttribute('data-v') <= v);
+        s.querySelector('i').className = +s.getAttribute('data-v') <= v ? 'fa-solid fa-star' : 'fa-regular fa-star';
+      });
+    });
+    starRow.addEventListener('mouseleave', function(){
+      $$('.lms-star', starRow).forEach(function(s){
+        var v = +s.getAttribute('data-v');
+        s.classList.remove('hovered');
+        s.querySelector('i').className = v <= state.rating ? 'fa-solid fa-star' : 'fa-regular fa-star';
+      });
+    });
+    starRow.addEventListener('click', function(e){
+      var btn = e.target.closest('.lms-star');
+      if(!btn) return;
+      state.rating = +btn.getAttribute('data-v');
+      $$('.lms-star', starRow).forEach(function(s){
+        var v = +s.getAttribute('data-v');
+        s.classList.toggle('selected', v <= state.rating);
+        s.querySelector('i').className = v <= state.rating ? 'fa-solid fa-star' : 'fa-regular fa-star';
+      });
+      commentBox.style.display = '';
+    });
+    feedbackSubmit.addEventListener('click', function(){
+      commentBox.style.display = 'none';
+      $$('.lms-star', starRow).forEach(function(s){ s.disabled = true; });
+      feedbackThanks.style.display = '';
+    });
 
     /* ---- Init ---- */
     renderCrumbs();
