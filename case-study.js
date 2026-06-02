@@ -37,26 +37,32 @@ document.querySelectorAll('.year').forEach(el => el.textContent = new Date().get
       });
     });
 
-    // KB stat counters (700+, 15+)
+    // Animated stat counters - data-driven via data-cs-count / data-cs-suffix
     (function () {
       const row = document.querySelector('.cs-stat-row');
       if (!row) return;
-      const defs = [
-        { idx: 0, end: 700, suffix: '+' },
-        { idx: 1, end: 15,  suffix: '+' }
-      ];
-      const els = row.querySelectorAll('.cs-stat-value');
+      const defs = Array.prototype.slice
+        .call(row.querySelectorAll('.cs-stat-value[data-cs-count]'))
+        .map(el => ({
+          el: el,
+          end: parseInt(el.getAttribute('data-cs-count'), 10) || 0,
+          suffix: el.getAttribute('data-cs-suffix') || ''
+        }));
+      if (!defs.length) return;
       let ran = false;
       const ease = t => t < .5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
-      new IntersectionObserver(([e]) => {
-        if (!e.isIntersecting || ran) return;
+      const settle = () => defs.forEach(d => { d.el.textContent = d.end + d.suffix; });
+      new IntersectionObserver((entries, ob) => {
+        if (!entries[0].isIntersecting || ran) return;
         ran = true;
+        ob.disconnect();
         const t0 = performance.now(), dur = 1100;
         function frame(now) {
           const p = Math.min((now - t0) / dur, 1), ep = ease(p);
-          defs.forEach(d => { els[d.idx].textContent = Math.round(d.end * ep) + d.suffix; });
+          defs.forEach(d => { d.el.textContent = Math.round(d.end * ep) + d.suffix; });
           if (p < 1) requestAnimationFrame(frame);
         }
         requestAnimationFrame(frame);
+        setTimeout(settle, dur + 120); // guarantee final value if rAF is throttled
       }, { threshold: 0.5 }).observe(row);
     })();
