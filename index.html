@@ -20,10 +20,22 @@
   <meta name="twitter:description" content="L&amp;D leader and hands-on builder: learning operations, LMS &amp; knowledge systems, AI-assisted knowledge tools, and browser-based performance-support tools built from scratch.">
   <meta name="twitter:image" content="https://jesserbecker.com/images/headshot.jpg">
   <meta name="twitter:image:alt" content="Jesse Becker, Global Learning and Development Manager">
+  <meta name="theme-color" content="#F7F2E9" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#171310" media="(prefers-color-scheme: dark)">
+
+  <!-- Apply the saved theme before first paint so there is no flash. -->
+  <script>(function(){try{var t=localStorage.getItem('theme');if(t==='dark'||(!t&&matchMedia('(prefers-color-scheme: dark)').matches))document.documentElement.setAttribute('data-theme','dark')}catch(e){}})();</script>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=20260602-1">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..700&amp;family=Inter:wght@400..700&amp;display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/tokens.css?v=20260802-1">
+  <link rel="stylesheet" href="css/base.css?v=20260802-1">
+  <link rel="stylesheet" href="css/components.css?v=20260802-1">
+  <link rel="stylesheet" href="css/layout.css?v=20260802-1">
+  <link rel="stylesheet" href="css/pages.css?v=20260802-1">
+  <link rel="stylesheet" href="css/print.css?v=20260802-1" media="print">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <script type="application/ld+json">
   {
@@ -59,18 +71,10 @@
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
-  <div class="bg-orbs" aria-hidden="true">
-    <div class="orb orb-1"></div>
-    <div class="orb orb-2"></div>
-    <div class="orb orb-3"></div>
-  </div>
 
   <nav class="navbar">
     <div class="nav-inner">
-      <a href="/" class="nav-logo">
-        <span class="nav-logo-mark">JB</span>
-        <span class="nav-logo-name">Jesse Becker</span>
-      </a>
+      <a href="/" class="nav-logo">Jesse<em>&nbsp;Becker</em></a>
       <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
@@ -78,52 +82,67 @@
         <li><a href="/" class="nav-link active" aria-current="page">Home</a></li>
         <li><a href="/portfolio#projects" class="nav-link">Portfolio</a></li>
         <li><a href="/personal" class="nav-link">Personal</a></li>
-        <li><a href="/resume" class="nav-link nav-link-resume">R&eacute;sum&eacute;</a></li>
+        <li><a href="/resume" class="nav-link">R&eacute;sum&eacute;</a></li>
+        <li class="nav-theme-item">
+          <button class="theme-toggle" aria-label="Switch to dark theme" aria-pressed="false">
+            <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M21.64 13a1 1 0 0 0-1.05-.14 8.05 8.05 0 0 1-3.37.73 8.15 8.15 0 0 1-8.14-8.1 8.59 8.59 0 0 1 .25-2A1 1 0 0 0 8 2.36a10.14 10.14 0 1 0 14 11.69 1 1 0 0 0-.36-1.05z"/></svg>
+            <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 17a5 5 0 1 1 0-10 5 5 0 0 1 0 10zm0-2a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM11 1h2v3h-2V1zm0 19h2v3h-2v-3zM3.5 4.9l1.4-1.4 2.1 2.1-1.4 1.4L3.5 4.9zm13.5 13.5l1.4-1.4 2.1 2.1-1.4 1.4-2.1-2.1zM19.1 3.5l1.4 1.4-2.1 2.1-1.4-1.4 2.1-2.1zM5.6 17l1.4 1.4-2.1 2.1-1.4-1.4L5.6 17zM1 11h3v2H1v-2zm19 0h3v2h-3v-2z"/></svg>
+          </button>
+        </li>
       </ul>
     </div>
   </nav>
 
   <header class="hero">
-    <div class="hero-inner">
-      <div class="hero-avatar" role="img" aria-label="Photo of Jesse Becker"
-           style="background-image:url('images/headshot-avatar.jpg');background-size:cover;background-position:center 20%"></div>
-      <h1>Jesse Becker</h1>
-      <p class="hero-title">Global Learning &amp; Development Manager</p>
-      <p class="hero-tagline">
-        I lead global learning operations and build the systems behind them - LMS programs,
-        knowledge tools, AI-assisted support, and lightweight browser tools that help frontline
-        teams perform in the flow of work.
-      </p>
-      <div class="hero-actions hero-actions-primary">
-        <a href="/portfolio#projects" class="btn btn-primary">Explore My Work <span aria-hidden="true">&rarr;</span></a>
-        <a href="/resume" class="btn btn-outline">View R&eacute;sum&eacute; <span aria-hidden="true">&rarr;</span></a>
+    <div class="container hero-grid">
+      <div class="hero-copy">
+        <p class="section-label">Jesse Becker &middot; Global L&amp;D Manager</p>
+        <h1>Leadership and <em>craft<svg viewBox="0 0 120 12" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path d="M3 9 C 30 3, 60 11, 117 5"/></svg></em>, in the same role.</h1>
+        <p class="hero-tagline">
+          I lead global learning operations and build the systems behind them &mdash; LMS programs,
+          knowledge tools, AI-assisted support, and lightweight browser tools that help frontline
+          teams perform in the flow of work.
+        </p>
+        <div class="hero-actions">
+          <a href="/portfolio#projects" class="btn btn-primary">Explore My Work <span class="arrow" aria-hidden="true">&rarr;</span></a>
+          <a href="/resume" class="btn btn-ghost">View R&eacute;sum&eacute;</a>
+        </div>
       </div>
-      <div class="pill-row">
-        <span class="pill">Global Training Operations</span>
-        <span class="pill">Knowledge Management</span>
-        <span class="pill">Learning Systems</span>
-        <span class="pill">HTML / CSS / JS</span>
+      <div class="hero-portrait">
+        <div class="under-sheet" aria-hidden="true"></div>
+        <div class="polaroid">
+          <span class="tape" aria-hidden="true"></span>
+          <span class="tape tape-right" aria-hidden="true"></span>
+          <div class="photo" role="img" aria-label="Photo of Jesse Becker"
+               style="background-image:url('images/headshot-avatar.jpg')"></div>
+          <p class="caption">Ashland, KY &mdash; remote, everywhere.</p>
+        </div>
+        <span class="stamp">US &middot; Ireland &middot; Philippines</span>
       </div>
     </div>
   </header>
 
   <div class="stats-bar">
-    <div class="stats-grid">
-      <div class="stat-item">
-        <div class="stat-value">4.5+/5</div>
-        <div class="stat-label">Learner Satisfaction <span class="stat-note">Post-training surveys, all programs</span></div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-value">90%+</div>
-        <div class="stat-label">First-Time Certification <span class="stat-note">New-hire certifications</span></div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-value">8+</div>
-        <div class="stat-label">Client Programs Supported</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-value">3</div>
-        <div class="stat-label">Regions: United States &middot; Ireland &middot; Philippines</div>
+    <div class="container">
+      <div class="stats-panel sheet stack">
+        <div class="stats-grid">
+          <div class="stat-item">
+            <div class="stat-value" data-count="4.5" data-decimals="1" data-suffix="+/5">4.5<sup>+/5</sup></div>
+            <div class="stat-label">Learner Satisfaction <span class="stat-note">Post-training surveys, all programs</span></div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-value" data-count="90" data-decimals="0" data-suffix="%+">90<sup>%+</sup></div>
+            <div class="stat-label">First-Time Certification <span class="stat-note">New-hire certifications</span></div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-value" data-count="8" data-decimals="0" data-suffix="+">8<sup>+</sup></div>
+            <div class="stat-label">Client Programs Supported</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-value" data-count="3" data-decimals="0" data-suffix="">3</div>
+            <div class="stat-label">Regions: United States &middot; Ireland &middot; Philippines</div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -131,13 +150,16 @@
   <main id="main">
     <section class="section snapshot-section" id="about" aria-label="About Jesse Becker">
       <div class="container">
+        <div class="section-head">
+          <span class="section-num">&#8470; 01</span>
+          <h2 class="section-title">Leadership and craft, in the same role</h2>
+          <span class="section-rule" aria-hidden="true"></span>
+        </div>
         <div class="snapshot">
           <div class="snapshot-main">
-            <p class="section-label">About</p>
-            <h2>Leadership and craft, in the same role</h2>
             <p>
               I'm a Global L&amp;D Manager based in Ashland, KY, working remotely. I lead a training
-              team and partner on strategy while staying hands-on in the craft - administering the LMS
+              team and partner on strategy while staying hands-on in the craft &mdash; administering the LMS
               and knowledge base, writing the CSS that makes documentation scannable, building decision
               trees in HTML and JavaScript, and automating coordination in Power Automate, alongside
               running live training across the United States, Ireland, and the Philippines.
@@ -147,76 +169,77 @@
               tools and systems I build are in production and used daily.
             </p>
             <div class="snapshot-actions">
-              <a href="/portfolio#projects" class="btn btn-blue btn-sm">See the Portfolio</a>
-              <a href="jesse-becker-resume.pdf" download class="btn btn-violet btn-sm">Download R&eacute;sum&eacute; (PDF)</a>
-              <a href="https://www.linkedin.com/in/jesse-becker-830997100/" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">Connect on LinkedIn</a>
+              <a href="/portfolio#projects" class="btn btn-primary btn-sm">See the Portfolio</a>
+              <a href="jesse-becker-resume.pdf" download class="btn btn-ghost btn-sm">Download R&eacute;sum&eacute; (PDF)</a>
+              <a href="https://www.linkedin.com/in/jesse-becker-830997100/" target="_blank" rel="noopener noreferrer" class="btn btn-ghost btn-sm">Connect on LinkedIn</a>
             </div>
           </div>
-          <ul class="snapshot-facts">
-            <li><span class="snapshot-fact-label">Based in</span><span class="snapshot-fact-value">Ashland, KY · Remote</span></li>
-            <li><span class="snapshot-fact-label">Craft</span><span class="snapshot-fact-value">Instructional Design · Front-End Enablement</span></li>
-            <li><span class="snapshot-fact-label">Also</span><span class="snapshot-fact-value">L&amp;D Leadership · LMS / KMS · AI Knowledge Tools</span></li>
-            <li><span class="snapshot-fact-label">Stack</span><span class="snapshot-fact-value">HTML · CSS · JavaScript · Power Automate</span></li>
+          <ul class="snapshot-facts sheet">
+            <li><span class="snapshot-fact-label">Based in</span><span class="snapshot-fact-value">Ashland, KY &middot; Remote</span></li>
+            <li><span class="snapshot-fact-label">Craft</span><span class="snapshot-fact-value">Instructional Design &middot; Front-End Enablement</span></li>
+            <li><span class="snapshot-fact-label">Also</span><span class="snapshot-fact-value">L&amp;D Leadership &middot; LMS / KMS &middot; AI Knowledge Tools</span></li>
+            <li><span class="snapshot-fact-label">Stack</span><span class="snapshot-fact-value">HTML &middot; CSS &middot; JavaScript &middot; Power Automate</span></li>
           </ul>
         </div>
       </div>
     </section>
 
-    <section class="section section-alt" id="skills">
+    <section class="section" id="skills">
       <div class="container">
-        <div class="section-header">
-          <p class="section-label">Expertise</p>
+        <div class="section-head">
+          <span class="section-num">&#8470; 02</span>
           <h2 class="section-title">Strategy, tools, and delivery</h2>
-          <p class="section-subtitle">Training design, front-end development, platform administration, and creative production.</p>
+          <span class="section-rule" aria-hidden="true"></span>
         </div>
-        <div class="skills-grid">
-          <div class="skill-card">
-            <div class="card-accent accent-blue"></div>
-            <div class="skill-card-header"><div class="skill-icon si-blue">L&amp;D</div><h3>Learning &amp; Development</h3></div>
-            <div class="skill-tags">
-              <span class="skill-tag">Training Enablement</span><span class="skill-tag">Learning Operations</span>
-              <span class="skill-tag">New-Hire Training</span><span class="skill-tag">Upskilling</span><span class="skill-tag">Facilitation</span>
+        <p class="section-subtitle">Training design, front-end development, platform administration, and creative production.</p>
+        <div class="ledger">
+          <div class="ledger-row">
+            <span class="ledger-idx" aria-hidden="true">a.</span>
+            <h3 class="ledger-name">Learning &amp; Development</h3>
+            <div class="ledger-tags">
+              <span class="tag">Training Enablement</span><span class="tag">Learning Operations</span>
+              <span class="tag">New-Hire Training</span><span class="tag">Upskilling</span><span class="tag">Facilitation</span>
             </div>
           </div>
-          <div class="skill-card">
-            <div class="card-accent accent-cyan"></div>
-            <div class="skill-card-header"><div class="skill-icon si-cyan">DEV</div><h3>Technical Tools</h3></div>
-            <div class="skill-tags">
-              <span class="skill-tag">HTML</span><span class="skill-tag">CSS</span><span class="skill-tag">JavaScript</span>
-              <span class="skill-tag">SharePoint</span><span class="skill-tag">Power Automate</span>
-              <span class="skill-tag">GitHub</span><span class="skill-tag">Jira</span>
+          <div class="ledger-row">
+            <span class="ledger-idx" aria-hidden="true">b.</span>
+            <h3 class="ledger-name">Technical Tools</h3>
+            <div class="ledger-tags">
+              <span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span>
+              <span class="tag">SharePoint</span><span class="tag">Power Automate</span>
+              <span class="tag">GitHub</span><span class="tag">Jira</span>
             </div>
           </div>
-          <div class="skill-card">
-            <div class="card-accent accent-violet"></div>
-            <div class="skill-card-header"><div class="skill-icon si-violet">KMS</div><h3>Knowledge Management</h3></div>
-            <div class="skill-tags">
-              <span class="skill-tag">Knowledge Management Systems</span><span class="skill-tag">KnowledgeOwl</span>
-              <span class="skill-tag">Talkdesk Copilot</span><span class="skill-tag">Metadata</span><span class="skill-tag">Content Governance</span>
+          <div class="ledger-row">
+            <span class="ledger-idx" aria-hidden="true">c.</span>
+            <h3 class="ledger-name">Knowledge Management</h3>
+            <div class="ledger-tags">
+              <span class="tag">Knowledge Management Systems</span><span class="tag">KnowledgeOwl</span>
+              <span class="tag">Talkdesk Copilot</span><span class="tag">Metadata</span><span class="tag">Content Governance</span>
             </div>
           </div>
-          <div class="skill-card">
-            <div class="card-accent accent-teal"></div>
-            <div class="skill-card-header"><div class="skill-icon si-teal">LMS</div><h3>Learning Systems</h3></div>
-            <div class="skill-tags">
-              <span class="skill-tag">LMS Administration</span><span class="skill-tag">LearnUpon LMS</span><span class="skill-tag">Certification Paths</span>
-              <span class="skill-tag">Course Builds</span><span class="skill-tag">Reporting</span><span class="skill-tag">Microsoft 365</span>
+          <div class="ledger-row">
+            <span class="ledger-idx" aria-hidden="true">d.</span>
+            <h3 class="ledger-name">Learning Systems</h3>
+            <div class="ledger-tags">
+              <span class="tag">LMS Administration</span><span class="tag">LearnUpon LMS</span><span class="tag">Certification Paths</span>
+              <span class="tag">Course Builds</span><span class="tag">Reporting</span><span class="tag">Microsoft 365</span>
             </div>
           </div>
-          <div class="skill-card">
-            <div class="card-accent accent-orange"></div>
-            <div class="skill-card-header"><div class="skill-icon si-orange">AV</div><h3>Creative Production</h3></div>
-            <div class="skill-tags">
-              <span class="skill-tag">Premiere Pro</span><span class="skill-tag">After Effects</span>
-              <span class="skill-tag">Photoshop</span><span class="skill-tag">Audition</span><span class="skill-tag">Captivate</span>
+          <div class="ledger-row">
+            <span class="ledger-idx" aria-hidden="true">e.</span>
+            <h3 class="ledger-name">Creative Production</h3>
+            <div class="ledger-tags">
+              <span class="tag">Premiere Pro</span><span class="tag">After Effects</span>
+              <span class="tag">Photoshop</span><span class="tag">Audition</span><span class="tag">Captivate</span>
             </div>
           </div>
-          <div class="skill-card">
-            <div class="card-accent accent-multi"></div>
-            <div class="skill-card-header"><div class="skill-icon si-green">OPS</div><h3>Operations</h3></div>
-            <div class="skill-tags">
-              <span class="skill-tag">Trainer Management</span><span class="skill-tag">Process Improvement</span><span class="skill-tag">Jira Workflows</span>
-              <span class="skill-tag">Analytics &amp; Surveys</span><span class="skill-tag">Change Management</span>
+          <div class="ledger-row">
+            <span class="ledger-idx" aria-hidden="true">f.</span>
+            <h3 class="ledger-name">Operations</h3>
+            <div class="ledger-tags">
+              <span class="tag">Trainer Management</span><span class="tag">Process Improvement</span><span class="tag">Jira Workflows</span>
+              <span class="tag">Analytics &amp; Surveys</span><span class="tag">Change Management</span>
             </div>
           </div>
         </div>
@@ -225,114 +248,90 @@
 
     <section class="section" id="featured-projects">
       <div class="container">
-        <div class="section-header">
-          <p class="section-label">Selected Work</p>
+        <div class="section-head">
+          <span class="section-num">&#8470; 03</span>
           <h2 class="section-title">Projects grounded in day-to-day impact</h2>
-          <p class="section-subtitle">A closer look at the tools, systems, and programs behind the work.</p>
+          <span class="section-rule" aria-hidden="true"></span>
         </div>
-        <div class="featured-grid">
-          <article class="featured-card">
-            <div class="featured-card-img fci-violet">AI</div>
-            <div class="featured-card-body">
-              <div class="tags"><span class="tag tag-violet">Knowledge Management</span><span class="tag tag-blue">AI Support</span></div>
-              <h3>Talkdesk Copilot Knowledge Integration</h3>
-              <p>Structured KnowledgeOwl content with tags, intents, and metadata to improve AI-assisted search results for frontline teams.</p>
-              <a href="/portfolio#copilot" class="card-link">View project &rarr;</a>
+        <p class="section-subtitle">A closer look at the tools, systems, and programs behind the work.</p>
+        <div class="work-grid work-grid--three">
+          <article class="work-card work-card--lead sheet stack">
+            <span class="fold" aria-hidden="true"></span>
+            <span class="work-glyph" aria-hidden="true">Aa</span>
+            <p class="kicker">Case Study &mdash; Front-End</p>
+            <h3>Knowledge Base Design System</h3>
+            <p>Built a modular CSS component library for KnowledgeOwl &mdash; 700+ lines of custom CSS, 15+ reusable components, zero dependencies, live in production.</p>
+            <div class="tags">
+              <span class="tag tag-accent">Knowledge Management</span><span class="tag">Front-End</span>
             </div>
+            <a href="/case-study-kb" class="card-link">Explore the case study <span class="arrow" aria-hidden="true">&rarr;</span></a>
           </article>
-          <article class="featured-card">
-            <div class="featured-card-img fci-violet">CSS</div>
-            <div class="featured-card-body">
-              <div class="tags"><span class="tag tag-violet">Knowledge Management</span><span class="tag tag-cyan">Front-End</span></div>
-              <h3>Knowledge Base Design System</h3>
-              <p>Built a modular CSS component library for KnowledgeOwl - 700+ lines of custom CSS, 15+ reusable components, zero dependencies, live in production.</p>
-              <a href="/case-study-kb" class="card-link">Explore the case study &rarr;</a>
-            </div>
+          <article class="work-card work-card--minor sheet stack">
+            <span class="work-glyph" aria-hidden="true">AI</span>
+            <p class="kicker">Project &mdash; AI Support</p>
+            <h3>Talkdesk Copilot Knowledge Integration</h3>
+            <p>Structured KnowledgeOwl content with tags, intents, and metadata to improve AI-assisted search results for frontline teams.</p>
+            <a href="/portfolio#copilot" class="card-link">View project <span class="arrow" aria-hidden="true">&rarr;</span></a>
           </article>
-          <article class="featured-card">
-            <div class="featured-card-img fci-teal">UX</div>
-            <div class="featured-card-body">
-              <div class="tags"><span class="tag tag-teal">Performance Support</span><span class="tag tag-cyan">Front-End</span></div>
-              <h3>Interactive Call-Flow Tools</h3>
-              <p>Decision trees and call flows built in HTML, CSS, and JavaScript that walk agents to the right answer step by step - with a live, working demo you can click through.</p>
-              <a href="/case-study-callflows" class="card-link">Try the interactive demo &rarr;</a>
-            </div>
+          <article class="work-card work-card--minor sheet stack">
+            <span class="work-glyph" aria-hidden="true">?</span>
+            <p class="kicker">Interactive Demo</p>
+            <h3>Interactive Call-Flow Tools</h3>
+            <p>Decision trees built in HTML, CSS, and JavaScript that walk agents to the right answer step by step &mdash; with a live demo you can click through.</p>
+            <a href="/case-study-callflows" class="card-link">Try the interactive demo <span class="arrow" aria-hidden="true">&rarr;</span></a>
           </article>
         </div>
       </div>
     </section>
 
     <section class="cta-section">
-      <div class="cta-inner">
-        <h2>Let's Connect</h2>
-        <p>For professional inquiries or questions about the work, reach out directly.</p>
-        <div class="hero-actions">
-          <a href="mailto:contact@jesserbecker.com" class="btn btn-primary">Email Me</a>
-          <a href="tel:+19786212223" class="btn btn-outline">Text or Call</a>
+      <div class="container">
+        <div class="cta-sheet sheet stack">
+          <h2>Let's <em>connect.</em></h2>
+          <p>For professional inquiries or questions about the work, reach out directly.</p>
+          <div class="hero-actions">
+            <a href="mailto:contact@jesserbecker.com" class="btn btn-primary">Email Me <span class="arrow" aria-hidden="true">&rarr;</span></a>
+            <a href="tel:+19786212223" class="btn btn-ghost">Text or Call</a>
+          </div>
         </div>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
-    <div class="footer-inner">
-      <div class="footer-logo-mark">JB</div>
-      <p class="footer-name">Jesse Becker</p>
-      <p class="footer-tag">Global L&amp;D Manager | Learning Systems | Knowledge Management &amp; Tools</p>
-      <div class="footer-contact" aria-label="Contact Jesse Becker">
-        <a href="mailto:contact@jesserbecker.com">contact@jesserbecker.com</a>
-        <span aria-hidden="true">|</span>
-        <a href="tel:+19786212223">978-621-2223 <small>Text or call</small></a>
+    <div class="container footer-inner">
+      <div>
+        <p class="footer-brand">Jesse<em>&nbsp;Becker</em></p>
+        <p class="footer-tag">Global L&amp;D Manager &middot; Learning Systems &middot; Knowledge Management &amp; Tools</p>
+        <div class="footer-contact" aria-label="Contact Jesse Becker">
+          <a href="mailto:contact@jesserbecker.com">contact@jesserbecker.com</a>
+          <span aria-hidden="true">&middot;</span>
+          <a href="tel:+19786212223">978-621-2223 <small>Text or call</small></a>
+        </div>
+        <div class="footer-social">
+          <a href="https://www.linkedin.com/in/jesse-becker-830997100/" target="_blank" rel="noopener noreferrer" aria-label="Jesse Becker on LinkedIn">
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.07 2.07 0 1 1 0-4.13 2.07 2.07 0 0 1 0 4.13zm1.78 13.02H3.55V9h3.57v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
+            LinkedIn
+          </a>
+        </div>
       </div>
-      <nav class="footer-links">
+      <nav class="footer-nav" aria-label="Footer">
         <a href="/" class="footer-link">Home</a>
         <a href="/portfolio#projects" class="footer-link">Portfolio</a>
         <a href="/resume" class="footer-link">R&eacute;sum&eacute;</a>
         <a href="/personal" class="footer-link">Personal</a>
       </nav>
-      <div class="footer-social">
-        <a href="https://www.linkedin.com/in/jesse-becker-830997100/" target="_blank" rel="noopener noreferrer" aria-label="Jesse Becker on LinkedIn">
-          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.07 2.07 0 1 1 0-4.13 2.07 2.07 0 0 1 0 4.13zm1.78 13.02H3.55V9h3.57v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
-          LinkedIn
-        </a>
-      </div>
-      <p class="footer-copy">&copy; <span class="year"></span> Jesse Becker. All rights reserved.</p>
+      <p class="footer-base">&copy; <span class="year"></span> Jesse Becker. All rights reserved.</p>
     </div>
   </footer>
 
-  <script src="site.js?v=20260602-1"></script>
+  <script src="site.js?v=20260802-1"></script>
   <script>
-    // Scroll reveal (shared helper in site.js)
     initReveal({
-      grids: ['.skills-grid', '.featured-grid'],
-      singles: ['.section-header']
+      singles: ['.section-head', '.section-subtitle'],
+      grids: ['.ledger', '.work-grid']
     });
-
-    // Stats counter
-    (function () {
-      const grid = document.querySelector('.stats-grid');
-      if (!grid) return;
-      const defs = [
-        { end: 4.5, suffix: '+/5', dec: 1 },
-        { end: 90,  suffix: '%+', dec: 0 },
-        { end: 8,   suffix: '+',  dec: 0 },
-        { end: 3,   suffix: '',   dec: 0 }
-      ];
-      const els = grid.querySelectorAll('.stat-value');
-      let ran = false;
-      const ease = t => t < .5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
-      new IntersectionObserver(([e]) => {
-        if (!e.isIntersecting || ran) return;
-        ran = true;
-        const t0 = performance.now(), dur = 1100;
-        function frame(now) {
-          const p = Math.min((now - t0) / dur, 1), ep = ease(p);
-          defs.forEach((d, i) => { els[i].textContent = (d.end * ep).toFixed(d.dec) + d.suffix; });
-          if (p < 1) requestAnimationFrame(frame);
-        }
-        requestAnimationFrame(frame);
-      }, { threshold: 0.5 }).observe(grid);
-    })();
+    initCounters('.stats-grid');
   </script>
 </body>
 </html>
