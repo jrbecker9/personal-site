@@ -175,20 +175,33 @@
   gap: var(--sp-6);
 }
 
+/* The resting tilt lives in --tilt rather than in the transform
+   directly, so the reveal and hover states can each rebuild the
+   full transform without any of them clobbering the others. */
 .project-card {
+  --tilt: 0deg;
   display: flex;
   flex-direction: column;
   gap: var(--sp-3);
   padding: var(--sp-6);
+  transform: rotate(var(--tilt));
   transition: transform var(--dur-mid) var(--ease-spring),
               box-shadow var(--dur-mid) var(--ease-out),
               opacity var(--dur-mid) var(--ease-out);
 }
 
-/* Alternating resting tilt so the grid reads as loose paper */
-.project-card:nth-child(odd)  { transform: rotate(-.35deg); }
-.project-card:nth-child(even) { transform: rotate(.35deg); }
-.project-card:hover { transform: rotate(0deg) translateY(-4px); box-shadow: var(--shadow-lift); }
+/* Alternating tilt so the grid reads as loose sheets of paper */
+.project-card:nth-child(odd)  { --tilt: -.35deg; }
+.project-card:nth-child(even) { --tilt: .35deg; }
+
+.project-card.reveal { transform: rotate(var(--tilt)) translateY(18px); }
+.project-card.reveal.is-visible { transform: rotate(var(--tilt)); }
+
+.project-card:hover,
+.project-card.reveal.is-visible:hover {
+  transform: rotate(0deg) translateY(-4px);
+  box-shadow: var(--shadow-lift);
+}
 
 .project-card-top { display: flex; flex-wrap: wrap; align-items: center; gap: var(--sp-2); }
 
@@ -416,6 +429,12 @@
 .cert-name { margin-bottom: .1rem; font-size: var(--fs-xs); font-weight: 600; color: var(--ink); }
 .cert-org { font-size: .72rem; color: var(--ink-faint); }
 
+/* Closing sidebar card - hidden in print, so it can be louder on screen */
+.resume-sidebar-cta { text-align: center; }
+.resume-sidebar-cta h3 { display: block; margin-bottom: var(--sp-2); }
+.resume-sidebar-cta p { margin-bottom: var(--sp-4); font-size: var(--fs-xs); }
+.resume-sidebar-cta .btn { width: 100%; justify-content: center; }
+
 @media (max-width: 900px) {
   .resume-layout { grid-template-columns: 1fr; }
   .resume-sidebar { order: -1; }
@@ -467,9 +486,9 @@
 .personal-section { padding: var(--sp-8) 0; border-bottom: 1px solid var(--hairline); }
 .personal-section:last-child { border-bottom: none; }
 
-.personal-header { margin-bottom: var(--sp-6); }
-.personal-header h2 { font-size: var(--fs-h2); }
-.personal-header p { margin-top: var(--sp-2); font-size: var(--fs-sm); color: var(--ink-faint); }
+/* Section heads on this page carry a lead paragraph underneath,
+   so they sit tighter than the standard rule. */
+.personal-header { margin-bottom: var(--sp-5); }
 
 .personal-lead { max-width: 70ch; margin-bottom: var(--sp-6); font-size: .97rem; }
 
@@ -575,20 +594,30 @@
 }
 
 .photo-card {
+  --tilt: 0deg;
   margin: 0;
   padding: var(--sp-2) var(--sp-2) 0;
   overflow: hidden;
   cursor: pointer;
+  transform: rotate(var(--tilt));
   transition: transform var(--dur-mid) var(--ease-spring),
               box-shadow var(--dur-mid) var(--ease-out);
 }
 
-.photo-card:nth-child(3n+1) { transform: rotate(-.5deg); }
-.photo-card:nth-child(3n+2) { transform: rotate(.4deg); }
-.photo-card:nth-child(3n)   { transform: rotate(-.25deg); }
+.photo-card:nth-child(3n+1) { --tilt: -.5deg; }
+.photo-card:nth-child(3n+2) { --tilt: .4deg; }
+.photo-card:nth-child(3n)   { --tilt: -.25deg; }
+
+.photo-card.reveal { transform: rotate(var(--tilt)) translateY(18px); }
+.photo-card.reveal.is-visible { transform: rotate(var(--tilt)); }
 
 .photo-card:hover,
-.photo-card:focus-visible { transform: rotate(0deg) translateY(-4px); box-shadow: var(--shadow-lift); }
+.photo-card:focus-visible,
+.photo-card.reveal.is-visible:hover,
+.photo-card.reveal.is-visible:focus-visible {
+  transform: rotate(0deg) translateY(-4px);
+  box-shadow: var(--shadow-lift);
+}
 
 .photo-card img {
   width: 100%;

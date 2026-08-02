@@ -20,48 +20,67 @@
   <meta name="twitter:description" content="Selected work across learning operations, LMS administration, knowledge management, workflow design, and front-end performance-support tools.">
   <meta name="twitter:image" content="https://jesserbecker.com/images/headshot.jpg">
   <meta name="twitter:image:alt" content="Jesse Becker L&amp;D portfolio">
+  <meta name="theme-color" content="#F7F2E9" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#171310" media="(prefers-color-scheme: dark)">
+
+  <!-- Apply the saved theme before first paint so there is no flash. -->
+  <script>(function(){try{var t=localStorage.getItem('theme');if(t==='dark'||(!t&&matchMedia('(prefers-color-scheme: dark)').matches))document.documentElement.setAttribute('data-theme','dark')}catch(e){}})();</script>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=20260602-1">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..700&amp;family=Inter:wght@400..700&amp;display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/tokens.css?v=20260802-1">
+  <link rel="stylesheet" href="css/base.css?v=20260802-1">
+  <link rel="stylesheet" href="css/components.css?v=20260802-1">
+  <link rel="stylesheet" href="css/layout.css?v=20260802-1">
+  <link rel="stylesheet" href="css/pages.css?v=20260802-1">
+  <link rel="stylesheet" href="css/print.css?v=20260802-1" media="print">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
-  <div class="bg-orbs" aria-hidden="true">
-    <div class="orb orb-1"></div><div class="orb orb-2"></div><div class="orb orb-3"></div>
-  </div>
 
   <nav class="navbar">
     <div class="nav-inner">
-      <a href="/" class="nav-logo"><span class="nav-logo-mark">JB</span><span class="nav-logo-name">Jesse Becker</span></a>
-      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+      <a href="/" class="nav-logo">Jesse<em>&nbsp;Becker</em></a>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
       <ul class="nav-links">
         <li><a href="/" class="nav-link">Home</a></li>
         <li><a href="#projects" class="nav-link active" aria-current="page">Portfolio</a></li>
         <li><a href="/personal" class="nav-link">Personal</a></li>
-        <li><a href="/resume" class="nav-link nav-link-resume">R&eacute;sum&eacute;</a></li>
+        <li><a href="/resume" class="nav-link">R&eacute;sum&eacute;</a></li>
+        <li class="nav-theme-item">
+          <button class="theme-toggle" aria-label="Switch to dark theme" aria-pressed="false">
+            <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M21.64 13a1 1 0 0 0-1.05-.14 8.05 8.05 0 0 1-3.37.73 8.15 8.15 0 0 1-8.14-8.1 8.59 8.59 0 0 1 .25-2A1 1 0 0 0 8 2.36a10.14 10.14 0 1 0 14 11.69 1 1 0 0 0-.36-1.05z"/></svg>
+            <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 17a5 5 0 1 1 0-10 5 5 0 0 1 0 10zm0-2a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM11 1h2v3h-2V1zm0 19h2v3h-2v-3zM3.5 4.9l1.4-1.4 2.1 2.1-1.4 1.4L3.5 4.9zm13.5 13.5l1.4-1.4 2.1 2.1-1.4 1.4-2.1-2.1zM19.1 3.5l1.4 1.4-2.1 2.1-1.4-1.4 2.1-2.1zM5.6 17l1.4 1.4-2.1 2.1-1.4-1.4L5.6 17zM1 11h3v2H1v-2zm19 0h3v2h-3v-2z"/></svg>
+          </button>
+        </li>
       </ul>
     </div>
   </nav>
 
   <header class="page-banner">
-    <div class="page-banner-inner">
-      <div class="page-banner-icon">Work</div>
-      <h1>Portfolio</h1>
-      <p>Systems, tools, and programs designed to make learning more useful and work more effective.</p>
+    <div class="container">
+      <div class="page-banner-inner">
+        <span class="page-banner-icon">Selected work</span>
+        <h1>The <em>portfolio</em></h1>
+        <p>Systems, tools, and programs designed to make learning more useful and work more effective.</p>
+      </div>
     </div>
   </header>
 
   <main id="main">
     <section class="section" id="projects">
       <div class="container">
-        <div class="section-header">
-          <p class="section-label">Case Studies</p>
-          <h2 class="section-title">Selected Work</h2>
-          <p class="section-subtitle">Filter the portfolio by focus area, or browse the full mix of learning strategy, technical work, and operations design.</p>
-          <p class="section-note">Several examples are anonymized - client names, URLs, pricing, and policy details have been fictionalized to protect proprietary information.</p>
+        <div class="section-head">
+          <span class="section-num">&#8470; 01</span>
+          <h2 class="section-title">Case studies and projects</h2>
+          <span class="section-rule" aria-hidden="true"></span>
         </div>
+        <p class="section-subtitle">Filter the portfolio by focus area, or browse the full mix of learning strategy, technical work, and operations design.</p>
 
         <div class="filter-row" role="group" aria-label="Portfolio filters">
           <button class="filter-tab active" data-filter="all" aria-pressed="true">All Projects</button>
@@ -73,47 +92,46 @@
           <button class="filter-tab" data-filter="creative" aria-pressed="false">Creative</button>
         </div>
 
+        <p class="filter-count" id="filter-count" role="status" aria-live="polite">Showing all 9 projects.</p>
+
         <div class="project-grid" id="project-grid">
-          <article class="project-card" id="kb-design-system" data-category="km tech">
-            <div class="card-accent accent-violet"></div>
+          <article class="project-card sheet" id="kb-design-system" data-category="km tech">
             <div class="project-card-top">
-              <span class="badge badge-violet">Knowledge Management</span>
+              <span class="badge badge-accent">Knowledge Management</span>
               <span class="badge badge-deep-dive">Deep Dive</span>
             </div>
             <h3 class="project-title">Knowledge Base Design System</h3>
             <p class="project-summary">Designed and deployed a modular CSS component library for a KnowledgeOwl knowledge management system (KMS), turning plain articles into scannable operational guides for frontline teams.</p>
-            <div class="tags"><span class="tag tag-violet">KnowledgeOwl KMS</span><span class="tag">CSS</span><span class="tag">HTML</span><span class="tag">Information Design</span></div>
+            <div class="tags"><span class="tag tag-accent">KnowledgeOwl KMS</span><span class="tag">CSS</span><span class="tag">HTML</span><span class="tag">Information Design</span></div>
             <div class="project-meta">
               <div><div class="meta-label">Challenge</div><div class="meta-value">Make policy and process details easier to locate during live customer interactions.</div></div>
               <div><div class="meta-label">Approach</div><div class="meta-value">Built reusable components, author snippets, and a consistent visual hierarchy.</div></div>
               <div class="meta-full"><div class="meta-label">Impact</div><div class="meta-value">Frontline guidance became faster to scan and easier to use during live customer interactions.</div></div>
             </div>
-            <a href="/case-study-kb" class="card-link">Explore the case study &rarr;</a>
+            <a href="/case-study-kb" class="card-link">Explore the case study <span class="arrow" aria-hidden="true">&rarr;</span></a>
           </article>
 
-          <article class="project-card" id="elearning-sales" data-category="ld tech">
-            <div class="card-accent accent-violet"></div>
+          <article class="project-card sheet" id="elearning-sales" data-category="ld tech">
             <div class="project-card-top">
-              <span class="badge badge-violet">Learning &amp; Development</span>
+              <span class="badge badge-accent">Learning &amp; Development</span>
               <span class="badge badge-deep-dive">Deep Dive</span>
             </div>
             <h3 class="project-title">Interactive E-Learning: Sales Fundamentals</h3>
             <p class="project-summary">Designed and coded a self-paced micro-course on core sales techniques inside a custom, LMS-style player - with lessons, gamification, and a graded knowledge check, built entirely in HTML, CSS, and JavaScript.</p>
-            <div class="tags"><span class="tag tag-violet">Instructional Design</span><span class="tag">E-Learning</span><span class="tag">Gamification</span><span class="tag">HTML / CSS / JS</span></div>
+            <div class="tags"><span class="tag tag-accent">Instructional Design</span><span class="tag">E-Learning</span><span class="tag">Gamification</span><span class="tag">HTML / CSS / JS</span></div>
             <div class="project-meta">
               <div><div class="meta-label">Challenge</div><div class="meta-value">Demonstrate e-learning design with a real, interactive course - not just a description.</div></div>
               <div><div class="meta-label">Approach</div><div class="meta-value">Storyboarded five lessons around real best practices and hand-built the LMS-style player.</div></div>
               <div class="meta-full"><div class="meta-label">Outcome</div><div class="meta-value">A working, gamified course with a knowledge check that doubles as a live demo of design and front-end skill.</div></div>
             </div>
-            <a href="/case-study-elearning" class="card-link">Take the course &rarr;</a>
+            <a href="/case-study-elearning" class="card-link">Take the course <span class="arrow" aria-hidden="true">&rarr;</span></a>
           </article>
 
-          <article class="project-card" id="copilot" data-category="km">
-            <div class="card-accent accent-violet"></div>
-            <div class="project-card-top"><span class="badge badge-violet">Knowledge Management</span></div>
+          <article class="project-card sheet" id="copilot" data-category="km">
+            <div class="project-card-top"><span class="badge badge-accent">Knowledge Management</span></div>
             <h3 class="project-title">Talkdesk Copilot Knowledge Integration</h3>
             <p class="project-summary">Led the integration of KnowledgeOwl content into Talkdesk's AI-driven Copilot to help teams surface more relevant information during customer interactions.</p>
-            <div class="tags"><span class="tag tag-violet">KnowledgeOwl</span><span class="tag">Talkdesk Copilot</span><span class="tag">Metadata</span><span class="tag">Intent Mapping</span></div>
+            <div class="tags"><span class="tag tag-accent">KnowledgeOwl</span><span class="tag">Talkdesk Copilot</span><span class="tag">Metadata</span><span class="tag">Intent Mapping</span></div>
             <div class="project-meta">
               <div><div class="meta-label">Challenge</div><div class="meta-value">Make a growing knowledge base easier to search in the flow of work.</div></div>
               <div><div class="meta-label">Approach</div><div class="meta-value">Built tagging, intent, and metadata structures to improve AI-assisted results.</div></div>
@@ -121,12 +139,11 @@
             </div>
           </article>
 
-          <article class="project-card" id="operations-systems" data-category="ops tech">
-            <div class="card-accent accent-blue"></div>
-            <div class="project-card-top"><span class="badge badge-blue">Operations Systems</span></div>
+          <article class="project-card sheet" id="operations-systems" data-category="ops tech">
+            <div class="project-card-top"><span class="badge badge-accent">Operations Systems</span></div>
             <h3 class="project-title">Operations Systems</h3>
             <p class="project-summary">The behind-the-scenes systems that keep training and knowledge work running across a distributed organization - built and owned end to end while supporting 8+ clients and three trainers.</p>
-            <div class="tags"><span class="tag tag-blue">Trainer Enablement</span><span class="tag">SharePoint</span><span class="tag">Power Automate</span><span class="tag">Jira</span><span class="tag">Recertification</span></div>
+            <div class="tags"><span class="tag tag-accent">Trainer Enablement</span><span class="tag">SharePoint</span><span class="tag">Power Automate</span><span class="tag">Jira</span><span class="tag">Recertification</span></div>
             <div class="project-meta">
               <div class="meta-full"><div class="meta-label">Trainer enablement</div><div class="meta-value">Onboarding plans, scorecards, and mentoring structures that make delivery more consistent and help new training staff ramp faster.</div></div>
               <div class="meta-full"><div class="meta-label">Coordination &amp; automation</div><div class="meta-value">SharePoint onboarding hubs and Power Automate workflows that replaced scattered email and manual follow-up with one hub and automated status tracking.</div></div>
@@ -135,133 +152,171 @@
             </div>
           </article>
 
-          <article class="project-card" id="training-journey" data-category="ld">
-            <div class="card-accent accent-multi"></div>
+          <article class="project-card sheet" id="training-journey" data-category="ld">
             <div class="project-card-top">
-              <span class="badge badge-blue">Learning &amp; Development</span>
+              <span class="badge badge-accent">Learning &amp; Development</span>
               <span class="badge badge-deep-dive">Deep Dive</span>
             </div>
             <h3 class="project-title">From Trainer to Global L&amp;D Manager</h3>
             <p class="project-summary">An interactive six-phase timeline tracing the growth from frontline operations into facilitation, learning systems, a Philippines BPO launch, technical enablement, and team leadership.</p>
-            <div class="tags"><span class="tag tag-blue">Training Operations</span><span class="tag">Global Onboarding</span><span class="tag">Philippines BPO Launch</span><span class="tag">Team Leadership</span></div>
+            <div class="tags"><span class="tag tag-accent">Training Operations</span><span class="tag">Global Onboarding</span><span class="tag">Philippines BPO Launch</span><span class="tag">Team Leadership</span></div>
             <div class="project-meta">
               <div><div class="meta-label">Span</div><div class="meta-value">October 2020 to present across six phases of growth.</div></div>
               <div><div class="meta-label">Reach</div><div class="meta-value">8+ clients supported, three client onboardings led, and three global regions reached.</div></div>
               <div class="meta-full"><div class="meta-label">Current Scope</div><div class="meta-value">Now owns global L&amp;D strategy, systems, trainer development, and delivery across a distributed organization.</div></div>
             </div>
-            <a href="/case-study-training" class="card-link">Explore the case study &rarr;</a>
+            <a href="/case-study-training" class="card-link">Explore the case study <span class="arrow" aria-hidden="true">&rarr;</span></a>
           </article>
 
-          <article class="project-card" id="call-flows" data-category="km tech">
-            <div class="card-accent accent-teal"></div>
-            <div class="project-card-top"><span class="badge badge-teal">Performance Support</span><span class="badge badge-deep-dive">Deep Dive</span></div>
+          <article class="project-card sheet" id="call-flows" data-category="km tech">
+            <div class="project-card-top"><span class="badge badge-accent">Performance Support</span><span class="badge badge-deep-dive">Deep Dive</span></div>
             <h3 class="project-title">Interactive Decision Trees &amp; Call Flows</h3>
             <p class="project-summary">Built browser-based decision trees and call-flow tools that give frontline staff clearer, more usable guidance during training and live work - coded from scratch in HTML, CSS, and JavaScript.</p>
-            <div class="tags"><span class="tag tag-teal">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span><span class="tag">Self-Service Learning</span></div>
+            <div class="tags"><span class="tag tag-accent">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span><span class="tag">Self-Service Learning</span></div>
             <div class="project-meta">
               <div><div class="meta-label">Challenge</div><div class="meta-value">Turn complex call procedures into practical, easy-to-follow support.</div></div>
               <div><div class="meta-label">Approach</div><div class="meta-value">Designed interactive tools around real agent workflows.</div></div>
               <div class="meta-full"><div class="meta-label">Outcome</div><div class="meta-value">Agents reach the right step-by-step answer faster, with more consistent handling and fewer unnecessary escalations.</div></div>
             </div>
-            <a href="/case-study-callflows" class="card-link">Try the interactive demo &rarr;</a>
+            <a href="/case-study-callflows" class="card-link">Try the interactive demo <span class="arrow" aria-hidden="true">&rarr;</span></a>
           </article>
 
-          <article class="project-card" data-category="lt">
-            <div class="card-accent accent-cyan"></div>
-            <div class="project-card-top"><span class="badge badge-cyan">Learning Systems</span></div>
+          <article class="project-card sheet" data-category="lt">
+            <div class="project-card-top"><span class="badge badge-accent">Learning Systems</span></div>
             <h3 class="project-title">LearnUpon Learning Infrastructure</h3>
             <p class="project-summary">Administer an enterprise learning management system (LMS), including user management, course builds, certification paths, and performance reporting.</p>
-            <div class="tags"><span class="tag tag-cyan">LearnUpon</span><span class="tag">LMS Administration</span><span class="tag">Certification Paths</span><span class="tag">Reporting</span></div>
+            <div class="tags"><span class="tag tag-accent">LearnUpon</span><span class="tag">LMS Administration</span><span class="tag">Certification Paths</span><span class="tag">Reporting</span></div>
             <div class="project-meta">
               <div><div class="meta-label">Need</div><div class="meta-value">Support repeatable training and certification across multiple client programs.</div></div>
               <div><div class="meta-label">Result</div><div class="meta-value">A maintained learning environment for onboarding, upskilling, and performance reporting.</div></div>
             </div>
           </article>
 
-          <article class="project-card" data-category="ld">
-            <div class="card-accent accent-violet"></div>
-            <div class="project-card-top"><span class="badge badge-violet">Learning &amp; Development</span></div>
+          <article class="project-card sheet" data-category="ld">
+            <div class="project-card-top"><span class="badge badge-accent">Learning &amp; Development</span></div>
             <h3 class="project-title">Global Onboarding &amp; Upskilling Programs</h3>
             <p class="project-summary">Deliver new-hire, upskilling, and soft-skills programs for agents and managers across operations in the United States, Ireland, and the Philippines.</p>
-            <div class="tags"><span class="tag tag-violet">Facilitation</span><span class="tag">Coaching</span><span class="tag">Customer Experience</span><span class="tag">Communication Skills</span></div>
+            <div class="tags"><span class="tag tag-accent">Facilitation</span><span class="tag">Coaching</span><span class="tag">Customer Experience</span><span class="tag">Communication Skills</span></div>
             <div class="project-meta">
               <div><div class="meta-label">Reach</div><div class="meta-value">Live and virtual learning across three global regions.</div></div>
               <div><div class="meta-label">Outcome</div><div class="meta-value">Maintained 4.5+/5 learner satisfaction across all programs (standardized post-training surveys) and 90%+ first-time pass rates on new-hire certifications.</div></div>
             </div>
           </article>
 
-          <article class="project-card" data-category="creative">
-            <div class="card-accent accent-orange"></div>
-            <div class="project-card-top"><span class="badge badge-orange">Creative Production</span></div>
+          <article class="project-card sheet" data-category="creative">
+            <div class="project-card-top"><span class="badge badge-accent">Creative Production</span></div>
             <h3 class="project-title">Branded Multimedia Learning Assets</h3>
             <p class="project-summary">Produced branded video and e-learning assets used in company-wide onboarding and client training sessions.</p>
-            <div class="tags"><span class="tag tag-orange">Premiere Pro</span><span class="tag">After Effects</span><span class="tag">Photoshop</span><span class="tag">Audition</span></div>
+            <div class="tags"><span class="tag tag-accent">Premiere Pro</span><span class="tag">After Effects</span><span class="tag">Photoshop</span><span class="tag">Audition</span></div>
             <div class="project-meta">
               <div><div class="meta-label">Need</div><div class="meta-value">Create a consistent, professional visual language for L&amp;D content.</div></div>
               <div><div class="meta-label">Result</div><div class="meta-value">Reusable production standards, including branded video intros and outros.</div></div>
             </div>
           </article>
         </div>
+
+        <p class="section-note">Several examples are anonymized &mdash; client names, URLs, pricing, and policy details have been fictionalized to protect proprietary information.</p>
       </div>
     </section>
 
     <section class="cta-section">
-      <div class="cta-inner">
-        <h2>The work behind the r&eacute;sum&eacute;</h2>
-        <p>See the full career timeline, tools, education, and recognition.</p>
-        <div class="hero-actions"><a href="/resume" class="btn btn-primary">View R&eacute;sum&eacute;</a><a href="jesse-becker-resume.pdf" download class="btn btn-outline">Download PDF</a></div>
+      <div class="container">
+        <div class="cta-sheet sheet stack">
+          <h2>The work behind the <em>r&eacute;sum&eacute;.</em></h2>
+          <p>See the full career timeline, tools, education, and recognition.</p>
+          <div class="hero-actions">
+            <a href="/resume" class="btn btn-primary">View R&eacute;sum&eacute; <span class="arrow" aria-hidden="true">&rarr;</span></a>
+            <a href="jesse-becker-resume.pdf" download class="btn btn-ghost">Download PDF</a>
+          </div>
+        </div>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
-    <div class="footer-inner">
-      <div class="footer-logo-mark">JB</div><p class="footer-name">Jesse Becker</p>
-      <p class="footer-tag">Global L&amp;D Manager | Learning Systems | Knowledge Management &amp; Tools</p>
-      <div class="footer-contact" aria-label="Contact Jesse Becker"><a href="mailto:contact@jesserbecker.com">contact@jesserbecker.com</a><span aria-hidden="true">|</span><a href="tel:+19786212223">978-621-2223 <small>Text or call</small></a></div>
-      <nav class="footer-links"><a href="/" class="footer-link">Home</a><a href="#projects" class="footer-link">Portfolio</a><a href="/resume" class="footer-link">R&eacute;sum&eacute;</a><a href="/personal" class="footer-link">Personal</a></nav>
-      <div class="footer-social">
-        <a href="https://www.linkedin.com/in/jesse-becker-830997100/" target="_blank" rel="noopener noreferrer" aria-label="Jesse Becker on LinkedIn">
-          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.07 2.07 0 1 1 0-4.13 2.07 2.07 0 0 1 0 4.13zm1.78 13.02H3.55V9h3.57v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
-          LinkedIn
-        </a>
+    <div class="container footer-inner">
+      <div>
+        <p class="footer-brand">Jesse<em>&nbsp;Becker</em></p>
+        <p class="footer-tag">Global L&amp;D Manager &middot; Learning Systems &middot; Knowledge Management &amp; Tools</p>
+        <div class="footer-contact" aria-label="Contact Jesse Becker">
+          <a href="mailto:contact@jesserbecker.com">contact@jesserbecker.com</a>
+          <span aria-hidden="true">&middot;</span>
+          <a href="tel:+19786212223">978-621-2223 <small>Text or call</small></a>
+        </div>
+        <div class="footer-social">
+          <a href="https://www.linkedin.com/in/jesse-becker-830997100/" target="_blank" rel="noopener noreferrer" aria-label="Jesse Becker on LinkedIn">
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.07 2.07 0 1 1 0-4.13 2.07 2.07 0 0 1 0 4.13zm1.78 13.02H3.55V9h3.57v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
+            LinkedIn
+          </a>
+        </div>
       </div>
-      <p class="footer-copy">&copy; <span class="year"></span> Jesse Becker. All rights reserved.</p>
+      <nav class="footer-nav" aria-label="Footer">
+        <a href="/" class="footer-link">Home</a>
+        <a href="#projects" class="footer-link">Portfolio</a>
+        <a href="/resume" class="footer-link">R&eacute;sum&eacute;</a>
+        <a href="/personal" class="footer-link">Personal</a>
+      </nav>
+      <p class="footer-base">&copy; <span class="year"></span> Jesse Becker. All rights reserved.</p>
     </div>
   </footer>
 
-  <script src="site.js?v=20260602-1"></script>
+  <script src="site.js?v=20260802-1"></script>
   <script>
-    const tabs = document.querySelectorAll('.filter-tab');
-    const cards = document.querySelectorAll('.project-card');
+    (function () {
+      var tabs = document.querySelectorAll('.filter-tab');
+      var cards = document.querySelectorAll('.project-card');
+      var count = document.getElementById('filter-count');
 
-    // Filter with fade - cooperates with reveal system
-    tabs.forEach(tab => tab.addEventListener('click', () => {
-      tabs.forEach(item => { item.classList.remove('active'); item.setAttribute('aria-pressed', 'false'); });
-      tab.classList.add('active');
-      tab.setAttribute('aria-pressed', 'true');
-      cards.forEach(card => {
-        const show = tab.dataset.filter === 'all' || card.dataset.category.split(' ').includes(tab.dataset.filter);
-        card.dataset.visible = show ? '1' : '0';
-        if (show) {
-          card.style.display = '';
-          card.style.opacity = '0';
-          card.style.transitionDelay = '0s';
-          card.classList.add('is-visible');
-          requestAnimationFrame(() => requestAnimationFrame(() => { card.style.opacity = ''; }));
-        } else {
-          card.style.opacity = '0';
-          setTimeout(() => { if (card.dataset.visible === '0') card.style.display = 'none'; }, 300);
-        }
+      function announce(shown, label) {
+        if (!count) return;
+        var noun = shown === 1 ? 'project' : 'projects';
+        count.textContent = label === 'all'
+          ? 'Showing all ' + shown + ' ' + noun + '.'
+          : 'Showing ' + shown + ' ' + noun + ' in this focus area.';
+      }
+
+      tabs.forEach(function (tab) {
+        tab.addEventListener('click', function () {
+          tabs.forEach(function (item) {
+            item.classList.remove('active');
+            item.setAttribute('aria-pressed', 'false');
+          });
+          tab.classList.add('active');
+          tab.setAttribute('aria-pressed', 'true');
+
+          var filter = tab.dataset.filter;
+          var shown = 0;
+
+          cards.forEach(function (card) {
+            var show = filter === 'all' || card.dataset.category.split(' ').indexOf(filter) !== -1;
+            card.dataset.visible = show ? '1' : '0';
+            if (show) {
+              shown++;
+              card.style.display = '';
+              card.style.opacity = '0';
+              card.style.transitionDelay = '0s';
+              card.classList.add('is-visible');
+              requestAnimationFrame(function () {
+                requestAnimationFrame(function () { card.style.opacity = ''; });
+              });
+            } else {
+              card.style.opacity = '0';
+              setTimeout(function () {
+                if (card.dataset.visible === '0') card.style.display = 'none';
+              }, 300);
+            }
+          });
+
+          announce(shown, filter);
+        });
       });
-    }));
+    })();
 
-    // Staggered entrance reveal for cards + section header (shared helper in site.js)
     initReveal({
       threshold: 0.05,
       rootMargin: '0px 0px -20px 0px',
       items: [{ sel: '.project-card', step: 0.1, mod: 3 }],
-      singles: ['.section-header']
+      singles: ['.section-head', '.section-subtitle']
     });
   </script>
 </body>
