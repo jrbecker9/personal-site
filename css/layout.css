@@ -275,10 +275,12 @@
 .hero-portrait .tape { top: -.7rem; left: 18%; transform: rotate(-10deg); }
 .hero-portrait .tape.tape-right { left: auto; right: 14%; transform: rotate(8deg); }
 
+/* Straddles the photo's lower-left corner rather than sitting at
+   the polaroid's foot, which would land on top of the caption. */
 .hero-portrait .stamp {
   position: absolute;
   z-index: 4;
-  bottom: -14px;
+  bottom: 2.7rem;
   left: -34px;
   transform: rotate(-5deg);
   transition: transform var(--dur-mid) var(--ease-spring);
