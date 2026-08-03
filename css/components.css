@@ -91,11 +91,18 @@
   box-shadow: 3px 3px 0 var(--accent);
 }
 
+/* The fill deliberately stays ink on hover. Filling with accent
+   put an accent shadow behind an accent button, so the offset
+   dissolved into the fill. The lift and the deeper shadow are
+   the feedback; the shadow needs the ink fill to read against. */
 .btn-primary:hover {
-  transform: translate(-2px, -2px);
-  box-shadow: 6px 6px 0 var(--accent);
-  background: var(--accent);
-  color: var(--on-accent);
+  transform: translate(-3px, -3px);
+  box-shadow: 7px 7px 0 var(--accent);
+}
+
+.btn-primary:active {
+  transform: translate(1px, 1px);
+  box-shadow: 2px 2px 0 var(--accent);
 }
 
 .btn-ghost {
