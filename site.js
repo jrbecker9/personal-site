@@ -97,11 +97,51 @@
     else if (typeof media.addListener === 'function') media.addListener(onSystemChange);
   }
 
+  /* -- Back to top ---------------------------------------- */
+
+  function initToTop() {
+    if (!('IntersectionObserver' in window)) return;
+
+    var btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'to-top';
+    btn.setAttribute('aria-label', 'Back to top');
+    btn.innerHTML = '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">' +
+                    '<path d="M12 5.6l7.4 7.4-1.6 1.6-4.7-4.7V20h-2.2V9.9l-4.7 4.7L4.6 13z"/></svg>';
+    document.body.appendChild(btn);
+
+    // A sentinel spanning the top of the page decides when to show the
+    // button: once it is fully scrolled past, the visitor is far enough
+    // down to want a way back. This beats a throttled scroll listener,
+    // which needs its own "already queued" flag and stays stuck in that
+    // state if the frame it is waiting on never runs.
+    var sentinel = document.createElement('div');
+    sentinel.setAttribute('aria-hidden', 'true');
+    sentinel.style.cssText = 'position:absolute;top:0;left:0;width:1px;' +
+                             'height:max(500px, 80vh);pointer-events:none;opacity:0';
+    document.body.prepend(sentinel);
+
+    new IntersectionObserver(function (entries) {
+      btn.classList.toggle('is-visible', !entries[0].isIntersecting);
+    }).observe(sentinel);
+
+    btn.addEventListener('click', function () {
+      var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      window.scrollTo({ top: 0, behavior: reduced ? 'auto' : 'smooth' });
+
+      // Hand focus back to the top of the page so keyboard users are
+      // not stranded at the end of the document after the jump.
+      var first = document.querySelector('.skip-link') || document.querySelector('.nav-logo');
+      if (first) first.focus({ preventScroll: true });
+    });
+  }
+
   /* -- Boot ------------------------------------------------ */
 
   initYear();
   initMobileNav();
   initTheme();
+  initToTop();
 })();
 
 /* ==========================================================

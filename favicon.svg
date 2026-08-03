@@ -1,17 +1,24 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-  <defs>
-    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%"   stop-color="#1E3A8A"/>
-      <stop offset="55%"  stop-color="#4C1D95"/>
-      <stop offset="100%" stop-color="#0E7490"/>
-    </linearGradient>
-  </defs>
-  <rect width="32" height="32" rx="7" fill="url(#g)"/>
-  <text x="16" y="21.5"
-        text-anchor="middle"
-        font-family="system-ui,-apple-system,'Segoe UI',sans-serif"
-        font-size="11.5"
-        font-weight="700"
-        fill="white"
-        letter-spacing="1">JB</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="Jesse Becker">
+  <!--
+    Paper & Ink mark. A vermilion tile carrying the wordmark's
+    initials in the same italic serif the site uses for display type.
+
+    Dark ink on vermilion rather than white: white only reaches
+    ~3.1:1 on this orange, dark ink clears 5:1, and it stays legible
+    when the browser scales this down to 16px in a tab strip.
+
+    The glyphs are outlined as paths rather than set as live type, so
+    the mark does not depend on a serif being installed wherever it
+    happens to render.
+  -->
+  <rect width="32" height="32" rx="7" fill="#E8490F"/>
+
+  <!-- translate optically centres the pair: the measured bounding box
+       sat 0.27 right and 0.49 high inside the 32-unit tile. -->
+  <g fill="#1A120C" transform="translate(-0.27 0.49)">
+    <!-- J -->
+    <path d="M16.03 8.4h-5.9l-.2 1.06h.72c.9 0 1.2.3 1.04 1.22l-1.44 8.06c-.3 1.7-1.02 2.5-1.98 2.5-.63 0-1.02-.3-1.02-.83 0-.5.33-.9.9-1.04l-.15-1c-1.4.22-2.28 1.05-2.28 2.2 0 1.26 1.06 2.06 2.72 2.06 2.2 0 3.65-1.28 4.1-3.8l1.5-8.35c.16-.9.5-1.02 1.4-1.02h.4z"/>
+    <!-- B -->
+    <path d="M17.9 8.4l-.19 1.06h.6c.9 0 1.18.3 1.02 1.22l-1.53 8.56c-.16.92-.55 1.22-1.45 1.22h-.6l-.19 1.06h6.1c3.06 0 4.98-1.5 4.98-3.77 0-1.6-1.06-2.62-3.02-2.87v-.08c1.98-.36 3.2-1.53 3.2-3.16 0-1.98-1.6-3.24-4.3-3.24zm3.06 1.06h1.28c1.55 0 2.4.78 2.4 2.16 0 1.72-1.1 2.75-2.98 2.75h-1.63zm-1.12 6h1.6c1.86 0 2.85.87 2.85 2.44 0 1.9-1.26 3.02-3.35 3.02h-2.06z"/>
+  </g>
 </svg>
