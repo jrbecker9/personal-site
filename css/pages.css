@@ -375,6 +375,11 @@
   background: var(--accent);
 }
 
+/* The tag row is a separate register from the bullets above it and
+   needs room to read that way. Screen only - print.css hides these,
+   so the PDF is unaffected. */
+.experience-card .tags { margin-top: var(--sp-5); }
+
 .resume-sidebar { display: flex; flex-direction: column; gap: var(--sp-5); }
 
 .sidebar-card { padding: var(--sp-5); }
