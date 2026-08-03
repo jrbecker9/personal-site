@@ -94,8 +94,8 @@
 .btn-primary:hover {
   transform: translate(-2px, -2px);
   box-shadow: 6px 6px 0 var(--accent);
-  background: var(--accent-deep);
-  color: #fff;
+  background: var(--accent);
+  color: var(--on-accent);
 }
 
 .btn-ghost {
@@ -186,10 +186,11 @@
   padding: var(--sp-2) var(--sp-4);
   border-radius: var(--r-full);
   background: var(--accent);
-  color: #fff;
+  color: var(--on-accent);
   font-family: var(--font-display);
   font-style: italic;
   font-size: var(--fs-sm);
+  font-weight: 600;
   box-shadow: var(--shadow-sheet);
 }
 

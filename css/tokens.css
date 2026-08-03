@@ -16,7 +16,7 @@
   /* -- Text ------------------------------------------------ */
   --ink:       #171310;
   --ink-soft:  #57504A;
-  --ink-faint: #8A8178;
+  --ink-faint: #776E64;   /* 4.9:1 on --surface; captions run to 12px */
 
   /* -- Accent (vermilion) ---------------------------------- */
   /* --accent for large/display text and non-text marks.
@@ -25,6 +25,11 @@
   --accent-deep: #C23A0A;
   --accent-tint: #FBE3D6;
   --tape:        rgba(232, 73, 15, .16);
+
+  /* Text sitting on an accent fill. White only reaches ~3.1:1 on
+     this vermilion, so filled marks take dark ink instead. The
+     dark theme's accent is lighter still, so this holds there. */
+  --on-accent: #1A120C;
 
   /* -- Lines ----------------------------------------------- */
   --hairline:        #E2D8C6;
@@ -92,7 +97,7 @@
 
   --ink:       #F3EDE3;
   --ink-soft:  #BFB4A6;
-  --ink-faint: #8A8178;
+  --ink-faint: #9A9188;   /* 5.4:1 on the dark --surface */
 
   /* On dark paper the lighter vermilion clears contrast on its
      own, so --accent-deep brightens rather than darkens. */
