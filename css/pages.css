@@ -224,6 +224,11 @@
   background: var(--surface-sunken);
 }
 
+/* On cream the sunken fill alone reads as recessed. On near-black the
+   same step is almost invisible, so the panel edge carries the nesting
+   instead. */
+[data-theme="dark"] .project-meta { border-color: var(--hairline-strong); }
+
 .project-meta > div { min-width: 0; }
 
 .meta-label {
@@ -324,6 +329,13 @@
   margin-bottom: var(--sp-4);
 }
 
+/* A long enough role title used to push the date block onto its own
+   line, so one entry showed the date beside the title and the next
+   showed it underneath. Let the title wrap inside its own column
+   instead and every entry keeps the same shape. */
+.experience-card-header > :first-child { flex: 1 1 12rem; min-width: 0; }
+.experience-card-header > .experience-meta { flex: 0 0 auto; }
+
 .experience-role { font-size: 1.15rem; margin-bottom: .2rem; }
 
 .experience-company {
@@ -380,9 +392,22 @@
    so the PDF is unaffected. */
 .experience-card .tags { margin-top: var(--sp-5); }
 
-.resume-sidebar { display: flex; flex-direction: column; gap: var(--sp-5); }
+/* The experience column is far taller than the sidebar, so the rail
+   used to stop a third of the way down and leave a dead column beside
+   the rest of the page. Stretching the rail and dropping the CTA to its
+   foot closes that: the card lands level with the end of the experience
+   list, where the reader actually finishes reading. */
+.resume-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-5);
+  align-self: stretch;
+}
 
-.sidebar-card { padding: var(--sp-5); }
+/* Matches .resume-summary and .experience-card. At --sp-5 the rail's
+   first heading sat 8px higher than "Professional Summary" beside it,
+   which read as a misalignment between two cards that start level. */
+.sidebar-card { padding: var(--sp-6); }
 
 .sidebar-card h3 {
   display: flex;
@@ -439,7 +464,7 @@
 .cert-org { font-size: .72rem; color: var(--ink-faint); }
 
 /* Closing sidebar card - hidden in print, so it can be louder on screen */
-.resume-sidebar-cta { text-align: center; }
+.resume-sidebar-cta { margin-top: auto; text-align: center; }
 .resume-sidebar-cta h3 { display: block; margin-bottom: var(--sp-2); }
 .resume-sidebar-cta p { margin-bottom: var(--sp-4); font-size: var(--fs-xs); }
 .resume-sidebar-cta .btn { width: 100%; justify-content: center; }

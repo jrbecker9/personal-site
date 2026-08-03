@@ -11,19 +11,27 @@ function showTimeline() {
   timelineEntries.forEach(el => el.classList.add('tl-visible'));
 }
 
-function runCounter(el) {
-  const target = parseFloat(el.dataset.count);
+const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+function renderCounter(el, value) {
   const prefix = el.dataset.prefix || '';
   const suffix = el.dataset.suffix || '';
   const isDecimal = el.dataset.decimal === '1';
-  const duration = 1600;
+  el.textContent = prefix + (isDecimal ? value.toFixed(1) : Math.round(value)) + suffix;
+}
+
+function runCounter(el) {
+  const target = parseFloat(el.dataset.count);
+
+  if (reducedMotion) { renderCounter(el, target); return; }
+
+  const duration = 600;
   const start = performance.now();
 
   function step(now) {
     const progress = Math.min((now - start) / duration, 1);
     const ease = 1 - Math.pow(1 - progress, 3);
-    const value = ease * target;
-    el.textContent = prefix + (isDecimal ? value.toFixed(1) : Math.round(value)) + suffix;
+    renderCounter(el, ease * target);
     if (progress < 1) requestAnimationFrame(step);
   }
 

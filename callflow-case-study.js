@@ -30,7 +30,7 @@ if ('IntersectionObserver' in window) {
 
   function runCounter(el) {
     const target = Number(el.dataset.count);
-    const duration = 1100;
+    const duration = 600;
     const start = performance.now();
 
     function frame(now) {

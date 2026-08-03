@@ -225,6 +225,14 @@
 
 .hero-actions { display: flex; flex-wrap: wrap; gap: var(--sp-4); }
 
+/* Once the pair stacks, two buttons sized to their own labels look
+   like a mistake rather than a hierarchy. Matching their width reads
+   as a deliberate pair. */
+@media (max-width: 520px) {
+  .hero-actions { flex-direction: column; align-items: stretch; }
+  .hero-actions .btn { width: 100%; justify-content: center; }
+}
+
 /* -- Taped portrait ---------------------------------------- */
 
 .hero-portrait { position: relative; justify-self: end; }
@@ -244,7 +252,7 @@
   position: relative;
   z-index: 2;
   padding: var(--sp-3) var(--sp-3) var(--sp-4);
-  background: var(--surface);
+  background: var(--polaroid-bg);
   border: 1px solid var(--hairline);
   border-radius: 6px;
   box-shadow: var(--shadow-lift);
@@ -269,7 +277,7 @@
   font-style: italic;
   font-size: var(--fs-sm);
   text-align: center;
-  color: var(--ink-soft);
+  color: var(--polaroid-ink);
 }
 
 .hero-portrait .tape { top: -.7rem; left: 18%; transform: rotate(-10deg); }

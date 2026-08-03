@@ -44,6 +44,20 @@
   --grain-opacity: .05;
   --grain-invert:  0;
 
+  /* -- Printed-object surfaces ----------------------------- */
+  /* The polaroid is a physical white-framed print, not a panel, so
+     it keeps its paper colour in both themes rather than turning
+     into a dark card. Its caption ink is paired to it. */
+  --polaroid-bg:  var(--surface);
+  --polaroid-ink: var(--ink-soft);
+
+  /* -- Decorative ghost marks ------------------------------ */
+  /* Multiplier for the oversized watermark glyphs and phase
+     numerals. A fixed opacity that whispers on cream shouts on
+     near-black, because the jump from dark paper to vermilion is
+     a much larger step than from light paper. */
+  --ghost-damp: 1;
+
   /* -- Spacing scale --------------------------------------- */
   --sp-1:  .25rem;
   --sp-2:  .5rem;
@@ -115,4 +129,11 @@
 
   --grain-opacity: .07;
   --grain-invert:  1;
+
+  /* Warm paper stock rather than pure white, so the print reads as
+     an object in the dark hero instead of a lit panel. */
+  --polaroid-bg:  #ECE4D6;
+  --polaroid-ink: #6B6259;
+
+  --ghost-damp: .55;
 }

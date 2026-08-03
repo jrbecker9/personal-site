@@ -153,6 +153,21 @@
 .cs-stat-label { font-size: var(--fs-xs); font-weight: 500; color: var(--ink-soft); }
 
 /* ==========================================================
+   Tech-stack subsection
+
+   This heading closes each case study. It used to carry inline
+   font-size and margin overrides that shrank it a step below
+   every other section title, so the last section read as an
+   afterthought. It now uses the standard title size and only
+   overrides the rhythm around it.
+   ========================================================== */
+
+.cs-tech-head {
+  margin-top: var(--sp-10);
+  margin-bottom: var(--sp-5);
+}
+
+/* ==========================================================
    Showcase tabs
    ========================================================== */
 

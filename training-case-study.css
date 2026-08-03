@@ -202,7 +202,7 @@
   line-height: 1;
   letter-spacing: -.04em;
   color: var(--accent);
-  opacity: .08;
+  opacity: calc(.08 * var(--ghost-damp));
   user-select: none;
   pointer-events: none;
 }
@@ -216,10 +216,14 @@
   border-radius: var(--r-sm);
 }
 
+/* The source is a portrait frame, so a short strip crops away the subject.
+   The taller band plus the downward bias keeps the road and the tricycle
+   in view instead of framing empty sky. */
 .tl-photo img {
   width: 100%;
-  height: 200px;
+  height: 320px;
   object-fit: cover;
+  object-position: 50% 65%;
   display: block;
   transition: transform .4s var(--ease-out);
 }
@@ -388,4 +392,5 @@
   .tl-spine { left: 26px; }
   .tl-future::before { left: 26px; }
   .tl-node-col { width: 56px; }
+  .tl-photo img { height: 240px; }
 }

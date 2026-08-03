@@ -238,7 +238,7 @@ window.initCounters = function (containerSel) {
     observer.disconnect();
 
     var start = performance.now();
-    var duration = 1100;
+    var duration = 600;
 
     (function frame(now) {
       var p = Math.min((now - start) / duration, 1);

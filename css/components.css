@@ -340,6 +340,15 @@
 
 .ledger-row:hover .tag { border-color: var(--accent); color: var(--ink); }
 
+/* These tags are the only thing on the site that runs hard against the
+   container's right edge, so they are the only thing the fixed .to-top
+   button can cover. Once the viewport is narrow enough for the button to
+   reach into the container, keep a lane clear for it. Above that width
+   the container's own margin is already wider than the button. */
+@media (max-width: 1224px) {
+  .ledger-tags { padding-right: 3.5rem; }
+}
+
 @media (max-width: 820px) {
   .ledger-row { grid-template-columns: 2rem 1fr; }
   .ledger-tags { grid-column: 2; justify-content: flex-start; }
@@ -390,6 +399,14 @@
 .work-card > p:not(.kicker) { flex: 1; font-size: .97rem; color: var(--ink-soft); }
 .work-card .kicker { flex: 0 0 auto; margin-bottom: var(--sp-4); }
 
+/* The lead card spans both rows, so it is taller than its content no
+   matter what it says. Letting the body copy swallow all that slack
+   opened a visible hole between the paragraph and the tags; centring
+   the block spreads the same space above and below instead, which
+   reads as a generous featured card rather than an unfinished one. */
+.work-card--lead { justify-content: center; }
+.work-card--lead > p:not(.kicker) { flex: 0 1 auto; }
+
 /* Oversized display glyph, low opacity, bleeding off the corner */
 .work-glyph {
   position: absolute;
@@ -401,7 +418,7 @@
   font-size: 6.5rem;
   line-height: 1;
   color: var(--accent);
-  opacity: .1;
+  opacity: calc(.1 * var(--ghost-damp));
   pointer-events: none;
   user-select: none;
 }
