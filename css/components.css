@@ -209,6 +209,22 @@
 
 .ledger { margin-top: var(--sp-2); }
 
+/* Rows carry different numbers of tag chips, so they wrap to
+   different heights and the list reads as ragged. Sizing the
+   implicit rows at 1fr makes every row match the tallest, and
+   it re-measures itself if the tag lists change.
+
+   Only above the stacking breakpoint: once the name and tags
+   sit on separate lines the raggedness stops reading as uneven,
+   and equalising would just pad every short row out to the
+   tallest one, adding a few hundred pixels of dead scroll. */
+@media (min-width: 821px) {
+  .ledger {
+    display: grid;
+    grid-auto-rows: 1fr;
+  }
+}
+
 .ledger-row {
   display: grid;
   grid-template-columns: 3.2rem minmax(11rem, .8fr) minmax(0, 1.6fr);
