@@ -20,37 +20,44 @@
   <meta name="twitter:description" content="A six-phase progression from frontline call-center agent to learning systems owner, global onboarding lead, and training team manager.">
   <meta name="twitter:image" content="https://jesserbecker.com/images/headshot.jpg">
   <meta name="twitter:image:alt" content="Global learning and development career progression case study by Jesse Becker">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=20260602-1">
-  <link rel="stylesheet" href="training-case-study.css?v=20260530-4">
+  <meta name="theme-color" content="#F7F2E9" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#171310" media="(prefers-color-scheme: dark)">
+
+  <!-- Apply the saved theme before first paint so there is no flash. -->
+  <script>(function(){try{var t=localStorage.getItem('theme');if(t==='dark'||(!t&&matchMedia('(prefers-color-scheme: dark)').matches))document.documentElement.setAttribute('data-theme','dark')}catch(e){}})();</script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..700&amp;family=Inter:wght@400..700&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/tokens.css?v=20260802-1">
+  <link rel="stylesheet" href="css/base.css?v=20260802-1">
+  <link rel="stylesheet" href="css/components.css?v=20260802-1">
+  <link rel="stylesheet" href="css/layout.css?v=20260802-1">
+  <link rel="stylesheet" href="css/pages.css?v=20260802-1">
+  <link rel="stylesheet" href="css/print.css?v=20260802-1" media="print">
+  <link rel="stylesheet" href="training-case-study.css?v=20260802-1">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
 
-  <div class="bg-orbs" aria-hidden="true">
-    <div class="orb orb-1"></div>
-    <div class="orb orb-2"></div>
-    <div class="orb orb-3"></div>
-  </div>
-
   <!-- Navigation -->
   <nav class="navbar">
     <div class="nav-inner">
-      <a href="/" class="nav-logo">
-        <span class="nav-logo-mark">JB</span>
-        <span class="nav-logo-name">Jesse Becker</span>
-      </a>
+      <a href="/" class="nav-logo">Jesse<em>&nbsp;Becker</em></a>
       <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
       <ul class="nav-links">
-        <li><a href="/"    class="nav-link">Home</a></li>
+        <li><a href="/" class="nav-link">Home</a></li>
         <li><a href="/portfolio#projects" class="nav-link active" aria-current="page">Portfolio</a></li>
-        <li><a href="/personal"  class="nav-link">Personal</a></li>
-        <li><a href="/resume" class="nav-link nav-link-resume">R&eacute;sum&eacute;</a></li>
+        <li><a href="/personal" class="nav-link">Personal</a></li>
+        <li><a href="/resume" class="nav-link">R&eacute;sum&eacute;</a></li>
+        <li class="nav-theme-item">
+          <button class="theme-toggle" aria-label="Switch to dark theme" aria-pressed="false">
+            <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M21.64 13a1 1 0 0 0-1.05-.14 8.05 8.05 0 0 1-3.37.73 8.15 8.15 0 0 1-8.14-8.1 8.59 8.59 0 0 1 .25-2A1 1 0 0 0 8 2.36a10.14 10.14 0 1 0 14 11.69 1 1 0 0 0-.36-1.05z"/></svg>
+            <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 17a5 5 0 1 1 0-10 5 5 0 0 1 0 10zm0-2a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM11 1h2v3h-2V1zm0 19h2v3h-2v-3zM3.5 4.9l1.4-1.4 2.1 2.1-1.4 1.4L3.5 4.9zm13.5 13.5l1.4-1.4 2.1 2.1-1.4 1.4-2.1-2.1zM19.1 3.5l1.4 1.4-2.1 2.1-1.4-1.4 2.1-2.1zM5.6 17l1.4 1.4-2.1 2.1-1.4-1.4L5.6 17zM1 11h3v2H1v-2zm19 0h3v2h-3v-2z"/></svg>
+          </button>
+        </li>
       </ul>
     </div>
   </nav>
@@ -67,9 +74,9 @@
       <h1>From Trainer to Global L&amp;D Manager</h1>
       <p>A six-phase progression built on operational credibility - starting on the call floor and growing into learning systems owner, global onboarding lead, and training team manager.</p>
       <div class="cs-hero-tags" aria-label="Project focus areas">
-        <span class="pill">Training Operations</span>
-        <span class="pill">L&amp;D Leadership</span>
-        <span class="pill">Learning Systems</span>
+        <span class="tag">Training Operations</span>
+        <span class="tag">L&amp;D Leadership</span>
+        <span class="tag">Learning Systems</span>
       </div>
     </div>
   </header>
@@ -82,19 +89,16 @@
 
         <div class="cs-meta-grid">
           <div class="cs-meta-card">
-            <div class="card-accent accent-violet"></div>
             <div class="cs-meta-label">Starting Point</div>
             <h3>A New-Hire Class, Not a Trainer Desk</h3>
             <p>Hired as a Trainer in October 2020 - but rather than stepping straight to the front of the room, I spent my first month in the same standard onboarding class as every new agent, taking live calls to learn the systems, workflows, and pressures from the inside.</p>
           </div>
           <div class="cs-meta-card">
-            <div class="card-accent accent-blue"></div>
             <div class="cs-meta-label">The Through-Line</div>
             <h3>Training as an Ecosystem, Not a Class</h3>
             <p>Expanded the training function beyond live delivery into the infrastructure around it - knowledge systems, LMS platforms, automation workflows, creative production, and technical tooling. The goal at every stage: make learning sustainable after the classroom ends.</p>
           </div>
           <div class="cs-meta-card">
-            <div class="card-accent accent-teal"></div>
             <div class="cs-meta-label">Where It Led</div>
             <h3>Global L&amp;D Manager &amp; Strategic Partner</h3>
             <p>Promoted to manager in December 2025, now managing a training team directly - including scheduling, development, and performance reviews - while partnering with clients, operations leadership, QA, and senior leadership on training strategy and operational readiness.</p>
@@ -137,32 +141,32 @@
         <!-- Compact journey bar -->
         <div class="journey-bar" aria-hidden="true">
           <div class="jb-step">
-            <div class="jb-dot" style="--jc:#8B5CF6">01</div>
+            <div class="jb-dot">01</div>
             <div class="jb-label">Frontline</div>
           </div>
-          <div class="jb-connector" style="--c1:#8B5CF6;--c2:#3B82F6"></div>
+          <div class="jb-connector"></div>
           <div class="jb-step">
-            <div class="jb-dot" style="--jc:#3B82F6">02</div>
+            <div class="jb-dot">02</div>
             <div class="jb-label">Facilitator</div>
           </div>
-          <div class="jb-connector" style="--c1:#3B82F6;--c2:#14B8A6"></div>
+          <div class="jb-connector"></div>
           <div class="jb-step">
-            <div class="jb-dot" style="--jc:#14B8A6">03</div>
+            <div class="jb-dot">03</div>
             <div class="jb-label">Systems</div>
           </div>
-          <div class="jb-connector" style="--c1:#14B8A6;--c2:#0EA5E9"></div>
+          <div class="jb-connector"></div>
           <div class="jb-step">
-            <div class="jb-dot" style="--jc:#0EA5E9">04</div>
+            <div class="jb-dot">04</div>
             <div class="jb-label">Launch</div>
           </div>
-          <div class="jb-connector" style="--c1:#0EA5E9;--c2:#06B6D4"></div>
+          <div class="jb-connector"></div>
           <div class="jb-step">
-            <div class="jb-dot" style="--jc:#06B6D4">05</div>
+            <div class="jb-dot">05</div>
             <div class="jb-label">Technical</div>
           </div>
-          <div class="jb-connector" style="--c1:#06B6D4;--c2:#F97316"></div>
+          <div class="jb-connector"></div>
           <div class="jb-step">
-            <div class="jb-dot" style="--jc:#F97316">06</div>
+            <div class="jb-dot">06</div>
             <div class="jb-label">Leadership</div>
           </div>
         </div>
@@ -175,9 +179,9 @@
           <div class="tl-entry" data-phase="1">
             <div class="tl-node-col">
               <div class="tl-year">Oct<br>2020</div>
-              <div class="tl-node" style="--pc:#8B5CF6">01</div>
+              <div class="tl-node">01</div>
             </div>
-            <div class="tl-card" style="--pc:#8B5CF6">
+            <div class="tl-card">
               <div class="tl-phase-label">Phase 01 - Frontline Foundation</div>
               <h3 class="tl-card-title">Learning the Job from the Agent Seat</h3>
               <p class="tl-card-desc">
@@ -189,9 +193,9 @@
                 <div class="tl-win">Gained firsthand understanding of the gap between training materials and live operational reality</div>
               </div>
               <div class="tags">
-                <span class="tag tag-violet">Call Center Operations</span>
-                <span class="tag tag-violet">CRM Systems</span>
-                <span class="tag tag-violet">Quality Assessment</span>
+                <span class="tag">Call Center Operations</span>
+                <span class="tag">CRM Systems</span>
+                <span class="tag">Quality Assessment</span>
                 <span class="tag">Customer Service</span>
               </div>
               <div class="tl-phase-bg" aria-hidden="true">01</div>
@@ -202,9 +206,9 @@
           <div class="tl-entry" data-phase="2">
             <div class="tl-node-col">
               <div class="tl-year">Late<br>2020-21</div>
-              <div class="tl-node" style="--pc:#3B82F6">02</div>
+              <div class="tl-node">02</div>
             </div>
-            <div class="tl-card" style="--pc:#3B82F6">
+            <div class="tl-card">
               <div class="tl-phase-label">Phase 02 - Facilitation &amp; Delivery</div>
               <h3 class="tl-card-title">Building a Training Practice from Scratch</h3>
               <p class="tl-card-desc">
@@ -216,9 +220,9 @@
                 <div class="tl-win">Developed structured facilitation approach grounded in practical application, not information transfer</div>
               </div>
               <div class="tags">
-                <span class="tag tag-blue">Instructor-Led Training</span>
-                <span class="tag tag-blue">Virtual Facilitation</span>
-                <span class="tag tag-blue">New Hire Onboarding</span>
+                <span class="tag">Instructor-Led Training</span>
+                <span class="tag">Virtual Facilitation</span>
+                <span class="tag">New Hire Onboarding</span>
                 <span class="tag">Compliance Training</span>
                 <span class="tag">Soft Skills</span>
               </div>
@@ -230,9 +234,9 @@
           <div class="tl-entry" data-phase="3">
             <div class="tl-node-col">
               <div class="tl-year">2021-<br>2022</div>
-              <div class="tl-node" style="--pc:#14B8A6">03</div>
+              <div class="tl-node">03</div>
             </div>
-            <div class="tl-card" style="--pc:#14B8A6">
+            <div class="tl-card">
               <div class="tl-phase-label">Phase 03 - Learning Systems &amp; Knowledge Infrastructure</div>
               <h3 class="tl-card-title">Owning the Platforms Behind the Training</h3>
               <p class="tl-card-desc">
@@ -245,9 +249,9 @@
                 <div class="tl-win">Built and maintained certification paths and performance tracking frameworks in LearnUpon</div>
               </div>
               <div class="tags">
-                <span class="tag tag-teal">LearnUpon</span>
-                <span class="tag tag-teal">KnowledgeOwl</span>
-                <span class="tag tag-teal">LMS Administration</span>
+                <span class="tag">LearnUpon</span>
+                <span class="tag">KnowledgeOwl</span>
+                <span class="tag">LMS Administration</span>
                 <span class="tag">Information Architecture</span>
                 <span class="tag">Content Governance</span>
               </div>
@@ -259,9 +263,9 @@
           <div class="tl-entry" data-phase="4">
             <div class="tl-node-col">
               <div class="tl-year">Oct-Nov<br>2022</div>
-              <div class="tl-node" style="--pc:#0EA5E9">04</div>
+              <div class="tl-node">04</div>
             </div>
-            <div class="tl-card" style="--pc:#0EA5E9">
+            <div class="tl-card">
               <div class="tl-phase-label">Phase 04 - Philippines BPO Launch</div>
               <h3 class="tl-card-title">Onboarding a Trainer and a New Operating Partner</h3>
               <p class="tl-card-desc">
@@ -278,9 +282,9 @@
                 <div class="tl-win">Built operational credibility through hands-on launch support and early coaching</div>
               </div>
               <div class="tags">
-                <span class="tag tag-cyan">BPO Launch</span>
-                <span class="tag tag-cyan">Train-the-Trainer</span>
-                <span class="tag tag-cyan">Philippines</span>
+                <span class="tag">BPO Launch</span>
+                <span class="tag">Train-the-Trainer</span>
+                <span class="tag">Philippines</span>
                 <span class="tag">Process Adoption</span>
                 <span class="tag">Change Enablement</span>
               </div>
@@ -292,9 +296,9 @@
           <div class="tl-entry" data-phase="5">
             <div class="tl-node-col">
               <div class="tl-year">2023-<br>2025</div>
-              <div class="tl-node" style="--pc:#06B6D4">05</div>
+              <div class="tl-node">05</div>
             </div>
-            <div class="tl-card" style="--pc:#06B6D4">
+            <div class="tl-card">
               <div class="tl-phase-label">Phase 05 - Technical Enablement &amp; Creative Production</div>
               <h3 class="tl-card-title">Building the Tools Training Teams Actually Need</h3>
               <p class="tl-card-desc">
@@ -308,10 +312,10 @@
                 <div class="tl-win">Designed and deployed SharePoint training hubs consolidating resources previously scattered across email and shared drives</div>
               </div>
               <div class="tags">
-                <span class="tag tag-cyan">HTML / CSS / JS</span>
-                <span class="tag tag-cyan">Power Automate</span>
-                <span class="tag tag-cyan">Adobe Creative Suite</span>
-                <span class="tag tag-cyan">Talkdesk Copilot</span>
+                <span class="tag">HTML / CSS / JS</span>
+                <span class="tag">Power Automate</span>
+                <span class="tag">Adobe Creative Suite</span>
+                <span class="tag">Talkdesk Copilot</span>
                 <span class="tag">SharePoint</span>
                 <span class="tag">AI Integration</span>
               </div>
@@ -323,9 +327,9 @@
           <div class="tl-entry" data-phase="6">
             <div class="tl-node-col">
               <div class="tl-year">Dec<br>2025+</div>
-              <div class="tl-node" style="--pc:#F97316">06</div>
+              <div class="tl-node">06</div>
             </div>
-            <div class="tl-card" style="--pc:#F97316">
+            <div class="tl-card">
               <div class="tl-phase-label">Phase 06 - Team Leadership &amp; Strategic Partnership</div>
               <h3 class="tl-card-title">Managing the Function, Not Just the Work</h3>
               <p class="tl-card-desc">
@@ -339,10 +343,10 @@
                 <div class="tl-win">Maintains 4.5+/5 learner satisfaction across all programs and 90%+ first-time pass rates on new-hire certifications</div>
               </div>
               <div class="tags">
-                <span class="tag tag-orange">Team Management</span>
-                <span class="tag tag-orange">Performance Reviews</span>
-                <span class="tag tag-orange">Client Partnership</span>
-                <span class="tag tag-orange">Strategic Planning</span>
+                <span class="tag">Team Management</span>
+                <span class="tag">Performance Reviews</span>
+                <span class="tag">Client Partnership</span>
+                <span class="tag">Strategic Planning</span>
                 <span class="tag">Training Needs Analysis</span>
               </div>
               <div class="tl-phase-bg" aria-hidden="true">06</div>
@@ -380,9 +384,8 @@
 
         <div class="cap-grid">
           <div class="skill-card">
-            <div class="card-accent accent-violet"></div>
             <div class="skill-card-header">
-              <div class="skill-icon si-violet">ILT</div>
+              <div class="skill-icon">ILT</div>
               <h3>Facilitation &amp; Delivery</h3>
             </div>
             <div class="skill-tags">
@@ -396,9 +399,8 @@
           </div>
 
           <div class="skill-card">
-            <div class="card-accent accent-blue"></div>
             <div class="skill-card-header">
-              <div class="skill-icon si-blue">LMS</div>
+              <div class="skill-icon">LMS</div>
               <h3>Learning Systems</h3>
             </div>
             <div class="skill-tags">
@@ -412,9 +414,8 @@
           </div>
 
           <div class="skill-card">
-            <div class="card-accent accent-teal"></div>
             <div class="skill-card-header">
-              <div class="skill-icon si-teal">DEV</div>
+              <div class="skill-icon">DEV</div>
               <h3>Technical Enablement</h3>
             </div>
             <div class="skill-tags">
@@ -428,9 +429,8 @@
           </div>
 
           <div class="skill-card">
-            <div class="card-accent accent-cyan"></div>
             <div class="skill-card-header">
-              <div class="skill-icon si-cyan">AV</div>
+              <div class="skill-icon">AV</div>
               <h3>Creative Production</h3>
             </div>
             <div class="skill-tags">
@@ -444,9 +444,8 @@
           </div>
 
           <div class="skill-card">
-            <div class="card-accent accent-orange"></div>
             <div class="skill-card-header">
-              <div class="skill-icon si-orange">TEAM</div>
+              <div class="skill-icon">TEAM</div>
               <h3>Team &amp; People Leadership</h3>
             </div>
             <div class="skill-tags">
@@ -460,9 +459,8 @@
           </div>
 
           <div class="skill-card">
-            <div class="card-accent accent-multi"></div>
             <div class="skill-card-header">
-              <div class="skill-icon si-green">OPS</div>
+              <div class="skill-icon">OPS</div>
               <h3>Strategic Partnership</h3>
             </div>
             <div class="skill-tags">
@@ -513,13 +511,15 @@
 
     <!-- CTA -->
     <section class="cta-section">
-      <div class="cta-inner">
+      <div class="container">
+        <div class="cta-sheet sheet stack">
         <h2>See More of the Work</h2>
         <p>The full portfolio includes case studies on the knowledge base systems, AI tools, and training programs referenced throughout this progression.</p>
         <div class="hero-actions">
           <a href="/portfolio#projects" class="btn btn-primary">Back to Portfolio</a>
-          <a href="/resume" class="btn btn-outline">View R&eacute;sum&eacute;</a>
+          <a href="/resume" class="btn btn-ghost">View R&eacute;sum&eacute;</a>
         </div>
+      </div>
       </div>
     </section>
 
@@ -527,31 +527,32 @@
 
   <!-- Footer -->
   <footer class="site-footer">
-    <div class="footer-inner">
-      <div class="footer-logo-mark">JB</div>
-      <p class="footer-name">Jesse Becker</p>
-      <p class="footer-tag">Global L&amp;D Manager | Learning Systems | Knowledge Management &amp; Tools</p>
-      <div class="footer-contact" aria-label="Contact Jesse Becker">
-        <a href="mailto:contact@jesserbecker.com">contact@jesserbecker.com</a>
-        <span aria-hidden="true">|</span>
-        <a href="tel:+19786212223">978-621-2223 <small>Text or call</small></a>
+    <div class="container footer-inner">
+      <div>
+        <p class="footer-brand">Jesse<em>&nbsp;Becker</em></p>
+        <p class="footer-tag">Global L&amp;D Manager &middot; Learning Systems &middot; Knowledge Management &amp; Tools</p>
+        <div class="footer-contact" aria-label="Contact Jesse Becker">
+          <a href="mailto:contact@jesserbecker.com">contact@jesserbecker.com</a>
+          <span aria-hidden="true">&middot;</span>
+          <a href="tel:+19786212223">978-621-2223 <small>Text or call</small></a>
+        </div>
+        <div class="footer-social">
+          <a href="https://www.linkedin.com/in/jesse-becker-830997100/" target="_blank" rel="noopener noreferrer" aria-label="Jesse Becker on LinkedIn">
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.07 2.07 0 1 1 0-4.13 2.07 2.07 0 0 1 0 4.13zm1.78 13.02H3.55V9h3.57v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
+            LinkedIn
+          </a>
+        </div>
       </div>
-      <nav class="footer-links">
-        <a href="/"     class="footer-link">Home</a>
+      <nav class="footer-nav" aria-label="Footer">
+        <a href="/" class="footer-link">Home</a>
         <a href="/portfolio#projects" class="footer-link">Portfolio</a>
         <a href="/resume" class="footer-link">R&eacute;sum&eacute;</a>
-        <a href="/personal"  class="footer-link">Personal</a>
+        <a href="/personal" class="footer-link">Personal</a>
       </nav>
-      <div class="footer-social">
-        <a href="https://www.linkedin.com/in/jesse-becker-830997100/" target="_blank" rel="noopener noreferrer" aria-label="Jesse Becker on LinkedIn">
-          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.07 2.07 0 1 1 0-4.13 2.07 2.07 0 0 1 0 4.13zm1.78 13.02H3.55V9h3.57v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
-          LinkedIn
-        </a>
-      </div>
-      <p class="footer-copy">&copy; <span class="year"></span> Jesse Becker. All rights reserved.</p>
+      <p class="footer-base">&copy; <span class="year"></span> Jesse Becker. All rights reserved.</p>
     </div>
   </footer>
-  <script src="site.js?v=20260602-1"></script>
-  <script src="training-case-study.js?v=20260602-1"></script>
+  <script src="site.js?v=20260802-1"></script>
+  <script src="training-case-study.js?v=20260802-1"></script>
 </body>
 </html>

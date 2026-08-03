@@ -20,38 +20,45 @@
   <meta name="twitter:description" content="A custom CSS component library built for a KnowledgeOwl knowledge base - turning plain articles into a scannable information system.">
   <meta name="twitter:image" content="https://jesserbecker.com/images/headshot.jpg">
   <meta name="twitter:image:alt" content="Knowledge base design system case study by Jesse Becker">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <meta name="theme-color" content="#F7F2E9" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#171310" media="(prefers-color-scheme: dark)">
+
+  <!-- Apply the saved theme before first paint so there is no flash. -->
+  <script>(function(){try{var t=localStorage.getItem('theme');if(t==='dark'||(!t&&matchMedia('(prefers-color-scheme: dark)').matches))document.documentElement.setAttribute('data-theme','dark')}catch(e){}})();</script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..700&amp;family=Inter:wght@400..700&amp;family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400&amp;display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous">
-  <link rel="stylesheet" href="style.css?v=20260602-1">
-  <link rel="stylesheet" href="case-study.css?v=20260530-2">
+  <link rel="stylesheet" href="css/tokens.css?v=20260802-1">
+  <link rel="stylesheet" href="css/base.css?v=20260802-1">
+  <link rel="stylesheet" href="css/components.css?v=20260802-1">
+  <link rel="stylesheet" href="css/layout.css?v=20260802-1">
+  <link rel="stylesheet" href="css/pages.css?v=20260802-1">
+  <link rel="stylesheet" href="css/print.css?v=20260802-1" media="print">
+  <link rel="stylesheet" href="case-study.css?v=20260802-1">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
 
-  <div class="bg-orbs" aria-hidden="true">
-    <div class="orb orb-1"></div>
-    <div class="orb orb-2"></div>
-    <div class="orb orb-3"></div>
-  </div>
-
   <!-- Navigation -->
   <nav class="navbar">
     <div class="nav-inner">
-      <a href="/" class="nav-logo">
-        <span class="nav-logo-mark">JB</span>
-        <span class="nav-logo-name">Jesse Becker</span>
-      </a>
+      <a href="/" class="nav-logo">Jesse<em>&nbsp;Becker</em></a>
       <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
       <ul class="nav-links">
-        <li><a href="/"    class="nav-link">Home</a></li>
+        <li><a href="/" class="nav-link">Home</a></li>
         <li><a href="/portfolio#projects" class="nav-link active" aria-current="page">Portfolio</a></li>
-        <li><a href="/personal"  class="nav-link">Personal</a></li>
-        <li><a href="/resume"    class="nav-link nav-link-resume">R&eacute;sum&eacute;</a></li>
+        <li><a href="/personal" class="nav-link">Personal</a></li>
+        <li><a href="/resume" class="nav-link">R&eacute;sum&eacute;</a></li>
+        <li class="nav-theme-item">
+          <button class="theme-toggle" aria-label="Switch to dark theme" aria-pressed="false">
+            <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M21.64 13a1 1 0 0 0-1.05-.14 8.05 8.05 0 0 1-3.37.73 8.15 8.15 0 0 1-8.14-8.1 8.59 8.59 0 0 1 .25-2A1 1 0 0 0 8 2.36a10.14 10.14 0 1 0 14 11.69 1 1 0 0 0-.36-1.05z"/></svg>
+            <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 17a5 5 0 1 1 0-10 5 5 0 0 1 0 10zm0-2a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM11 1h2v3h-2V1zm0 19h2v3h-2v-3zM3.5 4.9l1.4-1.4 2.1 2.1-1.4 1.4L3.5 4.9zm13.5 13.5l1.4-1.4 2.1 2.1-1.4 1.4-2.1-2.1zM19.1 3.5l1.4 1.4-2.1 2.1-1.4-1.4 2.1-2.1zM5.6 17l1.4 1.4-2.1 2.1-1.4-1.4L5.6 17zM1 11h3v2H1v-2zm19 0h3v2h-3v-2z"/></svg>
+          </button>
+        </li>
       </ul>
     </div>
   </nav>
@@ -68,9 +75,9 @@
       <h1>Knowledge Base Design System</h1>
       <p>A custom CSS component library built for a KnowledgeOwl knowledge base - turning plain article text into a scannable, visually structured information system used by frontline operations staff.</p>
       <div class="cs-hero-tags" aria-label="Project focus areas">
-        <span class="pill">Knowledge Management</span>
-        <span class="pill">CSS / HTML</span>
-        <span class="pill">KnowledgeOwl</span>
+        <span class="tag">Knowledge Management</span>
+        <span class="tag">CSS / HTML</span>
+        <span class="tag">KnowledgeOwl</span>
       </div>
       <p class="cs-anonymized-note">Anonymized portfolio sample. Names, URLs, pricing, and policy details are fictionalized.</p>
     </div>
@@ -83,19 +90,16 @@
         <!-- Overview cards -->
         <div class="cs-meta-grid">
           <div class="cs-meta-card">
-            <div class="card-accent accent-violet"></div>
             <div class="cs-meta-card-label">The Challenge</div>
             <h3>Plain articles weren't working</h3>
             <p>The default KnowledgeOwl theme rendered all article content as uniform paragraphs. During live customer interactions, agents had to read full articles to locate a single policy detail - slowing handle time and increasing errors.</p>
           </div>
           <div class="cs-meta-card">
-            <div class="card-accent accent-blue"></div>
             <div class="cs-meta-card-label">The Approach</div>
             <h3>A modular component library</h3>
             <p>Designed and built a complete CSS component system injected via KnowledgeOwl's custom CSS field. Components are written as reusable HTML snippets that any article author can insert - no coding knowledge required.</p>
           </div>
           <div class="cs-meta-card">
-            <div class="card-accent accent-teal"></div>
             <div class="cs-meta-card-label">The Outcome</div>
             <h3>Faster, more consistent lookups</h3>
             <p>Articles became immediately scannable. Color-coded alerts, structured steps, and collapsible sections let agents locate the exact information they need in seconds - during active calls, without reading full articles.</p>
@@ -142,25 +146,18 @@
 
         <!-- -- Panel 1: Browser mockup ----------------- -->
         <div class="cs-panel active" id="cs-panel-preview" role="tabpanel" aria-labelledby="cs-tab-preview" tabindex="0">
-          <div class="browser-mockup">
-            <div class="browser-chrome">
-              <div class="browser-dots">
-                <div class="browser-dot browser-dot--red"></div>
-                <div class="browser-dot browser-dot--yellow"></div>
-                <div class="browser-dot browser-dot--green"></div>
-              </div>
-              <div class="browser-url-bar">
-                <span class="lock">Secure</span>
-                support.apexpro.io/knowledge-base/subscription-tiers-access
-              </div>
+          <div class="cs-specimen">
+            <div class="cs-specimen__label">
+              Live sample
+              <span class="cs-specimen__url">support.apexpro.io/knowledge-base/subscription-tiers-access</span>
             </div>
-            <div class="browser-body">
+            <div class="cs-specimen__body">
               <iframe src="kb-sample.html"
                       title="Sample KB Article - Apex Pro Subscription & Access Guide"
                       loading="lazy"></iframe>
             </div>
           </div>
-          <p style="margin-top:1rem;font-size:.82rem;color:var(--text-muted);text-align:center;">
+          <p style="margin-top:1rem;font-size:.82rem;color:var(--ink-faint);text-align:center;font-style:italic;">
             Scrollable article preview with fictional content demonstrating the component system in context
           </p>
         </div>
@@ -171,23 +168,23 @@
 
             <nav class="comp-nav" role="tablist" aria-label="Component list">
               <button class="comp-nav-item active" data-comp="headers" type="button" aria-selected="true" aria-controls="comp-headers">
-                <div class="dot" style="background:var(--violet)"></div>
+                <div class="dot"></div>
                 Section Headers
               </button>
               <button class="comp-nav-item" data-comp="cards" type="button" aria-selected="false" aria-controls="comp-cards">
-                <div class="dot" style="background:var(--blue)"></div>
+                <div class="dot"></div>
                 Info Cards
               </button>
               <button class="comp-nav-item" data-comp="steps" type="button" aria-selected="false" aria-controls="comp-steps">
-                <div class="dot" style="background:var(--teal)"></div>
+                <div class="dot"></div>
                 Guided Steps
               </button>
               <button class="comp-nav-item" data-comp="table" type="button" aria-selected="false" aria-controls="comp-table">
-                <div class="dot" style="background:var(--cyan)"></div>
+                <div class="dot"></div>
                 Data Tables
               </button>
               <button class="comp-nav-item" data-comp="tier" type="button" aria-selected="false" aria-controls="comp-tier">
-                <div class="dot" style="background:var(--orange)"></div>
+                <div class="dot"></div>
                 Tier Comparison
               </button>
             </nav>
@@ -497,33 +494,29 @@
 
         <div class="skills-grid" style="margin-bottom:3rem;">
           <div class="skill-card">
-            <div class="card-accent accent-violet"></div>
             <div class="skill-card-header">
-              <div class="skill-icon si-violet">AUD</div>
+              <div class="skill-icon">AUD</div>
               <h3>Audit &amp; Pain-Pointing</h3>
             </div>
             <p style="font-size:.875rem;">Reviewed existing articles with operations team members during live call simulations. Identified friction points: buried alerts, no visual hierarchy, no way to distinguish warnings from tips, inconsistent formatting across authors.</p>
           </div>
           <div class="skill-card">
-            <div class="card-accent accent-blue"></div>
             <div class="skill-card-header">
-              <div class="skill-icon si-blue">UX</div>
+              <div class="skill-icon">UX</div>
               <h3>Component Design</h3>
             </div>
             <p style="font-size:.875rem;">Sketched a component vocabulary based on agent information needs: procedural steps, caution flags, quick-reference tables, and tier comparisons. Designed for fast visual scanning, not linear reading.</p>
           </div>
           <div class="skill-card">
-            <div class="card-accent accent-teal"></div>
             <div class="skill-card-header">
-              <div class="skill-icon si-teal">CSS</div>
+              <div class="skill-icon">CSS</div>
               <h3>CSS Implementation</h3>
             </div>
             <p style="font-size:.875rem;">Built entirely in native CSS - no preprocessors, no frameworks. Injected via KnowledgeOwl's custom CSS field. Used CSS custom properties for consistent theming and easy color overrides by article authors.</p>
           </div>
           <div class="skill-card">
-            <div class="card-accent accent-cyan"></div>
             <div class="skill-card-header">
-              <div class="skill-icon si-cyan">DOC</div>
+              <div class="skill-icon">DOC</div>
               <h3>Author Documentation</h3>
             </div>
             <p style="font-size:.875rem;">Wrote an internal style guide and HTML snippet library that lets non-technical content authors insert any component by copying a short code block - no CSS knowledge required to use the system.</p>
@@ -536,14 +529,14 @@
           <h2 class="section-title" style="font-size:1.5rem;">Tech Stack</h2>
         </div>
         <div class="tech-grid">
-          <div class="tech-pill"><div class="tech-dot" style="width:8px;height:8px;border-radius:50%;background:#3B82F6;"></div>CSS3 Custom Properties</div>
-          <div class="tech-pill"><div class="tech-dot" style="width:8px;height:8px;border-radius:50%;background:#8B5CF6;"></div>Semantic HTML5</div>
-          <div class="tech-pill"><div class="tech-dot" style="width:8px;height:8px;border-radius:50%;background:#14B8A6;"></div>KnowledgeOwl</div>
-          <div class="tech-pill"><div class="tech-dot" style="width:8px;height:8px;border-radius:50%;background:#F97316;"></div>Font Awesome 6</div>
-          <div class="tech-pill"><div class="tech-dot" style="width:8px;height:8px;border-radius:50%;background:#EC4899;"></div>Google Fonts (Poppins)</div>
-          <div class="tech-pill"><div class="tech-dot" style="width:8px;height:8px;border-radius:50%;background:#06B6D4;"></div>CSS Grid &amp; Flexbox</div>
-          <div class="tech-pill"><div class="tech-dot" style="width:8px;height:8px;border-radius:50%;background:#84CC16;"></div>CSS Animations</div>
-          <div class="tech-pill"><div class="tech-dot" style="width:8px;height:8px;border-radius:50%;background:#6B7280;"></div>No build step - pure CSS</div>
+          <div class="tech-pill"><div class="tech-pill-dot"></div>CSS3 Custom Properties</div>
+          <div class="tech-pill"><div class="tech-pill-dot"></div>Semantic HTML5</div>
+          <div class="tech-pill"><div class="tech-pill-dot"></div>KnowledgeOwl</div>
+          <div class="tech-pill"><div class="tech-pill-dot"></div>Font Awesome 6</div>
+          <div class="tech-pill"><div class="tech-pill-dot"></div>Google Fonts (Poppins)</div>
+          <div class="tech-pill"><div class="tech-pill-dot"></div>CSS Grid &amp; Flexbox</div>
+          <div class="tech-pill"><div class="tech-pill-dot"></div>CSS Animations</div>
+          <div class="tech-pill"><div class="tech-pill-dot"></div>No build step - pure CSS</div>
         </div>
 
       </div>
@@ -551,13 +544,15 @@
 
     <!-- CTA -->
     <section class="cta-section">
-      <div class="cta-inner">
+      <div class="container">
+        <div class="cta-sheet sheet stack">
         <h2>See More Projects</h2>
         <p>This is one example of applied knowledge management work. The full portfolio includes AI-powered tools, training programs, and platform migrations.</p>
         <div class="hero-actions">
           <a href="/portfolio#projects" class="btn btn-primary">Back to Portfolio</a>
-          <a href="/resume" class="btn btn-outline">View R&eacute;sum&eacute;</a>
+          <a href="/resume" class="btn btn-ghost">View R&eacute;sum&eacute;</a>
         </div>
+      </div>
       </div>
     </section>
 
@@ -565,31 +560,32 @@
 
   <!-- Footer -->
   <footer class="site-footer">
-    <div class="footer-inner">
-      <div class="footer-logo-mark">JB</div>
-      <p class="footer-name">Jesse Becker</p>
-      <p class="footer-tag">Global L&amp;D Manager | Learning Systems | Knowledge Management &amp; Tools</p>
-      <div class="footer-contact" aria-label="Contact Jesse Becker">
-        <a href="mailto:contact@jesserbecker.com">contact@jesserbecker.com</a>
-        <span aria-hidden="true">|</span>
-        <a href="tel:+19786212223">978-621-2223 <small>Text or call</small></a>
+    <div class="container footer-inner">
+      <div>
+        <p class="footer-brand">Jesse<em>&nbsp;Becker</em></p>
+        <p class="footer-tag">Global L&amp;D Manager &middot; Learning Systems &middot; Knowledge Management &amp; Tools</p>
+        <div class="footer-contact" aria-label="Contact Jesse Becker">
+          <a href="mailto:contact@jesserbecker.com">contact@jesserbecker.com</a>
+          <span aria-hidden="true">&middot;</span>
+          <a href="tel:+19786212223">978-621-2223 <small>Text or call</small></a>
+        </div>
+        <div class="footer-social">
+          <a href="https://www.linkedin.com/in/jesse-becker-830997100/" target="_blank" rel="noopener noreferrer" aria-label="Jesse Becker on LinkedIn">
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.07 2.07 0 1 1 0-4.13 2.07 2.07 0 0 1 0 4.13zm1.78 13.02H3.55V9h3.57v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
+            LinkedIn
+          </a>
+        </div>
       </div>
-      <nav class="footer-links">
-        <a href="/"     class="footer-link">Home</a>
+      <nav class="footer-nav" aria-label="Footer">
+        <a href="/" class="footer-link">Home</a>
         <a href="/portfolio#projects" class="footer-link">Portfolio</a>
-        <a href="/resume"    class="footer-link">R&eacute;sum&eacute;</a>
-        <a href="/personal"  class="footer-link">Personal</a>
+        <a href="/resume" class="footer-link">R&eacute;sum&eacute;</a>
+        <a href="/personal" class="footer-link">Personal</a>
       </nav>
-      <div class="footer-social">
-        <a href="https://www.linkedin.com/in/jesse-becker-830997100/" target="_blank" rel="noopener noreferrer" aria-label="Jesse Becker on LinkedIn">
-          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.07 2.07 0 1 1 0-4.13 2.07 2.07 0 0 1 0 4.13zm1.78 13.02H3.55V9h3.57v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
-          LinkedIn
-        </a>
-      </div>
-      <p class="footer-copy">&copy; <span class="year"></span> Jesse Becker. All rights reserved.</p>
+      <p class="footer-base">&copy; <span class="year"></span> Jesse Becker. All rights reserved.</p>
     </div>
   </footer>
-  <script src="site.js?v=20260602-1"></script>
-  <script src="case-study.js?v=20260602-1"></script>
+  <script src="site.js?v=20260802-1"></script>
+  <script src="case-study.js?v=20260802-1"></script>
 </body>
 </html>

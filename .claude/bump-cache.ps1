@@ -36,17 +36,13 @@ $refs = 0
 
 foreach ($file in $files) {
     $original = [IO.File]::ReadAllText($file.FullName)
-    $count = 0
 
-    $updated = [regex]::Replace($original, $pattern, {
-        param($m)
-        $script:count++
-        "$($m.Groups['attr'].Value)$($m.Groups['path'].Value)?v=$stamp$($m.Groups['tail'].Value)"
-    })
+    # Count first, then replace. Incrementing a counter from inside the
+    # MatchEvaluator scriptblock does not reliably reach this scope.
+    $count = [regex]::Matches($original, $pattern).Count
 
-    # $count is set inside the scriptblock via $script: scope
-    $count = $script:count
-    $script:count = 0
+    $updated = [regex]::Replace($original, $pattern,
+        '${attr}${path}?v=' + $stamp + '${tail}')
 
     if ($updated -ne $original) {
         if ($PSCmdlet.ShouldProcess($file.Name, "stamp $count asset reference(s) with ?v=$stamp")) {
