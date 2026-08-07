@@ -16,13 +16,14 @@
   /* -- Text ------------------------------------------------ */
   --ink:       #171310;
   --ink-soft:  #57504A;
-  --ink-faint: #776E64;   /* 4.9:1 on --surface; captions run to 12px */
+  --ink-faint: #6C645B;   /* >=4.5:1 on every paper surface, incl. --surface-sunken; captions run to 12px */
 
   /* -- Accent (vermilion) ---------------------------------- */
   /* --accent for large/display text and non-text marks.
-     --accent-deep for accent text below ~1.2rem (5.2:1 on paper). */
+     --accent-deep for accent text below ~1.2rem: 5.2:1 on
+     paper and >=4.5:1 on --accent-tint and --surface-sunken. */
   --accent:      #E8490F;
-  --accent-deep: #C23A0A;
+  --accent-deep: #B93708;
   --accent-tint: #FBE3D6;
   --tape:        rgba(232, 73, 15, .16);
 

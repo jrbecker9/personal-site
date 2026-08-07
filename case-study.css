@@ -603,8 +603,9 @@
 .kb-tier-compare__head-tier--silver { background:#8AA6FF22; }
 .kb-tier-compare__head-tier--gold   { background:#F8B88B2A; }
 .kb-tier-compare__tier-name { font-weight:700; font-size:12px; }
-.kb-tier-compare__tier-name--silver { color:#4F6FCC; }
-.kb-tier-compare__tier-name--gold   { color:#C97A3E; }
+/* Deep enough to clear 4.5:1 on their tinted header fills */
+.kb-tier-compare__tier-name--silver { color:#4462B8; }
+.kb-tier-compare__tier-name--gold   { color:#A05A20; }
 .kb-tier-compare__tier-price { font-size:10px; color:var(--kb-label); margin-top:2px; }
 .kb-tier-compare__section { display:block; padding:4px 12px; background:#00000009; font-size:9px; font-weight:700; letter-spacing:.8px; text-transform:uppercase; color:var(--kb-label); border-top:1px solid #00000014; }
 .kb-tier-compare__row { display:grid; grid-template-columns:1fr 80px 90px; border-top:1px solid #00000009; align-items:center; }
@@ -612,8 +613,8 @@
 .kb-tier-compare__feature { padding:8px 12px; font-size:12px; color:var(--kb-desc); }
 .kb-tier-compare__cell { text-align:center; padding:8px 6px; border-left:1px solid #00000009; }
 .kb-tier-compare__cell--yes { color:#215732; }
-.kb-tier-compare__cell--no  { color:#C8CACB; }
-.kb-tier-compare__cell--limited { color:#C97A3E; }
+.kb-tier-compare__cell--no  { color:#6E7274; }
+.kb-tier-compare__cell--limited { color:#A05A20; }
 
 /* ==========================================================
    Brand-identity specimen sheet (work sample)

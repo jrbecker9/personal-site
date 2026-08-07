@@ -54,10 +54,12 @@
       let ran = false;
       const ease = t => t < .5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
       const settle = () => defs.forEach(d => { d.el.textContent = d.end + d.suffix; });
+      const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
       new IntersectionObserver((entries, ob) => {
         if (!entries[0].isIntersecting || ran) return;
         ran = true;
         ob.disconnect();
+        if (reduced) { settle(); return; }
         const t0 = performance.now(), dur = 1100;
         function frame(now) {
           const p = Math.min((now - t0) / dur, 1), ep = ease(p);

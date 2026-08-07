@@ -51,7 +51,7 @@
 .stat-value sup {
   font-size: 1.2rem;
   font-style: italic;
-  color: var(--accent);
+  color: var(--accent-deep);
 }
 
 .stat-label { font-size: .84rem; font-weight: 500; color: var(--ink-soft); }
@@ -233,7 +233,7 @@
 
 .meta-label {
   margin-bottom: .28rem;
-  font-size: .62rem;
+  font-size: .68rem;
   font-weight: 700;
   letter-spacing: .12em;
   text-transform: uppercase;
@@ -284,7 +284,8 @@
   font-size: var(--fs-xs);
 }
 
-.resume-contact a { color: var(--accent-deep); font-weight: 600; }
+/* Same 24px tap-target padding as the footer links */
+.resume-contact a { display: inline-flex; align-items: center; padding-block: var(--sp-1); color: var(--accent-deep); font-weight: 600; }
 .resume-contact a:hover { text-decoration: underline; }
 .resume-contact span, .resume-contact small { color: var(--ink-faint); }
 .resume-contact small { font-size: .68rem; }
@@ -469,9 +470,10 @@
 .resume-sidebar-cta p { margin-bottom: var(--sp-4); font-size: var(--fs-xs); }
 .resume-sidebar-cta .btn { width: 100%; justify-content: center; }
 
+/* Stacked, the summary and experience lead; the skills rail reads
+   better as confirmation than as a wall before the story. */
 @media (max-width: 900px) {
   .resume-layout { grid-template-columns: 1fr; }
-  .resume-sidebar { order: -1; }
 }
 
 @media (max-width: 820px) {

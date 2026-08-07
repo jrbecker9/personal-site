@@ -76,6 +76,11 @@
     transition: none !important;
   }
 
+  /* Scroll-reveal elements that never entered the viewport are still
+     at opacity 0; printing must not depend on how far the visitor
+     scrolled (headless print never scrolls at all). */
+  .reveal { opacity: 1 !important; }
+
   .sheet { border: 1px solid var(--hairline); border-radius: 0; }
 
   .section { padding: 0; }
@@ -121,7 +126,12 @@
     background: #fff;
   }
 
-  .experience-card-header { gap: .08in; margin-bottom: .05in; }
+  /* The paper is narrower than the 820px breakpoint, so the mobile
+     stacking rules match during print. Stacked, the title block's
+     12rem flex-basis becomes a 12rem-tall column - pin the header
+     back to the desktop row layout on paper. */
+  .experience-card-header { flex-direction: row; gap: .08in; margin-bottom: .05in; }
+  .experience-meta { align-items: flex-end; }
   .experience-role { font-size: 9pt; }
   .experience-company { font-size: 7.8pt; }
   .experience-date { padding: .01in .05in; font-size: 7pt; }
