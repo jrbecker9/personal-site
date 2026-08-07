@@ -614,3 +614,114 @@
 .kb-tier-compare__cell--yes { color:#215732; }
 .kb-tier-compare__cell--no  { color:#C8CACB; }
 .kb-tier-compare__cell--limited { color:#C97A3E; }
+
+/* ==========================================================
+   Brand-identity specimen sheet (work sample)
+
+   A neutral, abstract stand-in for a delivered logo system:
+   the matrix of lockups x colour treatments, with the real
+   mark and wordmark replaced by placeholder shapes (a ring +
+   dot for the mark, bars for the wordmark). Like .kb-live it
+   is the artifact on display, so it keeps its own fixed paper
+   palette rather than flipping with the site theme - the
+   framing label marks that as intentional, and it lets the
+   "reversed on dark" column read correctly in either theme.
+   ========================================================== */
+
+.bi-specimen {
+  --bi-paper:#F4ECDD; --bi-sunken:#EAE0CE; --bi-dark:#211B15;
+  --bi-ink:#211B15; --bi-ink-soft:#5A5148; --bi-line:#D8CBB4;
+  --bi-accent:#C23A0A; --bi-accent-light:#E8490F;
+}
+
+.bi-sheet {
+  overflow:hidden;
+  border:1px solid var(--hairline-strong);
+  border-radius:var(--r-lg);
+  box-shadow:var(--shadow-lift);
+  background:var(--bi-paper);
+}
+
+.bi-sheet__head {
+  display:flex; align-items:center; gap:var(--sp-3);
+  padding:var(--sp-3) var(--sp-4);
+  border-bottom:1px solid var(--bi-line);
+  background:var(--bi-sunken);
+  font-size:.7rem; font-weight:700; letter-spacing:.14em; text-transform:uppercase;
+  color:var(--bi-ink-soft);
+}
+.bi-sheet__head::before { content:""; width:7px; height:7px; border-radius:50%; background:var(--bi-accent); flex-shrink:0; }
+.bi-sheet__meta { margin-left:auto; font-weight:600; letter-spacing:.02em; text-transform:none; }
+
+.bi-scroll { overflow-x:auto; }
+
+.bi-matrix {
+  min-width:540px;
+  display:grid;
+  grid-template-columns:minmax(96px,auto) repeat(3,1fr);
+  gap:1px;
+  padding:1px;
+  background:var(--bi-line);   /* shows through the 1px gaps as gridlines */
+}
+
+.bi-corner, .bi-colhead, .bi-rowhead {
+  display:flex; align-items:center;
+  padding:var(--sp-3) var(--sp-4);
+  background:var(--bi-paper);
+  font-size:.6rem; font-weight:700; letter-spacing:.12em; text-transform:uppercase;
+  color:var(--bi-ink-soft);
+}
+.bi-colhead { justify-content:center; }
+
+.bi-cell {
+  display:flex; align-items:center; justify-content:center;
+  min-height:98px; padding:var(--sp-4);
+}
+.bi-cell svg { width:100%; height:auto; }
+.bi-lockup--horizontal,
+.bi-lockup--stacked  { max-width:150px; }
+.bi-lockup--compact  { max-width:128px; }
+.bi-lockup--mark     { max-width:56px; }
+
+.bi-mark      { fill:var(--bi-mark); }
+.bi-mark-ring { fill:none; stroke:var(--bi-mark); stroke-width:6; }
+.bi-word      { fill:var(--bi-word); }
+
+.bi-cell--primary  { background:var(--bi-paper);  --bi-mark:var(--bi-accent);       --bi-word:var(--bi-ink); }
+.bi-cell--reversed { background:var(--bi-dark);   --bi-mark:var(--bi-accent-light); --bi-word:var(--bi-paper); }
+.bi-cell--mono     { background:var(--bi-sunken); --bi-mark:var(--bi-ink);          --bi-word:var(--bi-ink); }
+
+/* Localized regional editions */
+.bi-regions {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:var(--sp-5);
+  margin-top:var(--sp-5);
+}
+.bi-region {
+  overflow:hidden;
+  border:1px solid var(--hairline-strong);
+  border-radius:var(--r-lg);
+  box-shadow:var(--shadow-sheet);
+}
+.bi-region .bi-cell { min-height:128px; }
+.bi-region__label {
+  padding:var(--sp-3) var(--sp-4);
+  border-top:1px solid var(--bi-line);
+  background:var(--bi-sunken);
+  font-size:.68rem; font-weight:700; letter-spacing:.12em; text-transform:uppercase;
+  text-align:center;
+  color:var(--bi-ink-soft);
+}
+
+.bi-caption {
+  margin-top:var(--sp-4);
+  font-size:var(--fs-xs);
+  font-style:italic;
+  text-align:center;
+  color:var(--ink-faint);
+}
+
+@media (max-width: 600px) {
+  .bi-regions { grid-template-columns:1fr; }
+}
